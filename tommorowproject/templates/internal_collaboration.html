@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+{% load static %}
+<html
+    lang="en"
+    class="w-mod-js w-mod-ix"
+>
+    <head>
+        <style>
+            .wf-force-outline-none[tabindex="-1"]:focus {
+                outline: none;
+            }
+        </style>
+        <style data-hubspot-styled-components=""></style>
+        <meta charset="UTF-8" />
+        <title>Internal Collaboration</title>
+        
+        {% include 'includes/half_header.html' %}
+    </head>
+
+    <body data-w-id="60d3f7b8b0e86c28630fc6d6">
+        <!--googleoff: index-->
+        <div class="axeptio_mount" id="axeptio_overlay" data-project-id="603d0a5e2449d64b1b43034a" data-nosnippet="">
+            <div class="sc-dkmKIT gLLBWQ ax-website-overlay">
+                <button id="axeptio_main_button" title="Manage your preferences about cookies" tabindex="-1" class="sc-hKgJUU gbpxZC" disabled="">
+                    <span class="sc-dlfnuX cQFHoC">
+                        <span class="sc-bdfBQB bihjvE">
+                            <span class="sc-gsTEea cioNop svgr">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M21.662 2.821C18.866.025 11.663-.252 5.124 5.422-.987 10.725-.89 17.107 3.87 20.613c4.443 3.272 10.542 3.802 15.191-1.256 5.648-6.144 5.399-13.74 2.601-16.536z"></path>
+                                    <path
+                                        fill="#FFF"
+                                        d="M8.104 14.644a.567.567 0 01-.804 0h-.001l-2.53-2.529a.57.57 0 01.805-.807l2.128 2.127 6.186-6.185a.57.57 0 01.805.805l-6.589 6.589zm4.895-1.92a.546.546 0 01-.387-.93l4.047-4.047a.549.549 0 01.774 0 .549.549 0 010 .774l-4.046 4.047a.545.545 0 01-.388.156zm4.964 1.236l-1.593 1.591a.544.544 0 01-.773 0 .549.549 0 010-.774l1.594-1.594a.547.547 0 11.79.755l-.016.017-.002.005zm0-2.985l-3.085 3.084a.549.549 0 01-.774-.775l3.087-3.087a.549.549 0 01.774.775l-.002.003z"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!--googleon: index-->
+        <div class="page-wrapper">
+            <div class="global-styles w-embed w-iframe w-script">
+                <!-- Google Tag Manager (noscript) -->
+                
+                <!-- End Google Tag Manager (noscript) -->
+
+                <style>
+                    body {
+                        overscroll-behavior-y: none;
+                    }
+
+                    html {
+                        font-size: 1rem;
+                    }
+
+                    @media screen and (max-width: 1440px) {
+                        html {
+                            font-size: calc(0.8126951092611863rem + 0.20811654526534862vw);
+                        }
+                    }
+
+                    @media screen and (max-width: 479px) {
+                        html {
+                            font-size: calc(0.7494769874476988rem + 0.8368200836820083vw);
+                        }
+                    }
+
+                    ::-webkit-scrollbar {
+                        width: 0;
+                        height: 0;
+                        display: none;
+                    }
+
+                    /* Make text look crisper and more legible in all browsers */
+                    /*body {
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale;
+       font-smoothing: antialiased;
+       text-rendering: optimizeLegibility;
+       }
+     
+       /* Focus state style for keyboard navigation for the focusable elements */
+                    *[tabindex]:focus-visible,
+                    input[type="file"]:focus-visible {
+                        outline: 0.125rem solid #4d65ff;
+                        outline-offset: 0.125rem;
+                    }
+
+                    /* Set color style to inherit */
+                    .inherit-color * {
+                        color: inherit;
+                    }
+
+                    /* Get rid of top margin on first element in any rich text element */
+                    .w-richtext > :not(div):first-child,
+                    .w-richtext > div:first-child > :first-child {
+                        margin-top: 0 !important;
+                    }
+
+                    /* Get rid of bottom margin on last element in any rich text element */
+                    .w-richtext > :last-child,
+                    .w-richtext ol li:last-child,
+                    .w-richtext ul li:last-child {
+                        margin-bottom: 0 !important;
+                    }
+
+                    /* Make sure containers never lose their center alignment */
+                    .container-medium,
+                    .container-small,
+                    .container-large {
+                        margin-right: auto !important;
+                        margin-left: auto !important;
+                    }
+
+                    /* 
+       Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+       Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+       Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+       */
+                    /*
+       a,
+       .w-input,
+       .w-select,
+       .w-tab-link,
+       .w-nav-link,
+       .w-dropdown-btn,
+       .w-dropdown-toggle,
+       .w-dropdown-link {
+       color: inherit;
+       text-decoration: inherit;
+       font-size: inherit;
+       }
+       */
+
+                    .text-style-3lines {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                    }
+
+                    .text-style-2lines {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+
+                    .hide {
+                        display: none !important;
+                    }
+
+                    @media screen and (max-width: 991px) {
+                        .hide,
+                        .hide-tablet {
+                            display: none !important;
+                        }
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        .hide-mobile-landscape {
+                            display: none !important;
+                        }
+                    }
+
+                    @media screen and (max-width: 479px) {
+                        .hide-mobile {
+                            display: none !important;
+                        }
+                    }
+
+                    .margin-0 {
+                        margin: 0rem !important;
+                    }
+
+                    .padding-0 {
+                        padding: 0rem !important;
+                    }
+
+                    .spacing-clean {
+                        padding: 0rem !important;
+                        margin: 0rem !important;
+                    }
+
+                    .margin-top {
+                        margin-right: 0rem !important;
+                        margin-bottom: 0rem !important;
+                        margin-left: 0rem !important;
+                    }
+
+                    .padding-top {
+                        padding-right: 0rem !important;
+                        padding-bottom: 0rem !important;
+                        padding-left: 0rem !important;
+                    }
+
+                    .margin-right {
+                        margin-top: 0rem !important;
+                        margin-bottom: 0rem !important;
+                        margin-left: 0rem !important;
+                    }
+
+                    .padding-right {
+                        padding-top: 0rem !important;
+                        padding-bottom: 0rem !important;
+                        padding-left: 0rem !important;
+                    }
+
+                    .margin-bottom {
+                        margin-top: 0rem !important;
+                        margin-right: 0rem !important;
+                        margin-left: 0rem !important;
+                    }
+
+                    .padding-bottom {
+                        padding-top: 0rem !important;
+                        padding-right: 0rem !important;
+                        padding-left: 0rem !important;
+                    }
+
+                    .margin-left {
+                        margin-top: 0rem !important;
+                        margin-right: 0rem !important;
+                        margin-bottom: 0rem !important;
+                    }
+
+                    .padding-left {
+                        padding-top: 0rem !important;
+                        padding-right: 0rem !important;
+                        padding-bottom: 0rem !important;
+                    }
+
+                    .margin-horizontal {
+                        margin-top: 0rem !important;
+                        margin-bottom: 0rem !important;
+                    }
+
+                    .padding-horizontal {
+                        padding-top: 0rem !important;
+                        padding-bottom: 0rem !important;
+                    }
+
+                    .margin-vertical {
+                        margin-right: 0rem !important;
+                        margin-left: 0rem !important;
+                    }
+
+                    .padding-vertical {
+                        padding-right: 0rem !important;
+                        padding-left: 0rem !important;
+                    }
+
+                    .w-tab-link.w--current {
+                        background-color: var(--brand--opacity-00);
+                    }
+
+                    .breadcrumb_item {
+                        list-style: none;
+                    }
+
+                    /* Hubspot Form */
+                    .hs-form > p {
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    .hs-form .input {
+                        margin-right: 0 !important;
+                    }
+
+                    .hs-form > fieldset {
+                        max-width: 100% !important;
+                    }
+
+                    .hs-input {
+                        width: 100% !important;
+                    }
+
+                    .hs-input[type="radio"] {
+                        width: auto !important;
+                        margin-right: 0.5rem;
+                        min-height: auto !important;
+                    }
+
+                    .hs-form-checkbox > label {
+                        font-weight: 400 !important;
+                    }
+
+                    .hs-error-msgs > label {
+                        margin-bottom: 0px !important;
+                    }
+
+                    .hs-input[type="checkbox"] {
+                        width: 1rem !important;
+                        height: 1rem !important;
+                        margin-right: 0.5rem !important;
+                        min-height: auto !important;
+                    }
+
+                    .hs-input[type="checkbox"]:focus {
+                        box-shadow: 0 0 3px 1px #bdfd2e;
+                    }
+
+                    .hs-input[type="checkbox"]:checked {
+                        accent-color: #111;
+                        outline: 2px solid #111;
+                    }
+
+                    .hs-form-booleancheckbox-display > span {
+                        margin-left: 0 !important;
+                    }
+
+                    .hs-error-msgs.inputs-list {
+                        list-style-type: none;
+                        padding-left: 0;
+                    }
+
+                    .hs-richtext.hs-main-font-element p.p1 a {
+                        color: var(--brand--green-600) !important;
+                    }
+
+                    /* navbar */
+                    @media screen and (max-width: 1280px) and (min-width: 992px) {
+                        .navbar {
+                            font-size: clamp(0.5rem, 1cqw, 1rem);
+                        }
+                    }
+
+                    .navbar {
+                        background-color: var(--brand--opacity-00);
+                    }
+
+                    .navbar.scrolled {
+                        background-color: var(--brand--opacity-00);
+                    }
+
+                    .navbar .navbar_container {
+                        background-color: var(--brand--opacity-00);
+                    }
+
+                    .navbar.scrolled .navbar_container {
+                        background-color: var(--brand--green-900);
+                    }
+
+                    .navbar .navbar_logo-link,
+                    .navbar .navbar_link,
+                    .navbar #local_language {
+                        color: var(--brand--white);
+                    }
+
+                    .navbar.scrolled .navbar_logo-link,
+                    .navbar.scrolled .navbar_link,
+                    .navbar.scrolled #local_language {
+                        color: var(--brand--white);
+                    }
+
+                    .navbar.scrolled .navbar_logo-link:hover,
+                    .navbar.scrolled .navbar_link:hover,
+                    .navbar.scrolled #local_language:hover {
+                        color: var(--_fonts---font-color--font-white) !important;
+                    }
+
+                    .navbar.dropdown-hover,
+                    .navbar.dropdown-hover .navbar_container {
+                        background-color: var(--brand--white) !important;
+                    }
+
+                    .navbar_link.dropdown .dropdown-chevron {
+                        transform: rotate(0deg);
+                        transition: transform 0.3s ease;
+                    }
+
+                    .navbar_link.dropdown.chevron-rotated .dropdown-chevron {
+                        transform: rotate(180deg);
+                    }
+
+                    @media screen and (min-width: 992px) {
+                        .navbar_link.dropdown:hover .dropdown-chevron {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .navbar[color="default"].dropdown-hover .navbar_logo-link,
+                    .navbar[color="default"].dropdown-hover .navbar_link,
+                    .navbar[color="default"].dropdown-hover #local_language,
+                    .navbar[color=""].dropdown-hover .navbar_logo-link,
+                    .navbar[color=""].dropdown-hover .navbar_link,
+                    .navbar[color=""].dropdown-hover #local_language {
+                        color: var(--_fonts---font-color--font-green-dark) !important;
+                    }
+
+                    .navbar[color="default"].dropdown-hover #button_sign-in,
+                    .navbar[color=""].dropdown-hover #button_sign-in {
+                        background-color: var(--brand--green-900) !important;
+                    }
+
+                    body.no-scroll {
+                        overflow: hidden;
+                    }
+
+                    @media screen and (max-width: 991px) {
+                        .navbar.menu-open,
+                        .navbar.menu-open .navbar_container {
+                            background-color: var(--brand--white) !important;
+                        }
+
+                        .navbar.menu-open .navbar_logo-link,
+                        .navbar.menu-open .navbar_link {
+                            color: var(--_fonts---font-color--font-green-dark) !important;
+                        }
+                    }
+                </style>
+
+                <!-- NAVBAR -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const navbar = document.querySelector(".navbar");
+                        const navMenu = document.querySelector("nav");
+                        const logoLink = document.querySelector(".navbar_logo-link");
+                        const allNavbarLinksForStyle = document.querySelectorAll(".navbar_link, #local_language");
+                        const lightOpacityButtons = document.querySelectorAll("#button_sign-in");
+                        const dropdownLinks = document.querySelectorAll(".navbar_link.dropdown");
+                        const dropdownWrappers = document.querySelectorAll(".navbar-dropdown_wrapper");
+                        const scrollThreshold = 100;
+                        let isTicking = false;
+
+                        const updateNavbarState = () => {
+                            if (navbar.classList.contains("dropdown-hover")) return;
+                            if (navMenu?.hasAttribute("data-nav-menu-open")) {
+                                navbar.classList.add("menu-open");
+                                document.body.classList.add("no-scroll");
+                                logoLink.style.color = "";
+                                allNavbarLinksForStyle.forEach((link) => (link.style.color = ""));
+                                lightOpacityButtons.forEach((button) => (button.style.backgroundColor = ""));
+                            } else {
+                                navbar.classList.remove("menu-open");
+                                document.body.classList.remove("no-scroll");
+                                if (window.scrollY > scrollThreshold) {
+                                    navbar.classList.add("scrolled");
+                                    logoLink.style.color = "";
+                                    allNavbarLinksForStyle.forEach((link) => (link.style.color = ""));
+                                    lightOpacityButtons.forEach((button) => (button.style.backgroundColor = ""));
+                                } else {
+                                    navbar.classList.remove("scrolled");
+                                    if (navbar.hasAttribute("color")) {
+                                        const colorAttr = navbar.getAttribute("color");
+                                        if (colorAttr === "") {
+                                            logoLink.style.color = "var(--_fonts---font-color--font-green-dark)";
+                                            allNavbarLinksForStyle.forEach((link) => (link.style.color = "var(--_fonts---font-color--font-green-dark)"));
+                                            lightOpacityButtons.forEach((button) => (button.style.backgroundColor = "var(--brand--green-900)"));
+                                        } else if (colorAttr === "default") {
+                                            logoLink.style.color = "var(--_fonts---font-color--font-white)";
+                                            allNavbarLinksForStyle.forEach((link) => (link.style.color = "var(--_fonts---font-color--font-white)"));
+                                            // Pour color="default", on ne modifie PAS le background du bouton
+                                            lightOpacityButtons.forEach((button) => (button.style.backgroundColor = ""));
+                                        } else {
+                                            logoLink.style.color = "";
+                                            allNavbarLinksForStyle.forEach((link) => (link.style.color = ""));
+                                            lightOpacityButtons.forEach((button) => (button.style.backgroundColor = ""));
+                                        }
+                                    } else {
+                                        logoLink.style.color = "";
+                                        allNavbarLinksForStyle.forEach((link) => (link.style.color = ""));
+                                        lightOpacityButtons.forEach((button) => (button.style.backgroundColor = ""));
+                                    }
+                                }
+                            }
+                        };
+
+                        const onScroll = () => {
+                            if (!isTicking) {
+                                window.requestAnimationFrame(() => {
+                                    updateNavbarState();
+                                    isTicking = false;
+                                });
+                                isTicking = true;
+                            }
+                        };
+
+                        const observer = new MutationObserver(updateNavbarState);
+                        if (navMenu) {
+                            observer.observe(navMenu, {
+                                attributes: true,
+                                attributeFilter: ["data-nav-menu-open"],
+                            });
+                        }
+                        updateNavbarState();
+                        window.addEventListener("scroll", onScroll);
+
+                        dropdownLinks.forEach((dropdownLink) => {
+                            dropdownLink.addEventListener("mouseenter", () => {
+                                navbar.classList.add("dropdown-hover");
+                            });
+                            dropdownLink.addEventListener("mouseleave", () => {
+                                setTimeout(() => {
+                                    if (!isHoveringDropdown()) {
+                                        navbar.classList.remove("dropdown-hover");
+                                        updateNavbarState();
+                                    }
+                                }, 10);
+                            });
+                            dropdownLink.addEventListener("click", function () {
+                                if (window.innerWidth <= 991) {
+                                    dropdownLinks.forEach((link) => {
+                                        if (link !== this) {
+                                            link.classList.remove("chevron-rotated");
+                                        }
+                                    });
+                                    this.classList.toggle("chevron-rotated");
+                                }
+                            });
+                        });
+
+                        dropdownWrappers.forEach((wrapper) => {
+                            wrapper.addEventListener("mouseenter", () => {
+                                navbar.classList.add("dropdown-hover");
+                            });
+                            wrapper.addEventListener("mouseleave", () => {
+                                setTimeout(() => {
+                                    if (!isHoveringDropdown()) {
+                                        navbar.classList.remove("dropdown-hover");
+                                        updateNavbarState();
+                                    }
+                                }, 10);
+                            });
+                        });
+
+                        function isHoveringDropdown() {
+                            let hovered = false;
+                            dropdownLinks.forEach((link) => {
+                                if (link.matches(":hover")) hovered = true;
+                            });
+                            dropdownWrappers.forEach((wrapper) => {
+                                if (wrapper.matches(":hover")) hovered = true;
+                            });
+                            return hovered;
+                        }
+                    });
+                </script>
+            </div>
+
+            {% include 'includes/header.html' %}
+            <main class="main-wrapper">
+                <div class="section_hero-secondary">
+                    <div class="container-large">
+                        <div class="hero-secondary_wrapper">
+                            <div class="hero-secondary_content">
+                                <div class="margin-bottom margin-large">
+                                    <ul data-wf--element-breadcrumb--variant="dark" itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb_wrapper">
+                                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb_item">
+                                            <a itemprop="item" href="#" class="breadcrumb_link w-inline-block"><div href="#" itemprop="name">Home</div></a>
+                                            <div class="breadcrumb_meta w-embed"><meta itemprop="position" content="1" /></div>
+                                        </li>
+                                        <li class="breadcrumb_item">
+                                            <img loading="lazy" src="{% static 'img/6792416fdc27440b58ad1200_arrow-right.svg' %}" alt="" class="icon-1x1-regular is-breadcrumb-green" />
+                                            <img loading="lazy" src="{% static 'img/6790389741f428b54256338c_arrow-right-light.svg' %}" alt="" class="icon-1x1-regular is-breadcrumb-white" />
+                                        </li>
+                                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb_item">
+                                            <a itemprop="item" href="" aria-current="page" class="breadcrumb_link text-color-green w-inline-block w--current"><div href="#" itemprop="name">Contract collaboration</div></a>
+                                            <div class="breadcrumb_meta w-embed"><meta itemprop="position" content="2" /></div>
+                                        </li>
+                                        <li class="breadcrumb_item"><img loading="lazy" src="{% static 'img/6792416fdc27440b58ad1200_arrow-right.svg' %}" alt="" class="icon-1x1-regular is-breadcrumb-green is-big" /></li>
+                                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="breadcrumb_item">
+                                            <a itemprop="item" href="#" class="breadcrumb_link text-color-green is-big w-inline-block"><div href="#" itemprop="name">Visibilité et contrôle</div></a>
+                                            <div class="breadcrumb_meta w-embed"><meta itemprop="position" content="3" /></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="margin-bottom margin-small">
+                                    <h1>Make your negotiations more effective<br /></h1>
+                                </div>
+                                <div class="margin-bottom margin-large">
+                                    <p class="text-size-medium text-weight-medium">Manage all stages of the negotiation on a single platform and streamline communication with your teams right up to the signature.</p>
+                                </div>
+                                <div class="button-group">
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="pw3KOlwfk40JAWCnPrWyw"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                    </a>
+                                    <a fs-modal-element="" data-wf--button--button-variant="white" href="{% url 'profile' %}" target="_blank" class="button w-variant-81123379-11bf-e947-93b7-46799e3f85e4 w-inline-block">
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>My workspace</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="hero-secondary_image_wrapper">
+                                <img
+                                    src="{% static 'img/67acd6797f56ece6cf09edf4_Make your negotiations more efficient and secure.avif' %}"
+                                    loading="lazy"
+                                    alt="Make your negotiations more efficient and secure"
+                                    sizes="(max-width: 800px) 100vw, 800px"
+                                    srcset="
+                                        {% static 'img/67acd6797f56ece6cf09edf4_Make your negotiations more efficient and secure-p-500.avif' %} 500w,
+                                        {% static 'img/67acd6797f56ece6cf09edf4_Make your negotiations more efficient and secure.avif' %}       800w
+                                    "
+                                    class="hero-secondary_image"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="section_carousel-logo">
+                    <div class="padding-global">
+                        <div class="margin-bottom margin-medium"><div class="text-size-medium text-weight-medium text-color-dark-green">2000+ companies manage their contracts with Tomorro</div></div>
+                    </div>
+                    <div class="carousel_logo_wrapper">
+                        <div class="carousel_logo_content">
+                            <div class="carousel_logo_wrapper w-dyn-list">
+                                <div role="list" class="carousel_logo_list w-dyn-items">
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Vinci" loading="lazy" src="{% static 'img/67913b74cfed69b4183f8c1b_Vinci.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Raja" loading="lazy" src="{% static 'img/67913b770188763e917481ec_Raja.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Nestle" loading="lazy" src="{% static 'img/67913b79066b14fde22cb894_Nestle.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Veja" loading="lazy" src="{% static 'img/67913b74931f0b083c56aeb1_Veja.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="WWF" loading="lazy" src="{% static 'img/67913b73403541b3d2accda3_WWF.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Alma" loading="lazy" src="{% static 'img/67913b852a9f8dd7316b2338_Alma.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Sandoz" loading="lazy" src="{% static 'img/6862aa7387428c232faefaa0_Sandoz.png' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Ingenico" loading="lazy" src="{% static 'img/67913b7b6d7ed85950e0e6a2_Ingenico.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Maison Kitsuné" loading="lazy" src="{% static 'img/67913b796bc0a48b5d97137e_Kitsune.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Gifi" loading="lazy" src="{% static 'img/67913b7d4bb92fef320c5a37_Gifi.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Qobra" loading="lazy" src="{% static 'img/686294b280148da456b2fbac_Qobra.png' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Cafeyn" loading="lazy" src="{% static 'img/67913b840188763e91748ef1_Cafeyn.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Bureau Vallée" loading="lazy" src="{% static 'img/67913b841bfff715f4ebeb47_BureauVallee.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Station F" loading="lazy" src="{% static 'img/67913b75680e966cd63cbbde_StationF.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Electra" loading="lazy" src="{% static 'img/67913b7f7533a9cb9936629b_Electra.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Brevo" loading="lazy" src="{% static 'img/67913b84261bbb7f1d4f482a_Brevo.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Floa" loading="lazy" src="{% static 'img/67913b7e214070b9f4d3a2dd_Floa.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Bandai" loading="lazy" src="{% static 'img/67913b851fc0377fdaec4172_Bandai.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Comme des Gargons" loading="lazy" src="{% static 'img/67913b83ee717550fdd16907_CommedesGarcons.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Flowdesk" loading="lazy" src="{% static 'img/67913b83d528aad1060fb236_Flowdesk.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Chaussea" loading="lazy" src="{% static 'img/67913b83bc4f98385f485ab2_Chaussea.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Homa" loading="lazy" src="{% static 'img/67913b7c4bb92fef320c58c2_Homa.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Pennylane" loading="lazy" src="{% static 'img/67913b786bc0a48b5d9712d9_Pennylane.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Cheerz" loading="lazy" src="{% static 'img/67913b8391fdbfc989278e69_Cheerz.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Stade Toulousain" loading="lazy" src="{% static 'img/67913b753cf32fb1aec10076_StadeToulousain.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Shippeo" loading="lazy" src="{% static 'img/67913b766bc0a48b5d97118f_Shippeo.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Grand Frais" loading="lazy" src="{% static 'img/67913b7e66a0d83192549eea_GrandFrais.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Groupe Clarins" loading="lazy" src="{% static 'img/67913b7c0188763e917486f6_Clarins.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Shine" loading="lazy" src="{% static 'img/67913b76ba95e926f5795740_Shine.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Groupe Holder" loading="lazy" src="{% static 'img/67913b7c014fb8ae2cc5b5a4_GroupeHolder.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Ornikar" loading="lazy" src="{% static 'img/67913b781bfff715f4ebe2fa_Ornikar.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="24S.com" loading="lazy" src="{% static 'img/67913b8645c5e54627518d00_24s.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Fitness Park" loading="lazy" src="{% static 'img/67913b7e15eb0c21e2954da5_FitnessPark.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Upflow" loading="lazy" src="{% static 'img/67913b7459a22c09339da967_Upflow.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Welcome To The Jungle" loading="lazy" src="{% static 'img/67913b73710d3b119c5b06ff_WTTJ.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Infoprodigital" loading="lazy" src="{% static 'img/67913b7b261bbb7f1d4f4201_Infoprodigital.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Ducasse" loading="lazy" src="{% static 'img/67913b7f6bc0a48b5d971d2a_Ducasse.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Pretto" loading="lazy" src="{% static 'img/67913b78680e966cd63cbe15_Pretto.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Voodoo" loading="lazy" src="{% static 'img/67913b7408f0ab769e2922e7_Voodoo.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="SNCF Connect" loading="lazy" src="{% static 'img/67913b75f652ed1a5258b40b_SNCFCOnnect.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Foodles" loading="lazy" src="{% static 'img/67913b7ddc9beaac0c810f9c_Foodles.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Dotrine" loading="lazy" src="{% static 'img/67913b80c066087b5f6527d1_Doctrine.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Sames" loading="lazy" src="{% static 'img/67913b77931f0b083c56b0c3_Sames.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Mangopay" loading="lazy" src="{% static 'img/67913b79fb4d60b6d8478ed7_Mangopay.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Leetchi" loading="lazy" src="{% static 'img/67913b7aa22a3c14a5680c25_Leetchi.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Wizbii" loading="lazy" src="{% static 'img/67913b73f635cf749f7e9d65_Wizbii.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Evaneos" loading="lazy" src="{% static 'img/67913b7f6ae5beeac6fbffa5_Evaneos.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="monmarché.fr" loading="lazy" src="{% static 'img/67913b79ba95e926f5795a9e_MonMarche.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="CherryPick" loading="lazy" src="{% static 'img/67913b831fc0377fdaec40d8_CherryPick.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Memobank" loading="lazy" src="{% static 'img/67913b79014fb8ae2cc5b2ac_Meilleurtaux.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="RingOver" loading="lazy" src="{% static 'img/67913b768a7676bdadded996_RingOver.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="SantéClair" loading="lazy" src="{% static 'img/67913b7628fc5abba2a1f475_SanteClair.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Pledg" loading="lazy" src="{% static 'img/67913b78eba0739cb2d99b1c_Pledg.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Jean Rouyer" loading="lazy" src="{% static 'img/67913b7b08f0ab769e2935f4_JeanRouyer.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Cafpi" loading="lazy" src="{% static 'img/67913b840babb354f6af827b_Cafpi.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Lano" loading="lazy" src="{% static 'img/67913b7a680e966cd63cbf9b_Lano.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Ealis" loading="lazy" src="{% static 'img/67913b7f8a7676bdaddef08f_Ealis.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Founda" loading="lazy" src="{% static 'img/67913b7d6d7ed85950e0ec0b_Founda.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Harfanglab" loading="lazy" src="{% static 'img/67913b7c403541b3d2acd6d9_Harfanglab.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Sarbacane" loading="lazy" src="{% static 'img/67913b761cdd1eb9d21549f5_Sarbacane.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Atolls" loading="lazy" src="{% static 'img/67913b85745005d805d837ed_Atolls.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Yubo" loading="lazy" src="{% static 'img/67913b74945cecc4608f6c8e_Yubo.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Alchimie" loading="lazy" src="{% static 'img/67913b867d07bf8194d14f0e_Alchimie.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Linedata" loading="lazy" src="{% static 'img/67913b7a403541b3d2acd513_Linedata.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Opendatasoft" loading="lazy" src="{% static 'img/67913b78058368ae5b34cb89_Opendatasoft.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Qobuz" loading="lazy" src="{% static 'img/67913b77bc4f98385f484c15_Qobuz.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Upfast" loading="lazy" src="{% static 'img/67913b75c9253e7f75b7b456_Upfast.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Infovista" loading="lazy" src="{% static 'img/67913b7b28fc5abba2a1f9d7_Infovista.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Puressentiel" loading="lazy" src="{% static 'img/67913b786d7ed85950e0e24c_Puressentiel.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Ctoutvert" loading="lazy" src="{% static 'img/67913b83bc4f98385f485a40_Ctoutvert.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Mealz" loading="lazy" src="{% static 'img/67913b7959a22c09339dae1c_Mealz.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Valiuz" loading="lazy" src="{% static 'img/67913b740b79e63de370a5dc_Valiuz.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Inco" loading="lazy" src="{% static 'img/67913b7b2a9f8dd7316b17e7_Inco.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="2L Collection" loading="lazy" src="{% static 'img/67913b86a387695a29a39b3f_2LCollection.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Jiliti" loading="lazy" src="{% static 'img/67913b7a745005d805d82adf_Jiliti.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Locala" loading="lazy" src="{% static 'img/67913b7a066b14fde22cb96e_Locala.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="WayKonnect" loading="lazy" src="{% static 'img/67913b73cf403e78f91cfac9_WayKonnect.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Karburan" loading="lazy" src="{% static 'img/67913b7a1fc0377fdaec36a3_Karburan.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Opale" loading="lazy" src="{% static 'img/67913b780188763e917484f5_Opale.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="CybelAngel" loading="lazy" src="{% static 'img/67913b83e1b0b72b06f1bc22_CybelAngel.avif' %}" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img alt="Doctrine" loading="lazy" src="{% static 'img/679239293394c9e500361eb1_WTTJ.png' %}" class="carousel_logo_logo w-dyn-bind-empty" /></div>
+                                </div>
+                            </div>
+                            <div class="carousel_logo_wrapper w-dyn-list">
+                                <div role="list" class="carousel_logo_list w-dyn-items">
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Vinci" src="{% static 'img/67913258ace03972f7998b82_Vinci.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Raja" src="{% static 'img/679132542ec3d033ccfab274_Raja.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Nestle" src="{% static 'img/679132512457bc87455e041d_Nestle.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Veja" src="{% static 'img/679132578cc1043f9c564166_Veja.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="WWF" src="{% static 'img/6791325a194d08b5f1aa9026_wwf.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Alma" src="{% static 'img/67913247194d08b5f1aa82dc_Alma.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Sandoz" src="{% static 'img/68629bb69fb61554f2fba9a7_Sandoz Blue.svg' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Ingenico" src="{% static 'img/6791324eb55db833f12da4f1_Ingenico.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Maison Kitsuné" src="{% static 'img/67913250660b916ebf892b25_Kitsune.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Gifi" src="{% static 'img/6791324e3de65fff700fce1e_Gifi.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Qobra" src="{% static 'img/686294e94ee072896a541010_Qobre.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Cafeyn" src="{% static 'img/67913248a72d06d797aa528f_Cafeyn.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Bureau Vallée" src="{% static 'img/67913248c5409e1041528239_BureauVallee.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Station F" src="{% static 'img/67913256292941cd92a8456e_StationF.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Electra" src="{% static 'img/6791324b9f5e3363460fd70c_Electra.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Brevo" src="{% static 'img/67913248165338a934c48678_Brevo.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Floa" src="{% static 'img/6791324c970c22702ee92c39_Floa.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Bandai" src="{% static 'img/679132488236d8686fd39d0a_Bandai.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Comme des Gargons" src="{% static 'img/67913249d116363cbdaab874_CommedesGarcons.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Flowdesk" src="{% static 'img/6791324c5229912e64d84923_Flowdesk.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Chaussea" src="{% static 'img/679132498cc1043f9c56231d_Chaussea.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Homa" src="{% static 'img/6791324fec36687897d9d297_Homa.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Pennylane" src="{% static 'img/67913253629da1d796be147a_Pennylane.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Cheerz" src="{% static 'img/67913249665e4a167d22898c_Cheerz.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Stade Toulousain" src="{% static 'img/67913256cf2fb3d8bb41e0c7_Stadetoulousain.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Shippeo" src="{% static 'img/679132550d3e1ea1c4dc2fb2_Shippeo.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Grand Frais" src="{% static 'img/6791324dd867bcf205827a51_GrandFrais.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Groupe Clarins" src="{% static 'img/6791324d1abba4872cfcb570_Clarins.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Shine" src="{% static 'img/6791325575d786b1186e7431_Shine.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Groupe Holder" src="{% static 'img/6791324dc5409e1041528501_GroupeHolder.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Ornikar" src="{% static 'img/67913254dd08cb2b49964500_Ornikar.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="24S.com" src="{% static 'img/67913247bef306a21f9ddf19_24scom.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Fitness Park" src="{% static 'img/6791324bc5409e1041528494_FitnessPark.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Upflow" src="{% static 'img/67913259b28d2007a9b05357_Upflow.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Welcome To The Jungle" src="{% static 'img/67913258c5409e104152928d_WTTJ.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Infoprodigital" src="{% static 'img/6791324f0c7f2f9b05773a9d_Infopro.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Ducasse" src="{% static 'img/6791324acf2fb3d8bb41d8d3_Ducasse.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Pretto" src="{% static 'img/67913253cbc7b8989e974b5f_Pretto.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Voodoo" src="{% static 'img/6791325814ff3bbe9e9fe967_Voodoo.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="SNCF Connect" src="{% static 'img/67913257ace03972f7998a50_SNCF_Connect.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Foodles" src="{% static 'img/6791324c977f8666f1c01849_Foodles.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Dotrine" src="{% static 'img/6791324a660b916ebf892364_Dotrine.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Sames" src="{% static 'img/6791325426ca693835f18ce8_Sames.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Mangopay" src="{% static 'img/67913251d891d284e18ff2eb_Mangopay.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Leetchi" src="{% static 'img/679132500c7f2f9b05773b74_Leetchi.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Wizbii" src="{% static 'img/67913259fff50614f8638316_Wizbii.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Evaneos" src="{% static 'img/67913fd9adfc1792ac438cd7_Evaneos.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="monmarché.fr" src="{% static 'img/6791325249f5fbee24d1d5b2_MonMarche.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="CherryPick" src="{% static 'img/67913249cf0ce8911b74d796_CherryPick.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Memobank" src="{% static 'img/679132524152688e69aa132c_Memobank.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="RingOver" src="{% static 'img/67913254629da1d796be1618_RingOver.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="SantéClair" src="{% static 'img/67913255d86d9a80b3295679_SanteClair.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Pledg" src="{% static 'img/67913253b28d2007a9b04e99_Pledg.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Jean Rouyer" src="{% static 'img/6791324feb7aef33b50f3091_JeanRouyer.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Cafpi" src="{% static 'img/67913248ab47dffd7d6e9b40_Cafpi.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Lano" src="{% static 'img/679132504bb4417827149961_Lano.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Ealis" src="{% static 'img/6791324ba3834dd406300387_Ealis.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Founda" src="{% static 'img/6791324c8321fe9225a45e18_Founda.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Harfanglab" src="{% static 'img/6791324dc218beae6b9a0671_Harfanglab.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Sarbacane" src="{% static 'img/6791325575d786b1186e742e_Sarbacane.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Atolls" src="{% static 'img/6791324714ff3bbe9e9fbfe5_Atolls.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Yubo" src="{% static 'img/6791325af597afd0fc348dbf_Yubo.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Alchimie" src="{% static 'img/679132475fcd1be170945e9a_Alchimie.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Linedata" src="{% static 'img/67913250665e4a167d22940a_Linedata.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Opendatasoft" src="{% static 'img/679132522457bc87455e0497_Opendatasoft.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Qobuz" src="{% static 'img/67913253cf0ce8911b74ddda_Pyxo.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Upfast" src="{% static 'img/67913257cf0ce8911b74e04c_Upfast.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Infovista" src="{% static 'img/6791324fdd08cb2b49963db7_Infovista1.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Puressentiel" src="{% static 'img/67913253fc489507c919f839_Puressentiel.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Ctoutvert" src="{% static 'img/6791324a21d5a2c1812377f8_Ctoutvert.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Mealz" src="{% static 'img/67913252f59b85f8dd2f915a_Mealz.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Valiuz" src="{% static 'img/67913257194d08b5f1aa8cbf_Valiuz.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Inco" src="{% static 'img/6791324eb55db833f12da4f1_Ingenico.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="2L Collection" src="{% static 'img/6791324726ca693835f17e68_2LCollection.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Jiliti" src="{% static 'img/6791324fab04fdb8db734846_Jiliti.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Locala" src="{% static 'img/67913250c4d6161d0eb6b5c4_Locala.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="WayKonnect" src="{% static 'img/679132580d3e1ea1c4dc32d0_WayKonnect.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Karburan" src="{% static 'img/67913250788bba8f1b7e1722_Karburan.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Opale" src="{% static 'img/67913252660b916ebf892c2f_Opale.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="CybelAngel" src="{% static 'img/6791324ad86d9a80b3294d7b_CybelAngel.avif' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                    <div role="listitem" class="carousel_logo_item w-dyn-item"><img width="Auto" alt="Doctrine" src="{% static 'img/67b381c4529a72a36cf47490_doctrine_logo.jpeg' %}" loading="lazy" class="carousel_logo_logo" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide w-embed">
+                            <style>
+                                @keyframes carousel-logo {
+                                    from {
+                                        transform: translateX(0);
+                                    }
+                                    to {
+                                        transform: translateX(-100%);
+                                    }
+                                }
+
+                                .carousel_logo_wrapper {
+                                    animation: carousel-logo 300s linear infinite;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </section>
+                <section display="" data-wf--section-container-medium--variant="padding-section-medium" class="section_container">
+                    <div class="padding-global">
+                        <div class="container-medium">
+                            <div class="padding-section w-variant-d68c3fa0-1f14-1e28-765d-93f65bb73d5a">
+                                <div>
+                                    <div data-wf--element-letter-ai--variant="dark" class="letter-ai_container w-variant-2148f4fe-adb9-800d-1ab9-4b17a51065fa">
+                                        <div class="letter-ai_left">
+                                            <div class="margin-bottom margin-medium"><div class="letter-ai_tag">Open letter</div></div>
+                                            <div class="margin-bottom margin-xsmall">
+                                                <div class="letter-ai_title w-richtext">
+                                                    <h2>Contract in the <strong>AI</strong> era</h2>
+                                                </div>
+                                            </div>
+                                            <div class="margin-bottom margin-medium">
+                                                <p>
+                                                    At Tomorro, we believe in a future where artificial intelligence revolutionizes the legal world, freeing companies from traditional constraints.<br />
+                                                    Let's build that future together.
+                                                </p>
+                                            </div>
+                                            <a href="{% url 'partners' %}" class="button is-text text-color-green">Discover our beliefs</a>
+                                        </div>
+                                        <div class="letter-ai_right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="section_features">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large">
+                                <div class="slot">
+                                    <div data-wf--feature-content-left--content-variant-background="background-green" class="feature_component">
+                                        <div class="feature_item-left">
+                                            <div class="feature_content">
+                                                <div class="margin-bottom margin-small"><h2 class="heading-style-h3">Centralise all your contracts on a single platform</h2></div>
+                                                <div class="margin-bottom margin-medium"><p class="text-size-medium text-weight-medium">Search for your contracts in a few clicks and never miss an important deadline again.</p></div>
+                                                <div class="margin-bottom margin-medium">
+                                                    <div class="feature-rich-text w-richtext">
+                                                        <ul role="list">
+                                                            <li>Secure access management</li>
+                                                            <li>Filtered searches</li>
+                                                            <li>Export and reporting</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="w-dyn-list">
+                                                        <div role="list" class="w-dyn-items">
+                                                            <div role="listitem" class="testimonial_component w-dyn-item">
+                                                                <div class="feature_testimonial_image-wrapper"><img loading="lazy" src="{% static 'img/679107f68b845dccbbbe2fd2_evaneos-fluo.svg' %}" alt="" class="feature_testimonial_image" /></div>
+                                                                <div class="text-size-medium text-weight-medium">
+                                                                    "We opted for Tomorro for its easy-to-implement tool, which we deployed across the legal and sales teams to streamline our contract drafting and negotiation processes.”
+                                                                </div>
+                                                                <div class="testimonial_author">
+                                                                    <div class="testimonial_author_picture-wrapper">
+                                                                        <img
+                                                                            sizes="(max-width: 740px) 100vw, 740px"
+                                                                            srcset="{% static 'img/67910289be3251a74b4b6da0_1643395758774-p-500.jpeg' %} 500w, 
+                                                                            {% static 'img/67910289be3251a74b4b6da0_1643395758774.jpeg' %} 740w"
+                                                                            src="{% static 'img/67910289be3251a74b4b6da0_1643395758774.jpeg' %}"
+                                                                            loading="lazy"
+                                                                            alt=""
+                                                                            class="testimonial_author_picture"
+                                                                        />
+                                                                    </div>
+                                                                    <div class="testimonial_author_infos">
+                                                                        <div class="text-color-green text-weight-medium">Florence Rivat</div>
+                                                                        <div class="inline">Général Counsel</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a
+                                                    data-wf--button--button-variant="green-dark"
+                                                    href="{% url 'profile' %}"
+                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
+                                                    id="r8cefZg5h7Z4XQg-dcjPn"
+                                                    tabindex="0"
+                                                    role="button"
+                                                    aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                                                    aria-haspopup="dialog"
+                                                    aria-expanded="false"
+                                                    aria-roledescription="open-modal-trigger"
+                                                >
+                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
+                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                                    <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                                </a>
+                                            </div>
+                                            <div class="feature_image-wrapper is-right">
+                                                <img
+                                                    alt="Create visibility internally"
+                                                    src="{% static 'img/67acafb55d482922d7578fc1_Create visibility internally.avif' %}"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 1634px) 100vw, 1634px"
+                                                    srcset="{% static 'img/67acafb55d482922d7578fc1_Create visibility internally-p-500.avif' %} 500w, 
+                                                    {% static 'img/67acafb55d482922d7578fc1_Create visibility internally.avif' %} 800w"
+                                                    class="feature_image"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-wf--feature-content-right--content-variant-background="background-green" class="feature_component">
+                                        <div class="feature_item-right">
+                                            <div class="feature_image-wrapper is-left">
+                                                <img
+                                                    alt="Track the progress of your negotiations simply"
+                                                    loading="lazy"
+                                                    src="{% static 'img/67ace288bd51d6f3c51def70_Track the progress of your negotiations simply.avif' %}"
+                                                    sizes="100vw"
+                                                    srcset="
+                                                        {% static 'img/67ace288bd51d6f3c51def70_Track the progress of your negotiations simply-p-500.avif' %} 500w,
+                                                        {% static 'img/67ace288bd51d6f3c51def70_Track the progress of your negotiations simply.avif' %}       800w
+                                                    "
+                                                    class="feature_image"
+                                                />
+                                            </div>
+                                            <div class="feature_content">
+                                                <div class="margin-bottom margin-small"><h2 class="heading-style-h3">Track the progress of your negotiations simply</h2></div>
+                                                <div class="margin-bottom margin-medium">
+                                                    <p class="text-size-medium text-weight-medium">
+                                                        Manage your negotiations more efficiently and reduce the number of times you have to go back and forth on your legal contracts internally.
+                                                    </p>
+                                                </div>
+                                                <div class="margin-bottom margin-medium">
+                                                    <div class="feature-rich-text w-richtext">
+                                                        <ul role="list">
+                                                            <li>Negotiations dashboard</li>
+                                                            <li>Automate internal approval processes</li>
+                                                            <li>Automatic calculation of deadlines</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <a
+                                                    data-wf--button--button-variant="green-dark"
+                                                    href="{% url 'profile' %}"
+                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
+                                                    id="V6GwO5L5PqYwqz9wUjb3Y"
+                                                    tabindex="0"
+                                                    role="button"
+                                                    aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                                                    aria-haspopup="dialog"
+                                                    aria-expanded="false"
+                                                    aria-roledescription="open-modal-trigger"
+                                                >
+                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
+                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                                    <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section display="en" data-wf--section-container-medium--variant="padding-section-zero" class="section_container">
+                    <div class="padding-global">
+                        <div class="container-medium">
+                            <div class="padding-section w-variant-7b3a5853-6594-d208-7769-b8933c621b3b">
+                                <div>
+                                    <div class="breaker_component">
+                                        <div class="ebook_cta_content">
+                                            <img src="{% static 'img/67b501d555d108e935e1c47f_Ebook-%232-EN-Cover-Exe.webp' %}" loading="lazy" alt="" class="ebook-cta_image" />
+                                            <div class="ebook-cta_content_wrapper">
+                                                <div class="margin-bottom margin-medium"><h3 class="text-color-dark-green">The 2024 guide for optimal contract management</h3></div>
+                                                <div class="margin-bottom margin-medium">
+                                                    <div class="feature-rich-text w-richtext">
+                                                        <ul role="list">
+                                                            <li>What are the impacts, risks and costs of manual contract management?</li>
+                                                            <li>What new technological solutions are on the market?</li>
+                                                            <li>Discover 21 pages of advice, methods and case studies to help you manage your contracts effectively!</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <a
+                                                    fs-modal-element=""
+                                                    data-wf--button--button-variant="green-dark"
+                                                    href="{% url 'contract_management_automation' %}"
+                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
+                                                >
+                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
+                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                                    <div>Download the ebook</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="section_features">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large">
+                                <div class="slot">
+                                    <div data-wf--feature-content-left--content-variant-background="background-green" class="feature_component">
+                                        <div class="feature_item-left">
+                                            <div class="feature_content">
+                                                <div class="margin-bottom margin-small"><h2 class="heading-style-h3">A single source of truth for the whole company</h2></div>
+                                                <div class="margin-bottom margin-medium">
+                                                    <p class="text-size-medium text-weight-medium">Find all versions of the document and collaborate easily with your teams from your project space.<br /></p>
+                                                </div>
+                                                <div class="margin-bottom margin-medium">
+                                                    <div class="feature-rich-text w-richtext">
+                                                        <ul role="list">
+                                                            <li>Negotiation history</li>
+                                                            <li>Collaborative document editor</li>
+                                                            <li>Versioning and full change tracking</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <a
+                                                    data-wf--button--button-variant="green-dark"
+                                                    href="{% url 'profile' %}"
+                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
+                                                    id="EsGuFxGaidsRZvnh6WH5a"
+                                                    tabindex="0"
+                                                    role="button"
+                                                    aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                                                    aria-haspopup="dialog"
+                                                    aria-expanded="false"
+                                                    aria-roledescription="open-modal-trigger"
+                                                >
+                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
+                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                                    <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                                </a>
+                                            </div>
+                                            <div class="feature_image-wrapper is-right">
+                                                <img
+                                                    alt="Comments, markup and much more"
+                                                    src="{% static 'img/67acd678affa53cde4401909_Comments, markup and much more.avif' %}"
+                                                    loading="lazy"
+                                                    sizes="(max-width: 1634px) 100vw, 1634px"
+                                                    srcset="{% static 'img/67acd678affa53cde4401909_Comments, markup and much more-p-500.avif' %} 500w, 
+                                                    {% static 'img/67acd678affa53cde4401909_Comments, markup and much more.avif' %} 800w"
+                                                    class="feature_image"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div display="" data-wf--section-cta-card--variant="text-align-left" class="section_process">
+                    <div class="background-color-grey">
+                        <div class="padding-global">
+                            <div class="container-large">
+                                <div class="padding-section-large">
+                                    <div class="process_align-text">
+                                        <div class="max-width-large align-center">
+                                            <div class="text-align-center">
+                                                <div class="margin-bottom margin-xlarge">
+                                                    <h2>Start today, deploy next week</h2>
+                                                    <div class="margin-top margin-small">
+                                                        <p class="text-size-medium text-weight-medium text-color-dark-green">From the outset, we designed Tomorro to be simple and flexible, to suit every need.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="margin-bottom margin-xlarge">
+                                        <div class="grid_standard">
+                                            <div id="w-node-a1933f9f-59ef-c50b-a5da-74f7fef8f2c0-fef8f2b3" class="grid_standard_item is-white">
+                                                <div class="margin-bottom margin-xlarge">
+                                                    <div class="card_icon_wrapper"><img loading="lazy" src="{% static 'img/67921c4fc816dfa652020135_square-dark.svg' %}" alt="" class="icon-height-large" /></div>
+                                                </div>
+                                                <div class="grid_standard_bottom">
+                                                    <div class="margin-bottom margin-small"><h3 class="text-size-large text-weight-bold">Set-up</h3></div>
+                                                    <p class="text-weight-medium text-color-grey">Set up the basic functions of your Tomorro account in just a few minutes.</p>
+                                                </div>
+                                            </div>
+                                            <div id="w-node-a1933f9f-59ef-c50b-a5da-74f7fef8f2ca-fef8f2b3" class="grid_standard_item is-white">
+                                                <div class="margin-bottom margin-xlarge">
+                                                    <div class="card_icon_wrapper"><img loading="lazy" src="{% static 'img/67921c4fc816dfa652020136_people-dark.svg' %}" alt="" class="icon-height-large" /></div>
+                                                </div>
+                                                <div class="grid_standard_bottom">
+                                                    <div class="margin-bottom margin-small"><h3 class="text-size-large text-weight-bold">Training</h3></div>
+                                                    <p class="text-weight-medium text-color-grey">Our team will assist you in setting up your contract library and your contract templates.</p>
+                                                </div>
+                                            </div>
+                                            <div id="w-node-a1933f9f-59ef-c50b-a5da-74f7fef8f2d4-fef8f2b3" class="grid_standard_item is-white">
+                                                <div class="margin-bottom margin-xlarge">
+                                                    <div class="card_icon_wrapper"><img loading="lazy" src="{% static 'img/67921c4fc816dfa652020137_rocket-dark.svg' %}" alt="" class="icon-height-large" /></div>
+                                                </div>
+                                                <div class="grid_standard_bottom">
+                                                    <div class="margin-bottom margin-small"><h3 class="text-size-large text-weight-bold">Deployment</h3></div>
+                                                    <p class="text-weight-medium text-color-grey">Your account is ready and you can now invite your collaborators to use Tomorro autonomously.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-group align-center">
+                                        <a
+                                            data-wf--button--button-variant="green-dark"
+                                            href="{% url 'profile' %}"
+                                            class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
+                                            id="dKSKNCto2u6odA20SLzCR"
+                                            tabindex="0"
+                                            role="button"
+                                            aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                                            aria-haspopup="dialog"
+                                            aria-expanded="false"
+                                            aria-roledescription="open-modal-trigger"
+                                        >
+                                            <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
+                                            <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                            <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="section_cta">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large">
+                                <div class="z-index-2">
+                                    <div class="max-width-large align-center">
+                                        <div class="text-align-center">
+                                            <div class="margin-bottom margin-xlarge">
+                                                <div class="heading-rich-text heading-style-h1 text-color-grey w-richtext">
+                                                    <h2>Speed up your contract management with <strong>AI</strong></h2>
+                                                </div>
+                                            </div>
+                                            <a
+                                                data-wf--button--button-variant="green-dark"
+                                                href="{% url 'profile' %}"
+                                                class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
+                                                id="ZcOArElVshv24-QG12Emh"
+                                                tabindex="0"
+                                                role="button"
+                                                aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                                                aria-haspopup="dialog"
+                                                aria-expanded="false"
+                                                aria-roledescription="open-modal-trigger"
+                                            >
+                                                <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
+                                                <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                                <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!--fs-modal-anchor-->
+            <aside fs-modal-element="modal-1" class="modal demo" id="HQbtx5eMVIFxBbSgAJylt" role="dialog" aria-modal="true">
+                <div
+                    fs-modal-element="close-1"
+                    class="usecase_modal_cover"
+                    id="2-zvh6cX9hbmd3t6FrbCi"
+                    tabindex="0"
+                    role="button"
+                    aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-roledescription="close-modal-trigger"
+                ></div>
+                <div class="padding-global">
+                    <div class="max-width-xlarge">
+                        <div class="modal_demo_wrapper">
+                            <div class="modal_demo_content">
+                                <div class="margin-bottom margin-medium"><div class="heading-style-h3">Manage your contracts with AI</div></div>
+                                <div class="embed_calendar_demo w-embed w-script">
+                                    <script data-hubspot-rendered="true">
+                                        hbspt.forms.create({
+                                            portalId: "7016971",
+                                            formId: "9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8",
+                                            onFormSubmit: function (form) {
+                                                // Show the success div block.
+                                                $("#hubspot-success").show();
+                                            },
+                                        });
+                                    </script>
+                                    <div id="hbspt-form-f9831b8d-c058-4b6a-9ec1-538bf875a820" class="hbspt-form" data-hs-forms-root="true">
+                                        <form
+                                            id="hsForm_9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"
+                                            method="POST"
+                                            accept-charset="UTF-8"
+                                            enctype="multipart/form-data"
+                                            novalidate=""
+                                            action="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/7016971/9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"
+                                            class="hs-form-private hsForm_9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8 hs-form-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8 hs-form-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8_f9831b8d-c058-4b6a-9ec1-538bf875a820 hs-form stacked"
+                                            target="target_iframe_9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"
+                                            data-instance-id="f9831b8d-c058-4b6a-9ec1-538bf875a820"
+                                            data-form-id="9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"
+                                            data-portal-id="7016971"
+                                            data-test-id="hsForm_9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"
+                                        >
+                                            <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                                                <label id="label-email-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="email-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8">
+                                                    <span>Professional Email</span><span class="hs-form-required">*</span>
+                                                </label>
+                                                <div class="input">
+                                                    <input
+                                                        id="email-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"
+                                                        name="email"
+                                                        required=""
+                                                        placeholder="harvey.specter@pearson.hardman.com"
+                                                        type="email"
+                                                        class="hs-input"
+                                                        inputmode="email"
+                                                        autocomplete="email"
+                                                        value=""
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="hs_phone hs-phone hs-fieldtype-phonenumber field hs-form-field">
+                                                <label id="label-phone-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="phone-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>Phone Number</span></label>
+                                                <div class="input">
+                                                    <input id="phone-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="phone" placeholder="+44 XXX XXX XXX" type="tel" class="hs-input" inputmode="tel" autocomplete="tel" value="" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="hs-richtext hs-main-font-element">
+                                                    <p class="p1">
+                                                        <span>En communiquant vos coordonnées, vous acceptez d'être contacté au sujet de contenus et services pertinents, conformément à notre </span>
+                                                        <a
+                                                            href="#"
+                                                            rel="noopener"
+                                                            target="_blank"
+                                                        >
+                                                            Politique de Confidentialité
+                                                        </a>
+                                                        <span>.</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="hs_utm_campaign hs-utm_campaign hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_campaign-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="utm_campaign-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>Campagne UTM</span></label>
+                                                <div class="input"><input id="utm_campaign-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="utm_campaign" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_content hs-utm_content hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_content-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="utm_content-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>Contenu UTM</span></label>
+                                                <div class="input"><input id="utm_content-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="utm_content" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_id hs-utm_id hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_id-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="utm_id-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>UTM ID</span></label>
+                                                <div class="input"><input id="utm_id-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="utm_id" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_medium hs-utm_medium hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_medium-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="utm_medium-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>UTM Medium</span></label>
+                                                <div class="input"><input id="utm_medium-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="utm_medium" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_source hs-utm_source hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_source-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="utm_source-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>Source UTM</span></label>
+                                                <div class="input"><input id="utm_source-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="utm_source" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_term hs-utm_term hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_term-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="utm_term-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>Terme UTM</span></label>
+                                                <div class="input"><input id="utm_term-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="utm_term" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_gclid hs-gclid hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-gclid-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="gclid-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span>GCLID</span></label>
+                                                <div class="input"><input id="gclid-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="gclid" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_last_marketing_action hs-last_marketing_action hs-fieldtype-select field hs-form-field" style="display: none;">
+                                                <label id="label-last_marketing_action-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" class="" for="last_marketing_action-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8"><span></span></label>
+                                                <div class="input"><input id="last_marketing_action-9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8" name="last_marketing_action" class="hs-input" type="hidden" value="Demo_request" /></div>
+                                            </div>
+                                            <div class="hs_submit hs-submit">
+                                                <div class="hs-field-desc" style="display: none;"></div>
+                                                <div class="actions"><input type="submit" class="hs-button primary large" value="Échanger avec un expert Tomorro" /></div>
+                                            </div>
+                                            <input
+                                                name="hs_context"
+                                                type="hidden"
+                                                value='{"embedAtTimestamp":"1755181550591","formDefinitionUpdatedAt":"1753260096019","lang":"fr","clonedFromForm":"5e159129-1c91-4500-82e4-f6d0f44506be","renderRawHtml":"true","userAgent":"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0","pageTitle":"Internal Collaboration","pageUrl":"https://www.tomorro.com/software/internal-collaboration","isHubSpotCmsGeneratedPage":false,"hutk":"ffd6bfa1d33be9ddc6d99b23c5b4f09e","__hsfp":1423010458,"__hssc":"24085285.13.1755180772646","__hstc":"24085285.ffd6bfa1d33be9ddc6d99b23c5b4f09e.1754993301330.1754993301330.1755180772646.2","formTarget":"#hbspt-form-f9831b8d-c058-4b6a-9ec1-538bf875a820","rumScriptExecuteTime":1642,"rumTotalRequestTime":2652,"rumTotalRenderTime":2680,"rumServiceResponseTime":1010,"rumFormRenderTime":28,"connectionType":"","firstContentfulPaint":0,"largestContentfulPaint":0,"locale":"fr","timestamp":1755181551470,"originalEmbedContext":{"portalId":"7016971","formId":"9fe26e2d-17d5-46f8-8f3f-b2748cfc30f8","region":"na1","target":"#hbspt-form-f9831b8d-c058-4b6a-9ec1-538bf875a820","isBuilder":false,"isTestPage":false,"isPreview":false,"isMobileResponsive":true},"correlationId":"f9831b8d-c058-4b6a-9ec1-538bf875a820","renderedFieldsIds":["email","phone","utm_campaign","utm_content","utm_id","utm_medium","utm_source","utm_term","gclid","last_marketing_action"],"captchaStatus":"NOT_APPLICABLE","emailResubscribeStatus":"NOT_APPLICABLE","isInsideCrossOriginFrame":false,"source":"forms-embed-1.9606","sourceName":"forms-embed","sourceVersion":"1.9606","sourceVersionMajor":"1","sourceVersionMinor":"9606","allPageIds":{},"_debug_embedLogLines":[{"clientTimestamp":1755181548239,"level":"INFO","message":"Retrieved customer callbacks used on embed context: [\"onFormSubmit\"]"},{"clientTimestamp":1755181548239,"level":"INFO","message":"Retrieved pageContext values which may be overriden by the embed context: {\"pageTitle\":\"Internal Collaboration\",\"pageUrl\":\"https://www.tomorro.com/software/internal-collaboration\",\"userAgent\":\"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0\",\"isHubSpotCmsGeneratedPage\":false}"},{"clientTimestamp":1755181548241,"level":"INFO","message":"Retrieved countryCode property from normalized embed definition response: \"NL\""},{"clientTimestamp":1755181551461,"level":"INFO","message":"Retrieved analytics values from API response which may be overriden by the embed context: {\"hutk\":\"ffd6bfa1d33be9ddc6d99b23c5b4f09e\"}"}]}'
+                                            />
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal_collection-list_wrapper w-dyn-list">
+                                <div role="list" class="modal_collection-list w-dyn-items">
+                                    <div role="listitem" class="modal_list_item-testimonial w-dyn-item">
+                                        <div class="feature_testimonial_image-wrapper"><img loading="lazy" src="{% static 'img/67e6dc21e98ee8b657c6e039_Nestle-Testimonial.svg' %}" alt="" class="feature_testimonial_image" /></div>
+                                        <div class="text-size-regular text-weight-medium">
+                                            "Adopting Tomorro has transformed our contract management. We have cut the time spent on contracts by a factor of three, while reducing legal and financial risks. Thanks to Oro AI, document
+                                            analysis is faster, making decision-making smoother and operational teams more autonomous."
+                                        </div>
+                                        <div class="author inline">
+                                            <div class="testimonial_author_picture-wrapper"><img alt="Nestlé" loading="lazy" src="{% static 'img/67e6dd8a41c635689770a741_Béranger Pène.avif' %}" class="testimonial_author_picture" /></div>
+                                            <div class="testimonial_author_infos">
+                                                <div class="text-color-green">Béranger Pène</div>
+                                                <div class="text-weight-medium">General Manager - Legal &amp; Compliance</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    fs-modal-element="close-1"
+                    class="modal_close"
+                    id="dPje1e8Neyyq-bzm4ATx8"
+                    tabindex="0"
+                    role="button"
+                    aria-controls="HQbtx5eMVIFxBbSgAJylt"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-roledescription="close-modal-trigger"
+                >
+                    <img loading="lazy" src="{% static 'img/679024b896838ec15ffa9618_close-dark.svg' %}" alt="" class="icon-1x1-medium" />
+                </div>
+            </aside>
+            <!--fs-modal-anchor-->
+            <aside fs-modal-element="modal-2" class="modal demo-video" id="Cs7RUf47bkNJC4MJiP_US" role="dialog" aria-modal="true">
+                <div
+                    fs-modal-element="close-2"
+                    class="usecase_modal_cover"
+                    id="C_m_cOKJkzv0ggHzSThms"
+                    tabindex="0"
+                    role="button"
+                    aria-controls="Cs7RUf47bkNJC4MJiP_US"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-roledescription="close-modal-trigger"
+                ></div>
+                <div class="padding-global">
+                    <div class="max-width-xlarge">
+                        <div class="modal_demo-video_wrapper">
+                            <div class="modal_demo-video_image-wrapper">
+                                <div class="modal_demo-video_cover"></div>
+                                <img
+                                    src="{% static 'img/67914cebf14a5982dcf4b2a4_Video Repository.avif' %}"
+                                    loading="lazy"
+                                    sizes="(max-width: 2880px) 100vw, 2880px"
+                                    srcset="
+                                        {% static 'img/67914cebf14a5982dcf4b2a4_Video Repository-p-500.avif' %}   500w,
+                                        {% static 'img/67914cebf14a5982dcf4b2a4_Video Repository-p-800.avif' %}   800w,
+                                        {% static 'img/67914cebf14a5982dcf4b2a4_Video Repository-p-1080.avif' %} 1080w,
+                                        {% static 'img/67914cebf14a5982dcf4b2a4_Video Repository.avif' %}         2880w
+                                    "
+                                    alt=""
+                                    class="modal_demo-video_image"
+                                />
+                            </div>
+                            <div class="modal_demo-video_content">
+                                <div class="margin-bottom margin-small"><div class="heading-style-h4">Discover Tomorro in 2 minutes</div></div>
+                                <div class="hubspot_form-embed w-embed w-script">
+                                    <script data-hubspot-rendered="true">
+                                        hbspt.forms.create({
+                                            portalId: "7016971",
+                                            formId: "557184ab-f99b-4bfe-b18a-9ea8a31366fc",
+                                            onFormSubmit: function (form) {
+                                                // Show the success div block.
+                                                $("#hubspot-success").show();
+                                            },
+                                        });
+                                    </script>
+                                    <div id="hbspt-form-fc70977a-3c6a-4bb9-8845-00e60209ee91" class="hbspt-form" data-hs-forms-root="true">
+                                        <form
+                                            id="hsForm_557184ab-f99b-4bfe-b18a-9ea8a31366fc"
+                                            method="POST"
+                                            accept-charset="UTF-8"
+                                            enctype="multipart/form-data"
+                                            novalidate=""
+                                            action="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/7016971/557184ab-f99b-4bfe-b18a-9ea8a31366fc"
+                                            class="hs-form-private hsForm_557184ab-f99b-4bfe-b18a-9ea8a31366fc hs-form-557184ab-f99b-4bfe-b18a-9ea8a31366fc hs-form-557184ab-f99b-4bfe-b18a-9ea8a31366fc_fc70977a-3c6a-4bb9-8845-00e60209ee91 hs-form stacked"
+                                            target="target_iframe_557184ab-f99b-4bfe-b18a-9ea8a31366fc"
+                                            data-instance-id="fc70977a-3c6a-4bb9-8845-00e60209ee91"
+                                            data-form-id="557184ab-f99b-4bfe-b18a-9ea8a31366fc"
+                                            data-portal-id="7016971"
+                                            data-test-id="hsForm_557184ab-f99b-4bfe-b18a-9ea8a31366fc"
+                                        >
+                                            <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                                                <label id="label-email-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="email-557184ab-f99b-4bfe-b18a-9ea8a31366fc">
+                                                    <span>Professional email</span><span class="hs-form-required">*</span>
+                                                </label>
+                                                <div class="input">
+                                                    <input
+                                                        id="email-557184ab-f99b-4bfe-b18a-9ea8a31366fc"
+                                                        name="email"
+                                                        required=""
+                                                        placeholder="harvey.specter@pearson-hardman.com"
+                                                        type="email"
+                                                        class="hs-input"
+                                                        inputmode="email"
+                                                        autocomplete="email"
+                                                        value=""
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="hs_phone hs-phone hs-fieldtype-phonenumber field hs-form-field">
+                                                <label id="label-phone-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="phone-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>Phone number</span><span class="hs-form-required">*</span></label>
+                                                <div class="input">
+                                                    <input id="phone-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="phone" required="" placeholder="+44 XX XXXX XXXX" type="tel" class="hs-input" inputmode="tel" autocomplete="tel" value="" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="hs-richtext hs-main-font-element">
+                                                    <p style="font-size: 10px;">
+                                                        Submitting your details indicates that you are happy for Tomorro to contact you with relevant content and services in accordance with our
+                                                        <a
+                                                            href="#"
+                                                            target="_blank"
+                                                            rel="noopener"
+                                                        >
+                                                            Privacy Policy
+                                                        </a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="hs_utm_campaign hs-utm_campaign hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_campaign-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="utm_campaign-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>UTM Campaign</span></label>
+                                                <div class="input"><input id="utm_campaign-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="utm_campaign" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_content hs-utm_content hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_content-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="utm_content-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>UTM Content</span></label>
+                                                <div class="input"><input id="utm_content-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="utm_content" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_id hs-utm_id hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_id-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="utm_id-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>UTM ID</span></label>
+                                                <div class="input"><input id="utm_id-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="utm_id" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_medium hs-utm_medium hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_medium-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="utm_medium-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>UTM Medium</span></label>
+                                                <div class="input"><input id="utm_medium-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="utm_medium" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_utm_source hs-utm_source hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_source-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="utm_source-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>UTM Source</span></label>
+                                                <div class="input"><input id="utm_source-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="utm_source" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_last_marketing_action hs-last_marketing_action hs-fieldtype-select field hs-form-field" style="display: none;">
+                                                <label id="label-last_marketing_action-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="last_marketing_action-557184ab-f99b-4bfe-b18a-9ea8a31366fc">
+                                                    <span>Last Marketing Action</span>
+                                                </label>
+                                                <div class="input"><input id="last_marketing_action-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="last_marketing_action" class="hs-input" type="hidden" value="Video_Product" /></div>
+                                            </div>
+                                            <div class="hs_utm_term hs-utm_term hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-utm_term-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="utm_term-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>UTM Term</span></label>
+                                                <div class="input"><input id="utm_term-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="utm_term" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_gclid hs-gclid hs-fieldtype-text field hs-form-field smart-field" style="display: none;">
+                                                <label id="label-gclid-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="gclid-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>GCLID</span></label>
+                                                <div class="input"><input id="gclid-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="gclid" class="hs-input" type="hidden" value="" /></div>
+                                            </div>
+                                            <div class="hs_hs_language hs-hs_language hs-fieldtype-select field hs-form-field" style="display: none;">
+                                                <label id="label-hs_language-557184ab-f99b-4bfe-b18a-9ea8a31366fc" class="" for="hs_language-557184ab-f99b-4bfe-b18a-9ea8a31366fc"><span>Preferred language</span></label>
+                                                <div class="input"><input id="hs_language-557184ab-f99b-4bfe-b18a-9ea8a31366fc" name="hs_language" class="hs-input" type="hidden" value="en" /></div>
+                                            </div>
+                                            <div class="hs_submit hs-submit">
+                                                <div class="hs-field-desc" style="display: none;"></div>
+                                                <div class="actions"><input type="submit" class="hs-button primary large" value="Play the video demo" /></div>
+                                            </div>
+                                            <input
+                                                name="hs_context"
+                                                type="hidden"
+                                                value='{"embedAtTimestamp":"1755181550601","formDefinitionUpdatedAt":"1753260093565","lang":"en","clonedFromForm":"513fb059-7887-488e-90fe-22e1d34d0bc4","notifyHubSpotOwner":"true","renderRawHtml":"true","userAgent":"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0","pageTitle":"Internal Collaboration","pageUrl":"https://www.tomorro.com/software/internal-collaboration","isHubSpotCmsGeneratedPage":false,"hutk":"ffd6bfa1d33be9ddc6d99b23c5b4f09e","__hsfp":1423010458,"__hssc":"24085285.13.1755180772646","__hstc":"24085285.ffd6bfa1d33be9ddc6d99b23c5b4f09e.1754993301330.1754993301330.1755180772646.2","formTarget":"#hbspt-form-fc70977a-3c6a-4bb9-8845-00e60209ee91","rumScriptExecuteTime":1642,"rumTotalRequestTime":2702,"rumTotalRenderTime":2712,"rumServiceResponseTime":1060,"rumFormRenderTime":10,"connectionType":"","firstContentfulPaint":0,"largestContentfulPaint":0,"locale":"en","timestamp":1755181551478,"originalEmbedContext":{"portalId":"7016971","formId":"557184ab-f99b-4bfe-b18a-9ea8a31366fc","region":"na1","target":"#hbspt-form-fc70977a-3c6a-4bb9-8845-00e60209ee91","isBuilder":false,"isTestPage":false,"isPreview":false,"isMobileResponsive":true},"correlationId":"fc70977a-3c6a-4bb9-8845-00e60209ee91","renderedFieldsIds":["email","phone","utm_campaign","utm_content","utm_id","utm_medium","utm_source","last_marketing_action","utm_term","gclid","hs_language"],"captchaStatus":"NOT_APPLICABLE","emailResubscribeStatus":"NOT_APPLICABLE","isInsideCrossOriginFrame":false,"source":"forms-embed-1.9606","sourceName":"forms-embed","sourceVersion":"1.9606","sourceVersionMajor":"1","sourceVersionMinor":"9606","allPageIds":{},"_debug_embedLogLines":[{"clientTimestamp":1755181548290,"level":"INFO","message":"Retrieved customer callbacks used on embed context: [\"onFormSubmit\"]"},{"clientTimestamp":1755181548290,"level":"INFO","message":"Retrieved pageContext values which may be overriden by the embed context: {\"pageTitle\":\"Internal Collaboration\",\"pageUrl\":\"https://www.tomorro.com/software/internal-collaboration\",\"userAgent\":\"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0\",\"isHubSpotCmsGeneratedPage\":false}"},{"clientTimestamp":1755181548291,"level":"INFO","message":"Retrieved countryCode property from normalized embed definition response: \"NL\""},{"clientTimestamp":1755181551472,"level":"INFO","message":"Retrieved analytics values from API response which may be overriden by the embed context: {\"hutk\":\"ffd6bfa1d33be9ddc6d99b23c5b4f09e\"}"}]}'
+                                            />
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    fs-modal-element="close-2"
+                    class="modal_close"
+                    id="6XZVxEOULgPY-RyAJwKNR"
+                    tabindex="0"
+                    role="button"
+                    aria-controls="Cs7RUf47bkNJC4MJiP_US"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-roledescription="close-modal-trigger"
+                >
+                    <img loading="lazy" src="{% static 'img/679024b896838ec15ffa9618_close-dark.svg' %}" alt="" class="icon-1x1-medium" />
+                </div>
+            </aside>
+            {% include 'includes/footer.html' %}
+        </div>
+        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=678ed5a51cf3c992fa25b232" type="text/javascript" crossorigin="anonymous"></script>
+        <script src="https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/js/webflow.6f5271a6.4a3e90d243ad8fba.js" type="text/javascript"></script>
+
+        <script type="text/javascript" id="" charset="">
+            window.addEventListener("message", function (a) {
+                a.data.meetingBookSucceeded && window.dataLayer.push({ event: "hubspot-meeting-booked", "hs-form-guid": a.data.meetingsPayload.formGuid });
+            });
+        </script>
+        <script type="text/javascript" id="" charset="">
+            window.addEventListener("message", function (a) {
+                if ("hsFormCallback" === a.data.type && "onFormSubmitted" === a.data.eventName) {
+                    var b = document.getElementById("hsForm_" + a.data.id);
+                    if (b) {
+                        var c = {};
+                        b = b.querySelectorAll("input, select, textarea");
+                        b.forEach(function (d) {
+                            c[d.name] = d.value;
+                        });
+                    } else c = "";
+                    window.dataLayer.push({ event: "hubspot-form-success", form_id: a.data.id, form_fields: c });
+                }
+            });
+        </script>
+        <script type="text/javascript" id="" charset="">
+            window.intercomSettings = { app_id: "b6xrordn" };
+        </script>
+
+        <script type="text/javascript" id="" charset="">
+            (function () {
+                var b = window,
+                    a = b.Intercom;
+                if ("function" === typeof a) a("reattach_activator"), a("update", b.intercomSettings);
+                else {
+                    var e = document,
+                        d = function () {
+                            d.c(arguments);
+                        };
+                    d.q = [];
+                    d.c = function (c) {
+                        d.q.push(c);
+                    };
+                    b.Intercom = d;
+                    a = function () {
+                        var c = e.createElement("script");
+                        c.type = "text/javascript";
+                        c.async = !0;
+                        c.src = "https://widget.intercom.io/widget/b6xrordn";
+                        var f = e.getElementsByTagName("script")[0];
+                        f.parentNode.insertBefore(c, f);
+                    };
+                    "complete" === document.readyState ? a() : b.attachEvent ? b.attachEvent("onload", a) : b.addEventListener("load", a, !1);
+                }
+            })();
+        </script>
+        <script id="hs-script-loader" text="" charset="" type="text/javascript" src="https://js.hs-scripts.com/7016971.js"></script>
+        <script type="text/javascript" id="" charset="">
+            !(function (b, e, f, g, a, c, d) {
+                b.fbq ||
+                    ((a = b.fbq = function () {
+                        a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments);
+                    }),
+                    b._fbq || (b._fbq = a),
+                    (a.push = a),
+                    (a.loaded = !0),
+                    (a.version = "2.0"),
+                    (a.queue = []),
+                    (c = e.createElement(f)),
+                    (c.async = !0),
+                    (c.src = g),
+                    (d = e.getElementsByTagName(f)[0]),
+                    d.parentNode.insertBefore(c, d));
+            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+            fbq("init", "542990536238109");
+            fbq("track", "PageView");
+        </script>
+
+        
+        <script type="text/javascript" id="" charset="">
+            adroll_adv_id = "N3GUYNQF2ZD2JAK7FVG5XX";
+            adroll_pix_id = "6TYJWNHUXZDLTJ4UVZASUG";
+            adroll_version = "2.0";
+            (function (a, e, c, d, b) {
+                a.__adroll_loaded = !0;
+                a.adroll = a.adroll || [];
+                a.adroll.f = ["setProperties", "identify", "track"];
+                var f = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js";
+                for (b = 0; b < a.adroll.f.length; b++)
+                    a.adroll[a.adroll.f[b]] =
+                        a.adroll[a.adroll.f[b]] ||
+                        (function (g) {
+                            return function () {
+                                a.adroll.push([g, arguments]);
+                            };
+                        })(a.adroll.f[b]);
+                c = e.createElement("script");
+                d = e.getElementsByTagName("script")[0];
+                c.async = 1;
+                c.src = f;
+                d.parentNode.insertBefore(c, d);
+            })(window, document);
+            adroll.track("pageView");
+        </script>
+
+
+    </body>
+</html>

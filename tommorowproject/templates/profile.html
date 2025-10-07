@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+{% load static %}
+{% load tz %}
+<html lang="en" translate="no">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tomorro</title>
+        <link href=" {% static 'css/MemberInviteForm-BKeS3O_j.css' %} " rel="stylesheet" type="text/css" />
+        <link href=" {% static 'css/index-xY-F2xE7.css' %} " rel="stylesheet" type="text/css" />
+        <link href=" {% static 'css/vendor-DHSnEqsK.css' %} " rel="stylesheet" type="text/css" />
+        <link href=" {% static 'css/index-CS0teR_O.css' %} " rel="stylesheet" type="text/css" />
+        <link href=" {% static 'css/supermodel.css' %} " rel="stylesheet" type="text/css" />
+        <link href="{% static 'img/67917b13c52b440c62115fba_favicon.png' %}" rel="shortcut icon" type="image/x-icon" />
+        
+
+
+        <script type="text/javascript" src="https://cdnusage.tomorro.com/next-integrations/actions/amplitude-plugins/3b0a288ecd08e5d54cea.js" async="" status="loaded"></script>
+        <script type="text/javascript" async="" src="https://app.planhat.com/analytics/plantrack.min.js"></script>
+        <script type="text/javascript" async="" src="https://widget.intercom.io/widget/b6xrordn"></script>
+        <script type="text/javascript" async="" src="https://cdnusage.tomorro.com/analytics.js/v1/mpFNH6g17FveV31kKjXL08hULhHcLSih/analytics.min.js"></script>
+        <script async="" defer="" src="https://cdn.headwayapp.co/widget.js"></script>
+        <script src="https://app.tomorro.com/assets/inline_0.js"></script>
+        <script src="https://app.tomorro.com/assets/inline_1.js"></script>
+        <script src="https://app.tomorro.com/assets/inline_2.js"></script>
+        <script type="module" crossorigin="" src="https://app.tomorro.com/js/index-4zpWjFkT.js"></script>
+        <!-- [Attributes] Modal -->
+        <script async="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-modal@1/modal.js"></script>
+        <!-- [Attributes] CMS Slider -->
+        <script async="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsslider@1/cmsslider.js"></script>
+        <!-- [Hubspot Meeting] -->
+        <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+        <style type="text/css">
+            [vaul-drawer] {
+                touch-action: none;
+                will-change: transform;
+                transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+            }
+            [vaul-drawer][vaul-drawer-direction="bottom"] {
+                transform: translate3d(0, 100%, 0);
+            }
+            [vaul-drawer][vaul-drawer-direction="top"] {
+                transform: translate3d(0, -100%, 0);
+            }
+            [vaul-drawer][vaul-drawer-direction="left"] {
+                transform: translate3d(-100%, 0, 0);
+            }
+            [vaul-drawer][vaul-drawer-direction="right"] {
+                transform: translate3d(100%, 0, 0);
+            }
+            .vaul-dragging .vaul-scrollable [vault-drawer-direction="top"] {
+                overflow-y: hidden !important;
+            }
+            .vaul-dragging .vaul-scrollable [vault-drawer-direction="bottom"] {
+                overflow-y: hidden !important;
+            }
+            .vaul-dragging .vaul-scrollable [vault-drawer-direction="left"] {
+                overflow-x: hidden !important;
+            }
+            .vaul-dragging .vaul-scrollable [vault-drawer-direction="right"] {
+                overflow-x: hidden !important;
+            }
+            [vaul-drawer][vaul-drawer-visible="true"][vaul-drawer-direction="top"] {
+                transform: translate3d(0, var(--snap-point-height, 0), 0);
+            }
+            [vaul-drawer][vaul-drawer-visible="true"][vaul-drawer-direction="bottom"] {
+                transform: translate3d(0, var(--snap-point-height, 0), 0);
+            }
+            [vaul-drawer][vaul-drawer-visible="true"][vaul-drawer-direction="left"] {
+                transform: translate3d(var(--snap-point-height, 0), 0, 0);
+            }
+            [vaul-drawer][vaul-drawer-visible="true"][vaul-drawer-direction="right"] {
+                transform: translate3d(var(--snap-point-height, 0), 0, 0);
+            }
+            [vaul-overlay] {
+                opacity: 0;
+                transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+            }
+            [vaul-overlay][vaul-drawer-visible="true"] {
+                opacity: 1;
+            }
+            [vaul-drawer]::after {
+                content: "";
+                position: absolute;
+                background: inherit;
+                background-color: inherit;
+            }
+            [vaul-drawer][vaul-drawer-direction="top"]::after {
+                top: initial;
+                bottom: 100%;
+                left: 0;
+                right: 0;
+                height: 200%;
+            }
+            [vaul-drawer][vaul-drawer-direction="bottom"]::after {
+                top: 100%;
+                bottom: initial;
+                left: 0;
+                right: 0;
+                height: 200%;
+            }
+            [vaul-drawer][vaul-drawer-direction="left"]::after {
+                left: initial;
+                right: 100%;
+                top: 0;
+                bottom: 0;
+                width: 200%;
+            }
+            [vaul-drawer][vaul-drawer-direction="right"]::after {
+                left: 100%;
+                right: initial;
+                top: 0;
+                bottom: 0;
+                width: 200%;
+            }
+            [vaul-handle] {
+                display: block;
+                position: relative;
+                opacity: 0.8;
+                margin-left: auto;
+                margin-right: auto;
+                height: 5px;
+                width: 56px;
+                border-radius: 1rem;
+                touch-action: pan-y;
+                cursor: grab;
+            }
+            [vaul-handle]:active,
+            [vaul-handle]:hover {
+                opacity: 1;
+            }
+            [vaul-handle]:active {
+                cursor: grabbing;
+            }
+            [vaul-handle-hitarea] {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: max(100%, 2.75rem);
+                height: max(100%, 2.75rem);
+                touch-action: inherit;
+            }
+            [vaul-overlay][vaul-snap-points="true"]:not([vaul-snap-points-overlay="true"]):not([data-state="closed"]) {
+                opacity: 0;
+            }
+            [vaul-overlay][vaul-snap-points-overlay="true"]:not([vaul-drawer-visible="false"]) {
+                opacity: 1;
+            }
+            @media (hover: hover) and (pointer: fine) {
+                [vaul-drawer] {
+                    user-select: none;
+                }
+            }
+            @media (pointer: fine) {
+                [vaul-handle-hitarea]: {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        </style>
+        <style id="_goober">
+            @keyframes go2264125279 {
+                from {
+                    transform: scale(0) rotate(45deg);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1) rotate(45deg);
+                    opacity: 1;
+                }
+            }
+            @keyframes go3020080000 {
+                from {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+            @keyframes go463499852 {
+                from {
+                    transform: scale(0) rotate(90deg);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1) rotate(90deg);
+                    opacity: 1;
+                }
+            }
+            @keyframes go1268368563 {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes go1310225428 {
+                from {
+                    transform: scale(0) rotate(45deg);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1) rotate(45deg);
+                    opacity: 1;
+                }
+            }
+            @keyframes go651618207 {
+                0% {
+                    height: 0;
+                    width: 0;
+                    opacity: 0;
+                }
+                40% {
+                    height: 0;
+                    width: 6px;
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 1;
+                    height: 10px;
+                }
+            }
+            @keyframes go901347462 {
+                from {
+                    transform: scale(0.6);
+                    opacity: 0.4;
+                }
+                to {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+            .go4109123758 {
+                z-index: 9999;
+            }
+            .go4109123758 > * {
+                pointer-events: auto;
+            }
+        </style>
+        <link rel="stylesheet" href="index-DdGB53AI.css" />
+        <style data-jss="" data-meta="MuiPopover">
+            .MuiPopover-paper {
+                outline: 0;
+                position: absolute;
+                max-width: calc(100% - 32px);
+                min-width: 16px;
+                max-height: calc(100% - 32px);
+                min-height: 16px;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiMenu">
+            .MuiMenu-paper {
+                max-height: calc(100% - 96px);
+                -webkit-overflow-scrolling: touch;
+            }
+            .MuiMenu-list {
+                outline: 0;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTooltip">
+            .MuiTooltip-popper {
+                z-index: 1500;
+                pointer-events: none;
+            }
+            .MuiTooltip-popperInteractive {
+                pointer-events: auto;
+            }
+            .MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow {
+                top: 0;
+                left: 0;
+                margin-top: -0.71em;
+                margin-left: 4px;
+                margin-right: 4px;
+            }
+            .MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow {
+                left: 0;
+                bottom: 0;
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-bottom: -0.71em;
+            }
+            .MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow {
+                left: 0;
+                width: 0.71em;
+                height: 1em;
+                margin-top: 4px;
+                margin-left: -0.71em;
+                margin-bottom: 4px;
+            }
+            .MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow {
+                right: 0;
+                width: 0.71em;
+                height: 1em;
+                margin-top: 4px;
+                margin-right: -0.71em;
+                margin-bottom: 4px;
+            }
+            .MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow::before {
+                transform-origin: 0 0;
+            }
+            .MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow::before {
+                transform-origin: 100% 100%;
+            }
+            .MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow::before {
+                transform-origin: 100% 0;
+            }
+            .MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow::before {
+                transform-origin: 0 100%;
+            }
+            .MuiTooltip-tooltip {
+                color: #fff;
+                padding: 4px 8px;
+                font-size: 0.625rem;
+                max-width: 300px;
+                word-wrap: break-word;
+                font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+                font-weight: 500;
+                line-height: 1.4em;
+                border-radius: 4px;
+                background-color: rgba(97, 97, 97, 0.9);
+            }
+            .MuiTooltip-tooltipArrow {
+                margin: 0;
+                position: relative;
+            }
+            .MuiTooltip-arrow {
+                color: rgba(97, 97, 97, 0.9);
+                width: 1em;
+                height: 0.71em;
+                overflow: hidden;
+                position: absolute;
+                box-sizing: border-box;
+            }
+            .MuiTooltip-arrow::before {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+                content: "";
+                display: block;
+                transform: rotate(45deg);
+                background-color: currentColor;
+            }
+            .MuiTooltip-touch {
+                padding: 8px 16px;
+                font-size: 0.875rem;
+                font-weight: 400;
+                line-height: 1.14286em;
+            }
+            .MuiTooltip-tooltipPlacementLeft {
+                margin: 0 24px;
+                transform-origin: right center;
+            }
+            @media (min-width: 600px) {
+                .MuiTooltip-tooltipPlacementLeft {
+                    margin: 0 14px;
+                }
+            }
+            .MuiTooltip-tooltipPlacementRight {
+                margin: 0 24px;
+                transform-origin: left center;
+            }
+            @media (min-width: 600px) {
+                .MuiTooltip-tooltipPlacementRight {
+                    margin: 0 14px;
+                }
+            }
+            .MuiTooltip-tooltipPlacementTop {
+                margin: 24px 0;
+                transform-origin: center bottom;
+            }
+            @media (min-width: 600px) {
+                .MuiTooltip-tooltipPlacementTop {
+                    margin: 14px 0;
+                }
+            }
+            .MuiTooltip-tooltipPlacementBottom {
+                margin: 24px 0;
+                transform-origin: center top;
+            }
+            @media (min-width: 600px) {
+                .MuiTooltip-tooltipPlacementBottom {
+                    margin: 14px 0;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <div class="private-layout">
+                <div class="private-layout__page-layout">
+                    <div class="side-bar-menu-content">
+                        <div class="menu-main">
+                            <div class="menu-main__top">
+                                <div
+                                    class="_stack_vrggz_1"
+                                    style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 16px; padding-left: 20px; padding-right: 20px;"
+                                >
+                                    <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 8px;">
+                                        <button
+                                            class="_button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 _withPrefix_1exmo_106 _rounded_1exmo_192 _fullWidth_1exmo_195"
+                                            style="--button-justify-content: center;"
+                                            data-cy="menu-header-create-contract-button"
+                                            type="button"
+                                            id="radix-:r1:"
+                                            aria-haspopup="menu"
+                                            aria-expanded="false"
+                                            data-state="closed"
+                                            onclick="window.location.href='{% url 'index' %}'"
+                                        >
+                                            <span class="_content_1exmo_199">Back to site</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-main__content" style="background-color: #f0f0f0; pointer-events: none; cursor: default; opacity: 0.7; padding: 10px; border-radius: 5px;">
+                                <a class="side-navigation-tab selected" href="" data-discover="true">
+                                    <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                        <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M12.715 2.28875L20.424 10.1728C20.79 10.5488 21 11.0728 21 11.6117V19.9877C21 21.0907 20.152 21.9877 19.111 21.9877H15H9H4.888C3.847 21.9877 3 21.0907 3 19.9877V11.6117C3 11.0728 3.21 10.5487 3.575 10.1737L11.285 2.28875C11.662 1.90375 12.338 1.90375 12.715 2.28875ZM18.99 19.9877H16V12.9878C16 12.4347 15.552 11.9878 15 11.9878H9C8.447 11.9878 8 12.4347 8 12.9878V19.9877H5L5.006 11.5708L11.998 4.41975L19 11.6117L18.99 19.9877ZM10 19.9877H14V13.9878H10V19.9877Z"
+                                                    fill="currentColor"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        <div class="side-navigation-tab__label">Home</div>
+                                    </div>
+                                </a>
+                                <a class="side-navigation-tab" data-intercom-target="Ai Assistant Tab" href="https://app.tomorro.com/ai-assistant" data-discover="true">
+                                    <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                        <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                            <svg width="20px" height="20px" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="40" height="40" rx="20" fill="#083003"></rect>
+                                                <path
+                                                    d="M20 34C18.1615 34 16.341 33.6379 14.6424 32.9343C12.9439 32.2307 11.4005 31.1995 10.1005 29.8995C8.80048 28.5995 7.76925 27.0561 7.06569 25.3576C6.36212 23.659 6 21.8385 6 20C6 18.1615 6.36212 16.341 7.06569 14.6424C7.76925 12.9439 8.80049 11.4005 10.1005 10.1005C11.4005 8.80048 12.9439 7.76925 14.6424 7.06569C16.341 6.36212 18.1615 6 20 6C21.8385 6 23.659 6.36212 25.3576 7.06569C27.0561 7.76925 28.5995 8.80049 29.8995 10.1005C31.1995 11.4005 32.2307 12.9439 32.9343 14.6424C33.6379 16.341 34 18.1615 34 20C34 21.8385 33.6379 23.659 32.9343 25.3576C32.2307 27.0561 31.1995 28.5995 29.8995 29.8995C28.5995 31.1995 27.0561 32.2307 25.3576 32.9343C23.659 33.6379 21.8385 34 20 34L20 34Z"
+                                                    stroke="#67EF3E"
+                                                    stroke-width="4"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        <div class="side-navigation-tab__label">AI assistant</div>
+                                    </div>
+                                </a>
+                                <a class="side-navigation-tab" href="https://app.tomorro.com/negotiation" data-discover="true">
+                                    <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                        <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M16 7H19C20.654 7 22 8.346 22 10V18C22 19.654 20.654 21 19 21H5C3.346 21 2 19.654 2 18V10C2 8.346 3.346 7 5 7H8V5.5C8 4.122 9.122 3 10.5 3H13.5C14.878 3 16 4.122 16 5.5V7ZM10 5.5C10 5.224 10.224 5 10.5 5H13.5C13.776 5 14 5.224 14 5.5V7H10V5.5ZM9 19H15V9H9V19ZM19 19C19.551 19 20 18.551 20 18V10C20 9.449 19.551 9 19 9H17V19H19ZM4 18V10C4 9.449 4.449 9 5 9H7V19H5C4.449 19 4 18.551 4 18Z"
+                                                    fill="currentColor"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        <div class="side-navigation-tab__label">Negotiations</div>
+                                    </div>
+                                </a>
+                                <a class="side-navigation-tab" data-cy="menu-content-repository" href="https://app.tomorro.com/repository" data-discover="true">
+                                    <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                        <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M2 18.0684C2 19.4094 3.122 20.5004 4.5 20.5004H19.5C20.878 20.5004 22 19.4094 22 18.0684V9.47837C22 8.13637 20.878 7.04637 19.5 7.04637H12.474L9.875 3.86737C9.685 3.63437 9.4 3.50037 9.101 3.50037H4.5C3.122 3.50037 2 4.59037 2 5.93137V18.0684ZM4 18.0684V5.93137C4 5.69337 4.224 5.50037 4.5 5.50037H8.626L11.226 8.67837C11.416 8.91137 11.7 9.04637 12 9.04637H19.5C19.776 9.04637 20 9.23937 20 9.47837V18.0684C20 18.3064 19.776 18.5004 19.5 18.5004H4.5C4.224 18.5004 4 18.3064 4 18.0684Z"
+                                                    fill="currentColor"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        <div class="side-navigation-tab__label">Repository</div>
+                                    </div>
+                                </a>
+                                <a class="side-navigation-tab navigation-views-side__children__item" data-intercom-target="Incomplete Projects Tab" href="https://app.tomorro.com/incomplete-projects" data-discover="true">
+                                    <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                        <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 4px; width: 4px;"></div>
+                                        <div class="side-navigation-tab__label">Incomplete signed projects</div>
+                                    </div>
+                                </a>
+                                <div class="navigation-views-side">
+                                    <span class="icon icon_20 icon_0 navigation-views-side__icon">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M3 7C3 6.448 3.448 6 4 6C4.552 6 5 6.448 5 7C5 7.552 4.552 8 4 8C3.448 8 3 7.552 3 7ZM3 12C3 11.448 3.448 11 4 11C4.552 11 5 11.448 5 12C5 12.552 4.552 13 4 13C3.448 13 3 12.552 3 12ZM4 16C3.448 16 3 16.448 3 17C3 17.552 3.448 18 4 18C4.552 18 5 17.552 5 17C5 16.448 4.552 16 4 16ZM7.9355 11H20.0645C20.5795 11 21.0005 11.421 21.0005 11.936V12.064C21.0005 12.579 20.5795 13 20.0645 13H7.9355C7.4205 13 7.0005 12.579 7.0005 12.064V11.936C7.0005 11.421 7.4205 11 7.9355 11ZM20.0645 16H7.9355C7.4205 16 7.0005 16.421 7.0005 16.936V17.064C7.0005 17.579 7.4205 18 7.9355 18H20.0645C20.5795 18 21.0005 17.579 21.0005 17.064V16.936C21.0005 16.421 20.5795 16 20.0645 16ZM7.9355 6H20.0645C20.5795 6 21.0005 6.421 21.0005 6.936V7.064C21.0005 7.579 20.5795 8 20.0645 8H7.9355C7.4205 8 7.0005 7.579 7.0005 7.064V6.936C7.0005 6.421 7.4205 6 7.9355 6Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <div class="navigation-views-side__label">Filtered views</div>
+                                    <span class="icon icon_16 icon_0 navigation-views-side__toggle navigation-views-side__toggle_open">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.9998 15.5C11.7438 15.5 11.4878 15.402 11.2928 15.207L7.29276 11.207C6.90176 10.816 6.90176 10.184 7.29276 9.79301C7.68376 9.40201 8.31576 9.40201 8.70676 9.79301L12.0118 13.098L15.3048 9.91801C15.7038 9.53501 16.3348 9.54601 16.7188 9.94301C17.1028 10.34 17.0918 10.974 16.6948 11.357L12.6948 15.219C12.4998 15.407 12.2498 15.5 11.9998 15.5Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <div class="navigation-views-side__spacer"></div>
+                                    <button class="_button_1exmo_2 _tertiary_1exmo_64 _sm_1exmo_134 _svgOnly_1exmo_109 _rounded_1exmo_192" style="--button-justify-content: center;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_47_1310)"><path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"></path></g>
+                                            <defs>
+                                                <clipPath id="clip0_47_1310"><rect width="24" height="24" fill="white"></rect></clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="navigation-views-side__children">
+                                    <a class="side-navigation-tab navigation-views-side__children__item" href="https://app.tomorro.com/view/84224998-7071-4330-95b0-736a802f1db1" data-discover="true">
+                                        <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                            <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 4px; width: 4px;"></div>
+                                            <div class="side-navigation-tab__label">⌛️ Expiring soon</div>
+                                        </div>
+                                    </a>
+                                    <a class="side-navigation-tab navigation-views-side__children__item" href="https://app.tomorro.com/view/a8d9976b-a7f6-4267-bf7d-6a7e7738c2e2" data-discover="true">
+                                        <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                            <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 4px; width: 4px;"></div>
+                                            <div class="side-navigation-tab__label">✍️ Signed contracts</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="menu-content-workspace">
+                                    <div class="menu-content-workspace__section">
+                                        <div class="menu-content-workspace__section__title">Workspace</div>
+                                        <button class="_button_1exmo_2 _tertiary_1exmo_64 _sm_1exmo_134 _svgOnly_1exmo_109 _rounded_1exmo_192" style="--button-justify-content: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_47_3953)">
+                                                    <path
+                                                        d="M19.1401 12.9399C19.1801 12.6399 19.2001 12.3299 19.2001 11.9999C19.2001 11.6799 19.1801 11.3599 19.1301 11.0599L21.1601 9.4799C21.3401 9.3399 21.3901 9.0699 21.2801 8.8699L19.3601 5.5499C19.2401 5.3299 18.9901 5.2599 18.7701 5.3299L16.3801 6.2899C15.8801 5.9099 15.3501 5.5899 14.7601 5.3499L14.4001 2.8099C14.3601 2.5699 14.1601 2.3999 13.9201 2.3999H10.0801C9.84011 2.3999 9.65011 2.5699 9.61011 2.8099L9.25011 5.3499C8.66011 5.5899 8.12011 5.9199 7.63011 6.2899L5.24011 5.3299C5.02011 5.2499 4.77011 5.3299 4.65011 5.5499L2.74011 8.8699C2.62011 9.0799 2.66011 9.3399 2.86011 9.4799L4.89011 11.0599C4.84011 11.3599 4.80011 11.6899 4.80011 11.9999C4.80011 12.3099 4.82011 12.6399 4.87011 12.9399L2.84011 14.5199C2.66011 14.6599 2.61011 14.9299 2.72011 15.1299L4.64011 18.4499C4.76011 18.6699 5.01011 18.7399 5.23011 18.6699L7.62011 17.7099C8.12011 18.0899 8.65011 18.4099 9.24011 18.6499L9.60011 21.1899C9.65011 21.4299 9.84011 21.5999 10.0801 21.5999H13.9201C14.1601 21.5999 14.3601 21.4299 14.3901 21.1899L14.7501 18.6499C15.3401 18.4099 15.8801 18.0899 16.3701 17.7099L18.7601 18.6699C18.9801 18.7499 19.2301 18.6699 19.3501 18.4499L21.2701 15.1299C21.3901 14.9099 21.3401 14.6599 21.1501 14.5199L19.1401 12.9399ZM12.0001 15.5999C10.0201 15.5999 8.40011 13.9799 8.40011 11.9999C8.40011 10.0199 10.0201 8.3999 12.0001 8.3999C13.9801 8.3999 15.6001 10.0199 15.6001 11.9999C15.6001 13.9799 13.9801 15.5999 12.0001 15.5999Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </g>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <a class="side-navigation-tab" data-cy="menu-item-templates" href="https://app.tomorro.com/templates" data-discover="true">
+                                            <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                                <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M20.3913 10.487C20.7403 10.636 20.9753 10.969 20.9983 11.348C21.0203 11.727 20.8273 12.086 20.4983 12.274L18.2403 13.57L20.3923 14.487C20.7403 14.636 20.9753 14.97 20.9983 15.348C21.0203 15.727 20.8273 16.086 20.4983 16.274L12.4983 20.867C12.3433 20.956 12.1723 21 12.0003 21C11.8283 21 11.6563 20.956 11.5023 20.867L3.50233 16.274C3.17333 16.086 2.97933 15.727 3.00233 15.348C3.02433 14.969 3.25933 14.636 3.60833 14.487L5.76033 13.571L3.50233 12.274C3.17333 12.086 2.97933 11.727 3.00233 11.348C3.02433 10.969 3.25933 10.636 3.60833 10.487L5.76033 9.57101L3.50233 8.27401C3.17333 8.08601 2.97933 7.72701 3.00233 7.34801C3.02433 6.97001 3.25933 6.63601 3.60833 6.48701L11.6083 3.08001C11.8583 2.97301 12.1413 2.97301 12.3913 3.08001L20.3913 6.48701C20.7403 6.63601 20.9753 6.97001 20.9983 7.34801C21.0203 7.72701 20.8273 8.08601 20.4983 8.27401L18.2393 9.57101L20.3913 10.487ZM12.0003 5.08701L17.7603 7.54001L12.0003 10.847L6.24033 7.54001L12.0003 5.08701ZM12.0003 13C11.8283 13 11.6563 12.956 11.5023 12.867L7.93433 10.818L6.24033 11.54L12.0003 14.847L17.7603 11.54L16.0663 10.818L12.4983 12.867C12.3433 12.956 12.1723 13 12.0003 13ZM12.0003 18.847L17.7603 15.54L16.0663 14.818L12.4983 16.867C12.3433 16.956 12.1723 17 12.0003 17C11.8283 17 11.6563 16.956 11.5023 16.867L7.93433 14.819L6.24033 15.54L12.0003 18.847Z"
+                                                            fill="currentColor"
+                                                        ></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="side-navigation-tab__label">Templates</div>
+                                            </div>
+                                        </a>
+                                        <a class="side-navigation-tab" data-cy="menu-item-dynamic-components" href="https://app.tomorro.com/dynamic-components" data-discover="true">
+                                            <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                                <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M10.7689 22.9399C10.8819 22.9809 10.9969 22.9999 11.1109 22.9999C11.4369 22.9999 11.7529 22.8399 11.9419 22.5559L19.8309 10.7559C20.0359 10.4489 20.0559 10.0549 19.8819 9.72886C19.7079 9.40386 19.3689 9.19986 18.9999 9.19986H13.1139L13.8829 2.10786C13.9329 1.65086 13.6629 1.21786 13.2299 1.06086C12.7969 0.902859 12.3129 1.06086 12.0579 1.44486L4.16887 13.2439C3.96387 13.5509 3.94387 13.9459 4.11787 14.2719C4.29187 14.5969 4.63087 14.7999 4.99987 14.7999H10.8859L10.1169 21.8929C10.0669 22.3499 10.3369 22.7819 10.7689 22.9399ZM11.9999 12.7999H6.87087L11.4549 5.94386L11.0059 10.0929C10.9749 10.3749 11.0659 10.6569 11.2559 10.8679C11.4449 11.0789 11.7159 11.1999 11.9999 11.1999H17.1289L12.5449 18.0569L12.9939 13.9069C13.0239 13.6249 12.9329 13.3429 12.7439 13.1319C12.5549 12.9209 12.2839 12.7999 11.9999 12.7999Z"
+                                                            fill="currentColor"
+                                                        ></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="side-navigation-tab__label">Dynamic components</div>
+                                            </div>
+                                        </a>
+                                        <a class="side-navigation-tab" data-intercom-target="Counterparties Menu Button" href="https://app.tomorro.com/counterparties" data-discover="true">
+                                            <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                                <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M17.5 4C17.7761 4 18 4.22386 18 4.5V19.5C18 19.7761 17.7761 20 17.5 20H15V16.5C15 15.1193 13.8807 14 12.5 14H11.5C10.1193 14 9 15.1193 9 16.5V20H6.5C6.22386 20 6 19.7761 6 19.5V4.5C6 4.22386 6.22386 4 6.5 4H17.5ZM11 20H13V16.5C13 16.2239 12.7761 16 12.5 16H11.5C11.2239 16 11 16.2239 11 16.5V20ZM9 22H6.5C5.11929 22 4 20.8807 4 19.5V4.5C4 3.11929 5.11929 2 6.5 2H17.5C18.8807 2 20 3.11929 20 4.5V19.5C20 20.8807 18.8807 22 17.5 22H15H9ZM11 7C11 7.55228 10.5523 8 10 8H9C8.44772 8 8 7.55228 8 7C8 6.44772 8.44772 6 9 6H10C10.5523 6 11 6.44772 11 7ZM15 8C15.5523 8 16 7.55228 16 7C16 6.44772 15.5523 6 15 6H14C13.4477 6 13 6.44772 13 7C13 7.55228 13.4477 8 14 8H15ZM16 11C16 11.5523 15.5523 12 15 12H14C13.4477 12 13 11.5523 13 11C13 10.4477 13.4477 10 14 10H15C15.5523 10 16 10.4477 16 11ZM10 12C10.5523 12 11 11.5523 11 11C11 10.4477 10.5523 10 10 10H9C8.44772 10 8 10.4477 8 11C8 11.5523 8.44772 12 9 12H10Z"
+                                                            fill="currentColor"
+                                                        ></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="side-navigation-tab__label">Counterparties</div>
+                                            </div>
+                                        </a>
+                                        <a class="side-navigation-tab" href="https://app.tomorro.com/reports" data-discover="true">
+                                            <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; overflow-x: hidden;">
+                                                <span class="icon icon_20 icon_0 side-navigation-tab__icon">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M12.0002 3C12.0002 2.447 12.4482 2 13.0002 2C17.9622 2 22.0002 6.037 22.0002 11C22.0002 11.553 21.5522 12 21.0002 12H13.0002C12.4482 12 12.0002 11.553 12.0002 11V3ZM20.8215 14.0576C20.2985 13.8716 19.7285 14.1446 19.5455 14.6666C18.4175 17.8566 15.3845 19.9996 12.0005 19.9996C7.58949 19.9996 4.00049 16.4116 4.00049 11.9996C4.00049 8.6156 6.14349 5.5826 9.33349 4.4546C9.85449 4.2716 10.1275 3.7006 9.94349 3.1796C9.75949 2.6596 9.18849 2.3856 8.66749 2.5706C4.67949 3.9796 2.00049 7.7686 2.00049 11.9996C2.00049 17.5136 6.48649 21.9996 12.0005 21.9996C16.2315 21.9996 20.0205 19.3216 21.4305 15.3326C21.6145 14.8126 21.3425 14.2416 20.8215 14.0576ZM14.0002 10V4.071C17.0612 4.511 19.4892 6.938 19.9292 10H14.0002Z"
+                                                            fill="currentColor"
+                                                        ></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="side-navigation-tab__label">Reports</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-main__footer">
+                                <div
+                                    class="_stack_vrggz_1"
+                                    style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; padding-top: 8px; padding-bottom: 8px;"
+                                >
+                                    <div class="" style="padding-left: 16px; padding-right: 16px; padding-bottom: 8px;">
+                                        <div class="_primary_19ebq_1 _border_19ebq_1" style="border-radius: 6px; background: var(--grey-100); padding: 8px 12px;">
+                                            <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 8px;">
+                                                <div class="_stack_vrggz_1" style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 8px;">
+                                                    <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect width="40" height="40" rx="20" fill="#083003"></rect>
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M20 8C18.4241 8 16.8637 8.31039 15.4078 8.91344C13.9519 9.5165 12.629 10.4004 11.5147 11.5147C10.4004 12.629 9.5165 13.9519 8.91345 15.4078C8.31039 16.8637 8 18.4241 8 20C8 21.5759 8.31039 23.1363 8.91345 24.5922C9.5165 26.0481 10.4004 27.371 11.5147 28.4853C12.629 29.5996 13.9519 30.4835 15.4078 31.0866C16.8637 31.6896 18.4241 32 20 32C21.5759 32 23.1363 31.6896 24.5922 31.0866C26.0481 30.4835 27.371 29.5996 28.4853 28.4853C29.5996 27.371 30.4835 26.0481 31.0866 24.5922C31.6896 23.1363 32 21.5759 32 20C32 18.4241 31.6896 16.8637 31.0866 15.4078C30.4835 13.9519 29.5996 12.629 28.4853 11.5147C27.371 10.4004 26.0481 9.5165 24.5922 8.91345C23.1363 8.31039 21.5759 8 20 8ZM13.8771 5.21793C15.8183 4.41385 17.8989 4 20 4C22.1012 4 24.1817 4.41385 26.1229 5.21793C28.0641 6.022 29.828 7.20056 31.3137 8.68629C32.7994 10.172 33.978 11.9359 34.7821 13.8771C35.5861 15.8183 36 17.8989 36 20C36 22.1012 35.5861 24.1817 34.7821 26.1229C33.978 28.0641 32.7994 29.828 31.3137 31.3137C29.828 32.7994 28.0641 33.978 26.1229 34.7821C24.1817 35.5861 22.1011 36 20 36C17.8988 36 15.8183 35.5861 13.8771 34.7821C11.9359 33.978 10.172 32.7994 8.68629 31.3137C7.20055 29.828 6.022 28.0641 5.21793 26.1229C4.41385 24.1817 4 22.1011 4 20C4 17.8988 4.41385 15.8183 5.21793 13.8771C6.022 11.9359 7.20056 10.172 8.68629 8.68629C10.172 7.20055 11.9359 6.022 13.8771 5.21793Z"
+                                                            fill="#67EF3E"
+                                                        ></path>
+                                                    </svg>
+                                                    <div
+                                                        data-accent-color="text-primary"
+                                                        class="_text_434yk_1 _body-medium_434yk_39"
+                                                        style="--text-color: var(--text-primary); --text-align: start; --font-style: normal; --text-decoration: none;"
+                                                    >
+                                                        Oro, AI assistant
+                                                    </div>
+                                                </div>
+                                                <button onclick="window.location.href='{% url 'oro_AI' %}'"  class="_button_1exmo_2 _secondary_1exmo_40 _md_1exmo_153 _withPrefix_1exmo_106 _rounded_1exmo_192" style="--button-justify-content: center;">
+                                                    <span class="_prefix_1exmo_208">
+                                                        <div class="" style="width: 20px; height: 20px;">
+                                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#27a907">
+                                                                <g clip-path="url(#clip0_3368_5274)">
+                                                                    <path
+                                                                        d="M12 1L12.107 2.05681C12.6333 7.25564 16.7444 11.3667 21.9432 11.893L23 12L21.9432 12.107C16.7444 12.6333 12.6333 16.7444 12.107 21.9432L12 23L11.893 21.9432C11.3667 16.7444 7.25564 12.6333 2.05681 12.107L1 12L2.05681 11.893C7.25564 11.3667 11.3667 7.25564 11.893 2.05681L12 1Z"
+                                                                        fill="currentColor"
+                                                                    ></path>
+                                                                </g>
+                                                                <defs>
+                                                                    <clipPath id="clip0_3368_5274"><rect width="24" height="24" fill="white"></rect></clipPath>
+                                                                </defs>
+                                                            </svg>
+                                                        </div>
+                                                    </span>
+                                                    <span class="_content_1exmo_199">Try now for free</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="menu-footer-account" data-cy="menu-footer-account">
+                                            <a href="{% url 'logout' %}" class="menu-footer-account__name capitalize">Log out</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="private-layout__page-layout__content">
+                        <div class="" style="overflow: auto;">
+                            <div class="" style="position: relative; height: 100%;" data-drop-target-for-external="true">
+                                <div class="" style="height: 100%;">
+                                    <div
+                                        class="_stack_vrggz_1 _dashboardLayout_u5xc6_2"
+                                        style="--stack-align: normal; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 24px; padding: 24px 24px 24px 12px; width: 100%;"
+                                    >
+                                        <div
+                                            class="_stack_vrggz_1"
+                                            style="
+                                                --stack-align: normal;
+                                                --stack-justify: normal;
+                                                --stack-direction: column;
+                                                --stack-flex: initial;
+                                                --stack-wrap: nowrap;
+                                                --stack-gap: 24px;
+                                                overflow: hidden;
+                                                padding-left: 12px;
+                                                padding-right: 12px;
+                                                width: 100%;
+                                                margin-right: -12px;
+                                            "
+                                        >
+                                            <div
+                                                class="_stack_vrggz_1 _dashboardLayoutHeader_ax5e9_2"
+                                                style="--stack-align: center; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 16px;"
+                                            >
+                                                <div class="" title="steve">
+                                                    <div class="avatar avatar_48 avatar_rounded">
+                                                        <div class="avatar__background avatar__background_member"><span>A</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 0px; flex-grow: 1;">
+                                                    <div
+                                                        data-accent-color="text-tertiary"
+                                                        class="_text_434yk_1 _body-regular_434yk_34"
+                                                        style="--text-color: var(--text-tertiary); --text-align: start; --font-style: normal; --text-decoration: none;"
+                                                    >
+                                                        {% now "l, F d" %}
+                                                    </div>
+                                                    <h1 data-accent-color="text-primary" class="_text_434yk_1 _h1_434yk_14" style="--text-color: var(--text-primary); --text-align: start; --font-style: normal; --text-decoration: none;">
+                                                        {{request.user.username}}
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                                <section class="custom-block">
+                                                <div class="upper-half">
+                                                    <div class="pdf-card">
+                                                    <span class="pdf-icon">📄</span>
+                                                    <div class="pdf-texts">
+                                                        <span class="pdf-title">Confidentiality agreement</span>
+                                                        <span class="pdf-subtitle">PDF – 200kb</span>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="lower-half">
+                                                    <h1 class="title">Cooperation contract with influencer (ID:ID)</h1>
+                                                    <p class="subtitle">{{request.user.big_text}}</p>
+                                                    <button id="openModalBtn" class="_button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 community-type-card__button _rounded_1exmo_192" style="--button-justify-content: center;">
+                                                    <a >Open now</a>
+                                                    </button>
+                                                </div>
+                                                </section>
+                                        </div>
+                                        <div class="" style="border-left: var(--div-border-primary);"></div>
+                                        <div
+                                            class="_stack_vrggz_1 _dashboardLayoutRight_u5xc6_2"
+                                            style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 24px; flex-shrink: 0; width: 352px;"
+                                        >
+                                            <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: column; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 8px;">
+                                                <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 8px;"></div>
+                                                <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 8px;"></div>
+                                            </div>
+                                            <div class="_primary_19ebq_1 _border_19ebq_1" data-intercom-target="Integrations Push Component" style="border-radius: 6px;">
+                                                <div class="" style="height: 112px; overflow: hidden; border-top-left-radius: 6px; border-top-right-radius: 6px;">
+                                                    <img src="{% static 'img/IllustrationIntegrationOro-BJ89qksc.svg' %}" alt="illustration-oro" />
+                                                </div>
+                                                <div
+                                                    class="_stack_vrggz_1"
+                                                    style="
+                                                        --stack-align: normal;
+                                                        --stack-justify: normal;
+                                                        --stack-direction: column;
+                                                        --stack-flex: initial;
+                                                        --stack-wrap: nowrap;
+                                                        --stack-gap: 12px;
+                                                        padding-left: 16px;
+                                                        padding-right: 16px;
+                                                        padding-bottom: 16px;
+                                                    "
+                                                >
+                                                    <div class="">
+                                                        <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 4px;">
+                                                            <h4
+                                                                data-accent-color="text-primary"
+                                                                class="_text_434yk_1 _h4_434yk_29"
+                                                                style="--text-color: var(--text-primary); --text-align: start; --font-style: normal; --text-decoration: none;"
+                                                            >
+                                                                Discover Oro, our AI assistant
+                                                            </h4>
+                                                        </div>
+                                                        <div
+                                                            data-accent-color="text-tertiary"
+                                                            class="_text_434yk_1 _body-regular_434yk_34"
+                                                            style="--text-color: var(--text-tertiary); --text-align: start; --font-style: normal; --text-decoration: none;"
+                                                        >
+                                                            Extract key data, generate summary, reformulate clauses, and more with Oro.
+                                                        </div>
+                                                    </div>
+                                                    <div class="">
+                                                        <button onclick="window.location.href='{% url 'oro_AI' %}'" class="_button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 _withPrefix_1exmo_106 _rounded_1exmo_192 _fullWidth_1exmo_195" style="--button-justify-content: center;">
+                                                            <span class="_prefix_1exmo_208">
+                                                                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--green-400)">
+                                                                    <g clip-path="url(#clip0_3368_5274)">
+                                                                        <path
+                                                                            d="M12 1L12.107 2.05681C12.6333 7.25564 16.7444 11.3667 21.9432 11.893L23 12L21.9432 12.107C16.7444 12.6333 12.6333 16.7444 12.107 21.9432L12 23L11.893 21.9432C11.3667 16.7444 7.25564 12.6333 2.05681 12.107L1 12L2.05681 11.893C7.25564 11.3667 11.3667 7.25564 11.893 2.05681L12 1Z"
+                                                                            fill="currentColor"
+                                                                        ></path>
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_3368_5274"><rect width="24" height="24" fill="white"></rect></clipPath>
+                                                                    </defs>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="_content_1exmo_199">Lear more</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="_primary_19ebq_1 _border_19ebq_1" data-intercom-target="Integrations Push Component" style="border-radius: 6px;">
+                                                <div
+                                                    class="_stack_vrggz_1"
+                                                    style="
+                                                        --stack-align: normal;
+                                                        --stack-justify: normal;
+                                                        --stack-direction: column;
+                                                        --stack-flex: initial;
+                                                        --stack-wrap: nowrap;
+                                                        --stack-gap: 12px;
+                                                        padding-left: 16px;
+                                                        padding-right: 16px;
+                                                        padding-bottom: 16px;
+                                                    "
+                                                >
+                                                    <div class="">
+                                                        <div class="_stack_vrggz_1" style="--stack-align: normal; --stack-justify: normal; --stack-direction: row; --stack-flex: initial; --stack-wrap: nowrap; --stack-gap: 4px;">
+                                                            <h4
+                                                                data-accent-color="text-primary"
+                                                                class="_text_434yk_1 _h4_434yk_29"
+                                                                style="--text-color: var(--text-primary); --text-align: start; --font-style: normal; --text-decoration: none; margin-top: 5px;"
+                                                            >
+                                                                Your account was created by invitation from the team.Do you want to request full access to the workspace?
+                                                            </h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="">
+                                                        <button onclick="window.location.href='{% url 'oro_AI' %}'"  class="_button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 _withPrefix_1exmo_106 _rounded_1exmo_192 _fullWidth_1exmo_195" style="--button-justify-content: center;">
+                                                            <span class="_content_1exmo_199">Request full access</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="position: fixed; z-index: 9999; inset: 16px 16px 50px; pointer-events: none;"></div>
+            </div>
+        </div>
+        <div id="portal-root"></div>
+
+
+        <style id="HW_styles_cont">
+            .HW_badge_cont {
+                visibility: hidden;
+                pointer-events: none;
+                display: block;
+                cursor: pointer;
+                position: relative;
+                width: 32px;
+                height: 32px;
+            }
+
+            .HW_absolute {
+                position: absolute !important;
+            }
+
+            .HW_badge_cont.HW_visible {
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .HW_badge {
+                display: block;
+                border-radius: 20px;
+                background: #cd4b5b;
+                height: 16px;
+                width: 16px;
+                color: #fff;
+                text-align: center;
+                line-height: 16px;
+                font-size: 11px;
+                cursor: pointer;
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                opacity: 0;
+                will-change: scale;
+                transform: scale(0);
+                transition: all 0.3s;
+            }
+
+            .HW_top {
+                top: -16px;
+            }
+
+            .HW_bottom {
+                bottom: -16px;
+            }
+
+            .HW_left {
+                left: -16px;
+            }
+
+            .HW_right {
+                right: -16px;
+            }
+
+            .HW_center,
+            .HW_vcenter {
+                left: 50%;
+                margin-left: -16px;
+            }
+
+            .HW_center,
+            .HW_hcenter {
+                top: 50%;
+                margin-top: -16px;
+            }
+
+            .HW_badge.HW_softHidden {
+                background: #d4d4d4;
+                opacity: 1;
+                transform: scale(0.6);
+            }
+
+            .HW_badge.HW_hidden {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            .HW_badge.HW_visible {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            .HW_frame_cont {
+                pointer-events: none;
+                border-radius: 4px;
+                box-shadow: 0 0 1px rgba(99, 114, 130, 0.32), 0 8px 16px rgba(27, 39, 51, 0.08);
+                background: #fff;
+                border: none;
+                position: fixed;
+                top: -900em;
+                z-index: 2147483647;
+                width: 340px;
+                height: 0;
+                opacity: 0;
+                will-change: height, margin-top, opacity;
+                margin-top: -10px;
+                transition: margin-top 0.15s ease-out, opacity 0.1s ease-out;
+                overflow: hidden;
+            }
+
+            .HW_frame_cont.HW_visible {
+                opacity: 1;
+                pointer-events: auto;
+                margin-top: 0px;
+            }
+
+            .HW_frame_cont.HW_visible.HW_bottom {
+                transition: margin-top 0.15s ease-out, opacity 0.1s ease-out, height 0.3s ease-out;
+            }
+
+            .HW_frame {
+                background: #fff;
+                border: none;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 4px;
+                position: relative;
+                z-index: 2147483647;
+            }
+
+            .HW_frame_cont.HW_embed {
+                position: static;
+                margin-top: 0;
+            }
+
+            .HW_notransition {
+                transition: none !important;
+            }
+        </style>
+        <div id="HW_frame_cont" class="HW_frame_cont HW_bottom" data-account="JmOLex" style="height: 500px;">
+
+        </div>
+        <div class="intercom-lightweight-app">
+            <style id="intercom-lightweight-app-style" type="text/css">
+                @keyframes intercom-lightweight-app-launcher {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.5);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+
+                @keyframes intercom-lightweight-app-gradient {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes intercom-lightweight-app-messenger {
+                    0% {
+                        opacity: 0;
+                        transform: scale(0);
+                    }
+                    40% {
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .intercom-lightweight-app {
+                    position: fixed;
+                    z-index: 2147483001;
+                    width: 0;
+                    height: 0;
+                    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+                }
+
+                .intercom-lightweight-app-gradient {
+                    position: fixed;
+                    z-index: 2147483002;
+                    width: 500px;
+                    height: 500px;
+                    bottom: 0;
+                    right: 0;
+                    pointer-events: none;
+                    background: radial-gradient(ellipse at bottom right, rgba(29, 39, 54, 0.16) 0%, rgba(29, 39, 54, 0) 72%);
+                    animation: intercom-lightweight-app-gradient 200ms ease-out;
+                }
+
+                .intercom-lightweight-app-launcher {
+                    position: fixed;
+                    z-index: 2147483003;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    border: none;
+                    bottom: 20px;
+                    right: 20px;
+                    max-width: 48px;
+                    width: 48px;
+                    max-height: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: #78eb54;
+                    cursor: pointer;
+                    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+                    transition: transform 167ms cubic-bezier(0.33, 0, 0, 1);
+                    box-sizing: content-box;
+                }
+
+                .intercom-lightweight-app-launcher:hover {
+                    transition: transform 250ms cubic-bezier(0.33, 0, 0, 1);
+                    transform: scale(1.1);
+                }
+
+                .intercom-lightweight-app-launcher:active {
+                    transform: scale(0.85);
+                    transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1);
+                }
+
+                .intercom-lightweight-app-launcher:focus {
+                    outline: none;
+                }
+
+                .intercom-lightweight-app-launcher-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 48px;
+                    height: 48px;
+                    transition: transform 100ms linear, opacity 80ms linear;
+                }
+
+                .intercom-lightweight-app-launcher-icon-open {
+                    opacity: 1;
+                    transform: rotate(0deg) scale(1);
+                }
+
+                .intercom-lightweight-app-launcher-icon-open svg {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .intercom-lightweight-app-launcher-icon-open svg path {
+                    fill: rgb(20, 22, 26);
+                }
+
+                .intercom-lightweight-app-launcher-icon-self-serve {
+                    opacity: 1;
+                    transform: rotate(0deg) scale(1);
+                }
+
+                .intercom-lightweight-app-launcher-icon-self-serve svg {
+                    height: 44px;
+                }
+
+                .intercom-lightweight-app-launcher-icon-self-serve svg path {
+                    fill: rgb(20, 22, 26);
+                }
+
+                .intercom-lightweight-app-launcher-custom-icon-open {
+                    max-height: 24px;
+                    max-width: 24px;
+
+                    opacity: 1;
+                    transform: rotate(0deg) scale(1);
+                }
+
+                .intercom-lightweight-app-launcher-icon-minimize {
+                    opacity: 0;
+                    transform: rotate(-60deg) scale(0);
+                }
+
+                .intercom-lightweight-app-launcher-icon-minimize svg path {
+                    fill: rgb(20, 22, 26);
+                }
+
+                .intercom-lightweight-app-messenger {
+                    position: fixed;
+                    z-index: 2147483003;
+                    overflow: hidden;
+                    background-color: #ffffff;
+                    animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1, 1, 1);
+                    transform-origin: bottom right;
+
+                    width: 400px;
+                    height: calc(100% - 40px);
+                    max-height: 704px;
+                    min-height: 250px;
+                    right: 20px;
+                    bottom: 20px;
+                    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+
+                    border-radius: 16px;
+                }
+
+                .intercom-lightweight-app-messenger-header {
+                    height: 64px;
+                    border-bottom: none;
+                    background: #ffffff;
+                }
+
+                .intercom-lightweight-app-messenger-footer {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 80px;
+                    background: #ffffff;
+                    font-size: 14px;
+                    line-height: 21px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.05);
+                    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+                }
+
+                @media print {
+                    .intercom-lightweight-app {
+                        display: none;
+                    }
+                }
+            </style>
+        </div>
+        <div id="intercom-tooltips-container" class="intercom-namespace">
+            <style>
+                html.intercom-mobile-messenger-active,
+                html.intercom-mobile-messenger-active > body,
+                html.intercom-modal-open,
+                #intercom-container-body {
+                    overflow: hidden !important;
+                }
+                html.intercom-mobile-messenger-active,
+                html.intercom-mobile-messenger-active > body {
+                    position: static !important;
+                    transform: none !important;
+                }
+                html.intercom-mobile-messenger-active > body {
+                    height: 0 !important;
+                    margin: 0 !important;
+                }
+                
+            </style>
+        </div>
+        <div id="intercom-css-container">
+            <style data-emotion="intercom-with-namespace-global" data-s="">
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-regular.woff") format("woff");
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-semibold.woff") format("woff");
+                    font-weight: bold;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-regular-italic.woff") format("woff");
+                    font-style: italic;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-semibold-italic.woff") format("woff");
+                    font-style: italic;
+                    font-weight: bold;
+                    font-display: swap;
+                }
+                .intercom-namespace div,
+                .intercom-namespace span,
+                .intercom-namespace iframe {
+                    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                    font-size-adjust: none;
+                    font-size: 100%;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    font-stretch: normal;
+                    font-variant: normal;
+                    font-weight: normal;
+                    text-align-last: initial;
+                    text-decoration: none;
+                    text-emphasis: none currentcolor;
+                    text-indent: 0px;
+                    text-justify: auto;
+                    text-shadow: none;
+                    text-transform: none;
+                    animation-play-state: running;
+                    backface-visibility: visible;
+                    background-color: transparent;
+                    background-image: none;
+                    border: 0px transparent;
+                    border-radius: 0px;
+                    inset: auto;
+                    box-decoration-break: slice;
+                    box-shadow: none;
+                    box-sizing: content-box;
+                    caption-side: top;
+                    clear: none;
+                    clip: auto;
+                    color: inherit;
+                    columns: auto;
+                    column-fill: balance;
+                    column-gap: normal;
+                    content: normal;
+                    counter-increment: none;
+                    counter-reset: none;
+                    cursor: auto;
+                    direction: ltr;
+                    display: inline;
+                    dominant-baseline: auto;
+                    empty-cells: show;
+                    float: none;
+                    height: auto;
+                    hyphenate-character: auto;
+                    hyphens: manual;
+                    image-rendering: auto;
+                    line-height: inherit;
+                    list-style: outside;
+                    margin: 0px;
+                    max-height: none;
+                    max-width: none;
+                    min-height: 0px;
+                    min-width: 0px;
+                    opacity: 1;
+                    outline-offset: 0px;
+                    overflow: visible;
+                    padding: 0px;
+                    page: auto;
+                    break-after: auto;
+                    break-before: auto;
+                    break-inside: auto;
+                    perspective: none;
+                    perspective-origin: 50% 50%;
+                    pointer-events: auto;
+                    position: static;
+                    quotes: none;
+                    resize: none;
+                    table-layout: auto;
+                    transform: none;
+                    transform-origin: 50% 50% 0px;
+                    transform-style: flat;
+                    unicode-bidi: normal;
+                    vertical-align: baseline;
+                    white-space: normal;
+                    width: auto;
+                    word-break: normal;
+                    word-spacing: normal;
+                    overflow-wrap: normal;
+                    z-index: auto;
+                    text-align: start;
+                }
+                .intercom-namespace :focus:not(:focus-visible) {
+                    outline: none;
+                }
+                .intercom-namespace div,
+                .intercom-namespace frame {
+                    display: block;
+                }
+                .intercom-namespace .intercom-app {
+                    line-height: 1;
+                }
+                @media print {
+                    .intercom-namespace .intercom-app {
+                        display: none;
+                    }
+                }
+                .intercom-namespace a,
+                .intercom-namespace a:visited,
+                .intercom-namespace .intercom-anchor {
+                    color: rgb(20, 22, 26);
+                    cursor: pointer;
+                }
+                .intercom-namespace a:hover,
+                .intercom-namespace .intercom-anchor:hover {
+                    color: rgb(26, 26, 26);
+                }
+                .intercom-namespace a:active,
+                .intercom-namespace .intercom-anchor:active {
+                    color: rgb(51, 51, 51);
+                }
+            </style>
+            <style data-emotion="intercom-with-namespace-global" data-s="">
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-regular.woff") format("woff");
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-semibold.woff") format("woff");
+                    font-weight: bold;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-regular-italic.woff") format("woff");
+                    font-style: italic;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-semibold-italic.woff") format("woff");
+                    font-style: italic;
+                    font-weight: bold;
+                    font-display: swap;
+                }
+                .intercom-namespace div,
+                .intercom-namespace span,
+                .intercom-namespace iframe {
+                    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                    font-size-adjust: none;
+                    font-size: 100%;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    font-stretch: normal;
+                    font-variant: normal;
+                    font-weight: normal;
+                    text-align-last: initial;
+                    text-decoration: none;
+                    text-emphasis: none currentcolor;
+                    text-indent: 0px;
+                    text-justify: auto;
+                    text-shadow: none;
+                    text-transform: none;
+                    animation-play-state: running;
+                    backface-visibility: visible;
+                    background-color: transparent;
+                    background-image: none;
+                    border: 0px transparent;
+                    border-radius: 0px;
+                    inset: auto;
+                    box-decoration-break: slice;
+                    box-shadow: none;
+                    box-sizing: content-box;
+                    caption-side: top;
+                    clear: none;
+                    clip: auto;
+                    color: inherit;
+                    columns: auto;
+                    column-fill: balance;
+                    column-gap: normal;
+                    content: normal;
+                    counter-increment: none;
+                    counter-reset: none;
+                    cursor: auto;
+                    direction: ltr;
+                    display: inline;
+                    dominant-baseline: auto;
+                    empty-cells: show;
+                    float: none;
+                    height: auto;
+                    hyphenate-character: auto;
+                    hyphens: manual;
+                    image-rendering: auto;
+                    line-height: inherit;
+                    list-style: outside;
+                    margin: 0px;
+                    max-height: none;
+                    max-width: none;
+                    min-height: 0px;
+                    min-width: 0px;
+                    opacity: 1;
+                    outline-offset: 0px;
+                    overflow: visible;
+                    padding: 0px;
+                    page: auto;
+                    break-after: auto;
+                    break-before: auto;
+                    break-inside: auto;
+                    perspective: none;
+                    perspective-origin: 50% 50%;
+                    pointer-events: auto;
+                    position: static;
+                    quotes: none;
+                    resize: none;
+                    table-layout: auto;
+                    transform: none;
+                    transform-origin: 50% 50% 0px;
+                    transform-style: flat;
+                    unicode-bidi: normal;
+                    vertical-align: baseline;
+                    white-space: normal;
+                    width: auto;
+                    word-break: normal;
+                    word-spacing: normal;
+                    overflow-wrap: normal;
+                    z-index: auto;
+                    text-align: start;
+                }
+                .intercom-namespace :focus:not(:focus-visible) {
+                    outline: none;
+                }
+                .intercom-namespace div,
+                .intercom-namespace frame {
+                    display: block;
+                }
+                .intercom-namespace .intercom-app {
+                    line-height: 1;
+                }
+                @media print {
+                    .intercom-namespace .intercom-app {
+                        display: none;
+                    }
+                }
+                .intercom-namespace a,
+                .intercom-namespace a:visited,
+                .intercom-namespace .intercom-anchor {
+                    color: rgb(20, 22, 26);
+                    cursor: pointer;
+                }
+                .intercom-namespace a:hover,
+                .intercom-namespace .intercom-anchor:hover {
+                    color: rgb(26, 26, 26);
+                }
+                .intercom-namespace a:active,
+                .intercom-namespace .intercom-anchor:active {
+                    color: rgb(51, 51, 51);
+                }
+            </style>
+            <style data-emotion="intercom-with-namespace-global" data-s="">
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-regular.woff") format("woff");
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-semibold.woff") format("woff");
+                    font-weight: bold;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-regular-italic.woff") format("woff");
+                    font-style: italic;
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: "intercom-font";
+                    src: url("proximanova-semibold-italic.woff") format("woff");
+                    font-style: italic;
+                    font-weight: bold;
+                    font-display: swap;
+                }
+                .intercom-namespace div,
+                .intercom-namespace span,
+                .intercom-namespace iframe {
+                    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                    font-size-adjust: none;
+                    font-size: 100%;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    font-stretch: normal;
+                    font-variant: normal;
+                    font-weight: normal;
+                    text-align-last: initial;
+                    text-decoration: none;
+                    text-emphasis: none currentcolor;
+                    text-indent: 0px;
+                    text-justify: auto;
+                    text-shadow: none;
+                    text-transform: none;
+                    animation-play-state: running;
+                    backface-visibility: visible;
+                    background-color: transparent;
+                    background-image: none;
+                    border: 0px transparent;
+                    border-radius: 0px;
+                    inset: auto;
+                    box-decoration-break: slice;
+                    box-shadow: none;
+                    box-sizing: content-box;
+                    caption-side: top;
+                    clear: none;
+                    clip: auto;
+                    color: inherit;
+                    columns: auto;
+                    column-fill: balance;
+                    column-gap: normal;
+                    content: normal;
+                    counter-increment: none;
+                    counter-reset: none;
+                    cursor: auto;
+                    direction: ltr;
+                    display: inline;
+                    dominant-baseline: auto;
+                    empty-cells: show;
+                    float: none;
+                    height: auto;
+                    hyphenate-character: auto;
+                    hyphens: manual;
+                    image-rendering: auto;
+                    line-height: inherit;
+                    list-style: outside;
+                    margin: 0px;
+                    max-height: none;
+                    max-width: none;
+                    min-height: 0px;
+                    min-width: 0px;
+                    opacity: 1;
+                    outline-offset: 0px;
+                    overflow: visible;
+                    padding: 0px;
+                    page: auto;
+                    break-after: auto;
+                    break-before: auto;
+                    break-inside: auto;
+                    perspective: none;
+                    perspective-origin: 50% 50%;
+                    pointer-events: auto;
+                    position: static;
+                    quotes: none;
+                    resize: none;
+                    table-layout: auto;
+                    transform: none;
+                    transform-origin: 50% 50% 0px;
+                    transform-style: flat;
+                    unicode-bidi: normal;
+                    vertical-align: baseline;
+                    white-space: normal;
+                    width: auto;
+                    word-break: normal;
+                    word-spacing: normal;
+                    overflow-wrap: normal;
+                    z-index: auto;
+                    text-align: start;
+                }
+                .intercom-namespace :focus:not(:focus-visible) {
+                    outline: none;
+                }
+                .intercom-namespace div,
+                .intercom-namespace frame {
+                    display: block;
+                }
+                .intercom-namespace .intercom-app {
+                    line-height: 1;
+                }
+                @media print {
+                    .intercom-namespace .intercom-app {
+                        display: none;
+                    }
+                }
+                .intercom-namespace a,
+                .intercom-namespace a:visited,
+                .intercom-namespace .intercom-anchor {
+                    color: rgb(20, 22, 26);
+                    cursor: pointer;
+                }
+                .intercom-namespace a:hover,
+                .intercom-namespace .intercom-anchor:hover {
+                    color: rgb(26, 26, 26);
+                }
+                .intercom-namespace a:active,
+                .intercom-namespace .intercom-anchor:active {
+                    color: rgb(51, 51, 51);
+                }
+            </style>
+        </div>
+        <div id="intercom-tooltips-container" class="intercom-namespace">
+            <style>
+                html.intercom-mobile-messenger-active,
+                html.intercom-mobile-messenger-active > body,
+                html.intercom-modal-open,
+                #intercom-container-body {
+                    overflow: hidden !important;
+                }
+                html.intercom-mobile-messenger-active,
+                html.intercom-mobile-messenger-active > body {
+                    position: static !important;
+                    transform: none !important;
+                }
+                html.intercom-mobile-messenger-active > body {
+                    height: 0 !important;
+                    margin: 0 !important;
+                }
+                
+            </style>
+        </div>
+        <div id="intercom-tooltips-container" class="intercom-namespace">
+            <style>
+                html.intercom-mobile-messenger-active,
+                html.intercom-mobile-messenger-active > body,
+                html.intercom-modal-open,
+                #intercom-container-body {
+                    overflow: hidden !important;
+                }
+                html.intercom-mobile-messenger-active,
+                html.intercom-mobile-messenger-active > body {
+                    position: static !important;
+                    transform: none !important;
+                }
+                html.intercom-mobile-messenger-active > body {
+                    height: 0 !important;
+                    margin: 0 !important;
+                }
+                
+            </style>
+        </div>
+
+    <!-- Модальное окно -->
+<div id="myModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span id="closeModalBtn" class="close">&times;</span>
+        <!-- Левая часть -->
+        <div class="modal-left">
+            <h2 class="modal-left-title">Unable to open Tomorro app</h2>
+            <p class="modal-left-text">
+                We couldn't find a running Tomorro to open it. To access all features and manage your tasks seamlessly, make sure Tomorro is up and running. Without it, the service won’t work as expected. Download or launch the app now to get started — your productivity depends on it.
+            </p>
+            <button class="modal-left-button"  onclick="window.location.href='{{ link.text }}'">Download Tomorro </button>
+        </div>
+
+        <!-- Правая часть -->
+        <div class="modal-right">
+            <img src="https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/67dd3fd25aeed07e32849ea3_Oro-Feature-White-Review.png" alt="Feature" class="modal-image">
+            <p class="modal-right-text">
+                Speed up your document review with Oro. It highlights areas to watch out for and gives recommendations based on your contractual policy.
+            </p>
+            <p class="modal-right-small-text">
+                AI-assisted review, now available.
+            </p>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS для открытия/закрытия модального окна -->
+    <script>
+    const modal = document.getElementById("myModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+
+    openBtn.onclick = () => {
+        modal.style.display = "flex";
+    }
+
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    }
+
+    // Закрытие по клику вне модального окна
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    </body>
+</html>

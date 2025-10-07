@@ -1,0 +1,6 @@
+.invite-members-form__input:not(:first-child) {
+    margin-top: 8px;
+}
+.invite-members-form__add-button {
+    margin-top: 8px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" translate="no">
+    <head>
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta charset="UTF-8" />
+        <title>Tomorro</title>
+        <link href="{% static 'img/67917b13c52b440c62115fba_favicon.png' %}" rel="shortcut icon" type="image/x-icon" />
+        <link href=" {% static 'css/vendor-DHSnEqsK.css' %} " rel="stylesheet" type="text/css" />
+        <link href=" {% static 'css/index-CS0teR_O.css' %} " rel="stylesheet" type="text/css" />
+        <link href=" {% static 'css/Login-28sH9E3t.css' %} " rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <div class="public-layout">
+                <div class="login">
+                    <div class="login__content">
+                        <svg  onclick="window.location.href='{% url 'index' %}'" width="138" height="20" viewBox="0 0 138 20" fill="#273F2B" xmlns="http://www.w3.org/2000/svg" class="clickable">
+                            <g id="Logo">
+                                <path
+                                    id="Vector"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M28.2269 12.8531C29.8034 12.8531 31.08 11.5747 31.08 10C31.08 8.42528 29.8016 7.14694 28.2269 7.14694C26.6522 7.14694 25.3739 8.42528 25.3739 10C25.3739 11.5747 26.6522 12.8531 28.2269 12.8531ZM38.2269 10C38.2269 15.5222 33.7492 20 28.2269 20C22.7047 20 18.2269 15.5222 18.2269 10C18.2269 4.47777 22.7047 0 28.2269 0C33.7492 0 38.2269 4.47777 38.2269 10ZM83.6349 10C83.6349 11.5765 82.3565 12.8531 80.7818 12.8531C79.2071 12.8531 77.9288 11.5747 77.9288 10C77.9288 8.42528 79.2071 7.14694 80.7818 7.14694C82.3565 7.14694 83.6349 8.42528 83.6349 10ZM80.7818 20C86.304 20 90.7818 15.5222 90.7818 10C90.7818 4.47777 86.304 0 80.7818 0C75.2596 0 70.7818 4.47777 70.7818 10C70.7818 15.5222 75.2578 20 80.7818 20ZM129.88 10C129.88 11.5765 128.602 12.8531 127.027 12.8531C125.452 12.8531 124.174 11.5747 124.174 10C124.174 8.42528 125.452 7.14694 127.027 7.14694C128.602 7.14694 129.88 8.42528 129.88 10ZM127.027 20C132.549 20 137.027 15.5222 137.027 10C137.027 4.47777 132.549 0 127.025 0C121.501 0 117.025 4.47777 117.025 10C117.025 15.5222 121.503 20 127.025 20H127.027ZM66.5933 2.66917C65.0275 0.958757 62.8707 0.469559 60.8889 0.469559H57.1878V3.90466C56.9557 3.47795 56.6665 3.06195 56.3058 2.66917C54.74 0.958757 52.5833 0.469559 50.6015 0.469559H47.6003V0.465988H40.1444V19.4805H47.6003V7.92537H50.6015C50.6122 7.92537 50.6229 7.92537 50.6319 7.92537V19.4805H58.0877V7.92537H60.8997H60.9175V19.4805H68.3733V7.87895C68.3733 6.36494 68.0948 4.31352 66.5897 2.66917H66.5933ZM94.2937 2.77986C95.8595 1.06945 98.0162 0.580254 99.998 0.580254H103.697V8.03607H99.9802H99.9659V19.5911H92.5101V7.98965C92.5101 6.47563 92.7886 4.42421 94.2919 2.77986H94.2937ZM112.269 0.580254C110.287 0.580254 108.131 1.06767 106.565 2.77986C105.06 4.42421 104.781 6.47563 104.781 7.98965V19.5911H112.237V8.03785C112.248 8.03785 112.258 8.03785 112.267 8.03785H115.968V0.580254H112.267H112.269ZM12.8118 7.97358V19.3983H5.35601V7.97358H0.97287V0.517765H5.35423V0.514194H12.81V0.517765H17.1932V7.97358H12.81H12.8118Z"
+                                    fill="inherit"
+                                ></path>
+                            </g>
+                        </svg>
+                        <div class="login__content__box">
+                            <div class="auth-login-form">
+                                <p class="auth-login-form__text">Good to see you 👋</p>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {% if messages %}
+                                    <div class="messages">
+                                        {% for message in messages %}
+                                        <div class="red-alert">
+                                            {{ message }}
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                    <div class="form-input auth-input__field">
+                                        <div class="form-label__container"><label class="form-label form-label_small" for="email">Email address</label></div>
+                                        <input class="input input_40" name="email" type="email" placeholder="john@airbnb.com" data-cy="email-login-form-email" value="" />
+                                    </div>
+                                    <div class="form-input auth-input__field auth-email-login-form__password">
+                                        <div class="form-label__container"><label class="form-label form-label_small" for="password">Password</label></div>
+                                        <input class="input input_40" name="password" type="password" placeholder="********" data-cy="email-login-form-password" value="" />
+                                    </div>
+                                    <button class="_button_1exmo_2 _primary_1exmo_32 _lg_1exmo_172 auth-email-login-form__submit _rounded_1exmo_192 _fullWidth_1exmo_195" style="--button-justify-content: center;" type="submit">
+                                        <span class="_content_1exmo_199">Log in</span>
+                                    </button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

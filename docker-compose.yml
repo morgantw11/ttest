@@ -1,0 +1,28 @@
+version: '3.9'
+
+
+services:
+  web:  # Django + Gunicorn
+    build: .
+    container_name: django_web
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  nginx:  # Nginx для статики и прокси
+    image: nginx:latest
+    container_name: django_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./exproj/static:/app/exproj/static
+      - ./exproj/media:/app/exproj/media
+    depends_on:
+      - web
+    restart: unless-stopped
+    

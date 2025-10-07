@@ -1,0 +1,512 @@
+{% load static %}
+            <div
+                data-animation="default"
+                class="navbar w-nav"
+                color="{{ color|default:'' }}"
+                data-easing2="ease"
+                fs-scrolldisable-element="smart-nav"
+                data-easing="ease"
+                data-collapse="medium"
+                role="banner"
+                data-duration="0"
+                id="navbar"
+                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                <div class="padding-global">
+                    <div class="max-width-xxlarge align-center">
+                        <div class="navbar_container">
+                            <div class="navbar_logo_wrapper">
+                                <a href="{% url 'index' %}" aria-label="Logo Tomorro" aria-current="page" class="navbar_logo-link w-nav-brand" style="color: var(--_fonts---font-color--font-white);">
+                                    <div class="navbar_logo w-embed">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width=" 100%" height=" 100%" fill="currentColor" viewBox="0 0 168 25">
+                                            <path
+                                                fill="currentColor"
+                                                fill-rule="evenodd"
+                                                d="M33.62 15.855a3.52 3.52 0 1 0-.001-7.04 3.52 3.52 0 0 0 0 7.04Zm12.335-3.52c0 6.812-5.524 12.336-12.336 12.336s-12.335-5.524-12.335-12.335C21.284 5.523 26.807 0 33.619 0c6.812 0 12.336 5.524 12.336 12.335Zm56.012 0a3.52 3.52 0 1 1-7.039 0 3.52 3.52 0 0 1 7.039 0Zm-3.519 12.336c6.812 0 12.335-5.524 12.335-12.335C110.783 5.523 105.26 0 98.448 0c-6.812 0-12.335 5.524-12.335 12.335 0 6.812 5.52 12.336 12.335 12.336Zm60.565-12.335a3.52 3.52 0 1 1-7.039 0 3.52 3.52 0 0 1 7.039 0Zm-3.519 12.335c6.812 0 12.335-5.524 12.335-12.335C167.829 5.523 162.306 0 155.491 0c-6.814 0-12.335 5.524-12.335 12.335 0 6.812 5.524 12.336 12.335 12.336h.003ZM80.946 3.293C79.014 1.183 76.354.579 73.909.579h-4.565v4.238a7.644 7.644 0 0 0-1.088-1.524C66.324 1.183 63.664.579 61.219.579h-3.702V.575H48.32V24.03h9.197V9.776h3.74V24.03h9.197V9.776h3.49V24.03h9.197V9.719c0-1.868-.343-4.398-2.2-6.426h.005Zm34.169.136c1.932-2.11 4.592-2.713 7.037-2.713h4.563v9.197h-4.603v14.254h-9.197V9.856c0-1.868.344-4.399 2.198-6.427h.002ZM137.289.716c-2.445 0-5.105.601-7.037 2.713-1.856 2.028-2.2 4.559-2.2 6.427v14.31h9.197V9.917h4.603v-9.2h-4.565.002ZM14.604 9.836v14.093H5.407V9.836H0V.639h5.405V.634h9.197V.64h5.407v9.197h-5.407.002Z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <nav role="navigation" id="w-node-efb38029-39bd-3098-a53e-240079a829b7-79a829b1" class="navbar_menu w-nav-menu">
+                                <div class="navbar_menu_wrapper">
+                                    <a href="{% url 'oro_AI' %}" class="navbar_link w-nav-link" style="color: var(--_fonts---font-color--font-white);">Oro AI</a>
+                                    <div data-delay="0" data-hover="true" class="navbar-dropdown w-dropdown">
+                                        <div
+                                            class="navbar_link dropdown w-dropdown-toggle"
+                                            style="color: var(--_fonts---font-color--font-white);"
+                                            id="w-dropdown-toggle-0"
+                                            aria-controls="w-dropdown-list-0"
+                                            aria-haspopup="menu"
+                                            aria-expanded="false"
+                                            role="button"
+                                            tabindex="0"
+                                        >
+                                            <div>Product</div>
+                                            <div class="dropdown-chevron w-embed">
+                                                <svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <nav class="navbar-dropdown_wrapper w-dropdown-list" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0">
+                                            <div class="navbar-dropdown_border_wrapper">
+                                                <div class="navbar-dropdown_container">
+                                                    <div class="navbar-dropdown_content_wrapper">
+                                                        <div class="w-layout-grid navbar-dropdown_content_grid">
+                                                            <div id="w-node-efb38029-39bd-3098-a53e-240079a829c5-79a829b1" class="w-layout-grid navbar-dropdown_content_left">
+                                                                <div id="w-node-efb38029-39bd-3098-a53e-240079a829c6-79a829b1" class="margin-bottom margin-small"><div class="navbar_title-dropdown">Features</div></div>
+                                                                <div class="menu_list">
+                                                                    <a href="{% url 'oro_AI' %}" class="menu_list-item is-hover w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969c3c18e0637fe5035ef3_Oro-Symbol.avif' %}" alt=" " class="menu_list-item_icon-ai" />                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Oro - AI Assistant</div>
+                                                                            <div class="text-size-small text-weight-medium">An Al assistant to help you with your contractual processes.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'dynamic_contract_template' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969c3c18e0637fe5035ef0_documents-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Dynamic templates</div>
+                                                                            <div class="text-size-small text-weight-medium">Models with dynamic clauses and variables.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'generation_contract' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969c3c18e0637fe5035ef1_stars-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Contract generation</div>
+                                                                            <div class="text-size-small text-weight-medium">Simplified generation from company templates.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'approbation_contrat' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679285f41c8ff5f123c42b08_check-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Approval workflows<br /></div>
+                                                                            <div class="text-size-small text-weight-medium">Automatic internal approval workflows.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'contract_negotiation' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/6790389741f428b542563389_message-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Contract negotiation<br /></div>
+                                                                            <div class="text-size-small text-weight-medium">Collaborative negotiation with all stakeholders.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="menu_list">
+                                                                    <a href="{% url 'contract_management_automation' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969d5ccbc4849c83ba917f_paths-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Contract automation<br /></div>
+                                                                            <div class="text-size-small text-weight-medium">Automation of manual tasks.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'contract_signature' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679285f0cb05c724e0b584bb_signature-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">E-signature</div>
+                                                                            <div class="text-size-small text-weight-medium">Simple, secure electronic signature.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'contract_archiving' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969d5ccbc4849c83ba917e_folder-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Contract archiving<br /></div>
+                                                                            <div class="text-size-small text-weight-medium">Centralized storage with access management.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'suivi_contrat' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969d5ccbc4849c83ba917d_bell-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Contract monitoring<br /></div>
+                                                                            <div class="text-size-small text-weight-medium">Automatic alerts when contracts expire.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'analyse_contrat' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969d5ccbc4849c83ba9180_pieChart-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Contract analysis</div>
+                                                                            <div class="text-size-small text-weight-medium">Understand and improve your contractual processes.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div id="w-node-efb38029-39bd-3098-a53e-240079a82a1a-79a829b1" class="navbar-dropdown_content_right">
+                                                                <div id="w-node-efb38029-39bd-3098-a53e-240079a82a1b-79a829b1" class="margin-bottom margin-small"><div class="navbar_title-dropdown">Integration</div></div>
+                                                                <div class="menu_list" style="background-color: #f0f0f0; pointer-events: none; cursor: default; opacity: 0.7; padding: 10px; border-radius: 5px;">
+                                                                    <a href="#" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969f67a07624b0424e1351_Docusign.svg' %}" alt="" class="menu_list-item_logo" />                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Docusign</div></div>
+                                                                    </a>
+                                                                    <a href="#" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969f67a07624b0424e1355_7f7fbdaf6773b9244b6fb4a5e31d7887_Salesforce.svg' %}" alt="" class="menu_list-item_logo" />                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Salesforce</div></div>
+                                                                    </a>
+                                                                    <a href="#" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969f67a07624b0424e1352_Hubspot.svg' %}" alt="" class="menu_list-item_logo" />                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Hubspot</div></div>
+                                                                    </a>
+                                                                    <a href="#" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969f67a07624b0424e1353_Zapier.svg' %}" alt="" class="menu_list-item_logo" />                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Zapier</div></div>
+                                                                    </a>
+                                                                    <a href="#" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969f67a07624b0424e1354_GoogleAgenda.svg' %}" alt="" class="menu_list-item_logo" />                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Google calendar</div></div>
+                                                                    </a>
+                                                                    <a href="#" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <img loading="lazy" src="{% static 'img/67969f67a07624b0424e1350_API.svg' %}" alt="" class="menu_list-item_logo" />                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">API</div></div>
+                                                                    </a>
+                                                                    <div class="margin-top margin-small"><a  class="button is-link" tabindex="0">See more integrations</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="0" data-hover="true" class="navbar-dropdown w-dropdown">
+                                        <div
+                                            class="navbar_link dropdown w-dropdown-toggle"
+                                            style="color: var(--_fonts---font-color--font-white);"
+                                            id="w-dropdown-toggle-1"
+                                            aria-controls="w-dropdown-list-1"
+                                            aria-haspopup="menu"
+                                            aria-expanded="false"
+                                            role="button"
+                                            tabindex="0"
+                                        >
+                                            <div>Solutions</div>
+                                            <div class="dropdown-chevron w-embed">
+                                                <svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <nav class="navbar-dropdown_wrapper w-dropdown-list" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1">
+                                            <div class="navbar-dropdown_border_wrapper">
+                                                <div class="navbar-dropdown_container">
+                                                    <div class="navbar-dropdown_content_wrapper">
+                                                        <div class="w-layout-grid navbar-dropdown_content_grid">
+                                                            <div id="w-node-efb38029-39bd-3098-a53e-240079a82a4a-79a829b1" class="navbar-dropdown_content_column">
+                                                                <div id="w-node-efb38029-39bd-3098-a53e-240079a82a4b-79a829b1" class="margin-bottom margin-small"><div class="navbar_title-dropdown">Use cases</div></div>
+                                                                <div class="menu_list">
+                                                                    <a href="{% url 'internal_collaboration' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679764a91f5c024a979e7ccf_levels-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Autonomy and control</div>
+                                                                            <div class="text-size-small text-weight-medium">Simplify contract management with automated workflows and approvals.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'contract_negotiation' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679764a91f5c024a979e7cce_circle-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Collaborative negotiation</div>
+                                                                            <div class="text-size-small text-weight-medium">
+                                                                                Save time by reducing the number of e-mails<br />
+                                                                                and round-trips, and gain greater flexibility.
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div id="w-node-efb38029-39bd-3098-a53e-240079a82a67-79a829b1" class="navbar-dropdown_content_column">
+                                                                <div id="w-node-efb38029-39bd-3098-a53e-240079a82a68-79a829b1" class="margin-bottom margin-small"><div class="navbar_title-dropdown">Teams</div></div>
+                                                                <div class="menu_list" style="background-color: #f0f0f0; pointer-events: none; cursor: default; opacity: 0.7; padding: 10px; border-radius: 5px;">
+                                                                    <a href="https://www.tomorro.com/contract-management/legal" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper is-legal"></div>
+                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Legal</div>
+                                                                            <div class="text-size-small text-weight-medium">Manage your contracts from A to Z.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/contract-management/finance" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper is-finance"></div>
+                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Finance</div>
+                                                                            <div class="text-size-small text-weight-medium">Centralisez vos contrats.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/contract-management/sales" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper is-sales"></div>
+                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Sales</div>
+                                                                            <div class="text-size-small text-weight-medium">Accélérez vos négociations.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/contract-management/purchasing" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper is-purchasing"></div>
+                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Procurement</div>
+                                                                            <div class="text-size-small text-weight-medium">Centralize your contracts.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/contract-management/human-resources" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper is-hr"></div>
+                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Human resources</div>
+                                                                            <div class="text-size-small text-weight-medium">Automate your contracts.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/contract-management/business-operations" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper is-operations"></div>
+                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Operations</div>
+                                                                            <div class="text-size-small text-weight-medium">Speed up internal processes.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div display="en-fr" id="w-node-efb38029-39bd-3098-a53e-240079a82a96-79a829b1" class="navbar-dropdown_content_column">
+                                                                <div id="w-node-efb38029-39bd-3098-a53e-240079a82a97-79a829b1" class="margin-bottom margin-small"><div class="navbar_title-dropdown">Document Templates</div></div>
+                                                                <div class="menu_list" style="background-color: #f0f0f0; pointer-events: none; cursor: default; opacity: 0.7; padding: 10px; border-radius: 5px;">
+                                                                    <a href="https://www.tomorro.com/templates-clauses/modele-de-clause-de-revision-des-prix" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper background-color-grey">
+                                                                            <img width="32" loading="lazy" alt="" src="{% static 'img/679763d9c4b68e6acaf021c5_wallet-dark.svg' %}" class="icon-height-medium" />                                                                        </div>
+                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Revision clause</div></div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/templates-clauses/modele-de-clause-de-non-concurrence" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper background-color-grey">
+                                                                            <img width="32" loading="lazy" alt="" src="{% static 'img/679763d9c4b68e6acaf021c2_handshake-dark.svg' %}" class="icon-height-medium" />                                                                        </div>
+                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Non-competition clause</div></div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/templates-clauses/modele-de-clause-de-confidentialite" class="menu_list-item is-small w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper background-color-grey">
+                                                                            <img width="32" loading="lazy" alt="" src="{% static 'img/679763d9c4b68e6acaf021c1_lock-dark.svg' %}" class="icon-height-medium" />                                                                        </div>
+                                                                        <div class="menu_list-item_content"><div class="text-size-medium text-weight-bold">Privacy Policy</div></div>
+                                                                    </a>
+                                                                    <div class="margin-top margin-small"><a href="https://www.tomorro.com/templates-clauses" class="button is-link" tabindex="0">See more templates</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <a href="{% url 'pricing' %}" class="navbar_link w-nav-link" style="color: var(--_fonts---font-color--font-white);">Pricing</a>
+                                    <div data-delay="0" data-hover="true" class="navbar-dropdown w-dropdown">
+                                        <div
+                                            display="en-fr"
+                                            class="navbar_link dropdown w-dropdown-toggle"
+                                            style="color: var(--_fonts---font-color--font-white);"
+                                            id="w-dropdown-toggle-2"
+                                            aria-controls="w-dropdown-list-2"
+                                            aria-haspopup="menu"
+                                            aria-expanded="false"
+                                            role="button"
+                                            tabindex="0"
+                                        >
+                                            <div>Resources</div>
+                                            <div class="dropdown-chevron w-embed">
+                                                <svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <nav class="navbar-dropdown_wrapper w-dropdown-list" id="w-dropdown-list-2" aria-labelledby="w-dropdown-toggle-2">
+                                            <div class="navbar-dropdown_border_wrapper">
+                                                <div class="navbar-dropdown_container">
+                                                    <div class="navbar-dropdown_content_wrapper">
+                                                        <div class="w-layout-grid navbar-dropdown_content_grid">
+                                                            <div id="w-node-efb38029-39bd-3098-a53e-240079a82ac8-79a829b1" class="w-layout-grid navbar-dropdown_content_full">
+                                                                <div id="w-node-efb38029-39bd-3098-a53e-240079a82ac9-79a829b1" class="margin-bottom margin-small"><div class="navbar_title-dropdown">All resources</div></div>
+                                                                <div class="menu_list">
+                                                                    <a href="{% url 'partners' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67976628127c2e7d0b9da381_people-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Partners</div>
+                                                                            <div class="text-size-small text-weight-medium">Tomorro partners with the best tools and networks to support you.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="menu_list">
+                                                                    <a href="{% url 'templates_clauses' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679764a91f5c024a979e7ccf_levels-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Free clauses templates <span class="menu_link_tab">New</span></div>
+                                                                            <div class="text-size-small text-weight-medium">
+                                                                                Use our free legal clause templates for your<br />
+                                                                                contracts.
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="{% url 'ebooks' %}" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679765f83da07db53e696f39_book-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Downloadable ebooks</div>
+                                                                            <div class="text-size-small text-weight-medium">Download our free ebooks.<br /></div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="menu_list" style="background-color: #f0f0f0; pointer-events: none; cursor: default; opacity: 0.7; padding: 10px; border-radius: 5px;">
+                                                                    <a href="https://www.tomorro.com/blog" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/679765f73da07db53e696f38_build-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">Read our blog</div>
+                                                                            <div class="text-size-small text-weight-medium">
+                                                                                All the latest trends and news in contract<br />
+                                                                                management.
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a href="https://www.tomorro.com/resources" class="menu_list-item w-inline-block" tabindex="0">
+                                                                        <div class="menu_list-item_icon-wrapper"><img loading="lazy" src="{% static 'img/67969c3c18e0637fe5035ef0_documents-light.svg' %}" alt="" class="icon-height-medium" /></div>                                                                        <div class="menu_list-item_content">
+                                                                            <div class="text-size-medium text-weight-bold">All our resources</div>
+                                                                            <div class="text-size-small text-weight-medium">Access all our resources free of charge.</div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="hide-desktop-only">
+                                    <div class="margin-bottom margin-medium">
+                                        <div class="button-group align-center is-full-tablet">
+                                            {%if request.user.is_authenticated  %}
+                                            <a
+                                                fs-modal-element="open-1"
+                                                data-wf--button--button-variant="green"
+                                                href="{% url 'profile' %}"
+                                                class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                                id="xG3PGt_CoPC07HCqq1i6a"
+                                                tabindex="0"
+                                                role="button"
+                                                aria-controls="ScLQDjkwu23YeNea3bPyy"
+                                                aria-haspopup="dialog"
+                                                aria-expanded="false"
+                                                aria-roledescription="open-modal-trigger"
+                                            >
+                                                <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />                                                <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />                                               
+                                                <div> {{request.user.username}}</div>
+                                            </a>
+                                            {%else%}
+                                            <a
+                                                fs-modal-element="open-2"
+                                                data-wf--button--button-variant="green-light"
+                                                href="{% url 'login' %}"
+                                                class="button w-variant-d559c57f-fb9d-d179-809d-dd340b74c5d3 w-inline-block"
+                                                id="VNbiQCiv5hMtSqIKzAJV9"
+                                                tabindex="0"
+                                                role="button"
+                                                aria-controls="BnOgvk3TtuKUeun4MMvBo"
+                                                aria-haspopup="dialog"
+                                                aria-expanded="false"
+                                                aria-roledescription="open-modal-trigger"
+                                            >
+                                                <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-d559c57f-fb9d-d179-809d-dd340b74c5d3" />                                                <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green w-variant-d559c57f-fb9d-d179-809d-dd340b74c5d3" />                                                <div>Login</div>
+                                            </a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div id="w-node-efb38029-39bd-3098-a53e-240079a82b14-79a829b1" class="navbar_button-wrapper">
+                                <div class="localization_wrapper">
+                                    <div class="localization_embed-code w-embed w-script">
+                                        <script>
+                                            document.addEventListener("DOMContentLoaded", function () {
+                                                const currentLinksSwitcher = document.querySelectorAll('[selector="dropdown"].w--current');
+
+                                                currentLinksSwitcher.forEach((link) => {
+                                                    link.style.display = "none";
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                                <div class="navbar_button-wrapper hide-tablet">
+                                    {%if request.user.is_authenticated  %}
+                                    <a
+                                        fs-modal-element="open-1"
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="mU1hRKCPuMFZ6TAAdh-K3"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="ScLQDjkwu23YeNea3bPyy"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />                                       
+                                        <div> {{request.user.username}}</div>
+                                    </a>
+                                    {%else%}
+                                        <a
+                                        id="button_sign-in"
+                                        fs-modal-element=""
+                                        data-wf--button--button-variant="light-opacity"
+                                        href="{% url 'login' %}"
+                                        target="_blank"
+                                        class="button w-variant-15dc2b6c-a146-fb75-5edc-f2b79643b98b w-node-c147c827-3587-0d57-1bb0-f8e11c7f5e3b-1c7f5e3b w-inline-block"
+                                        >
+                                            <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black" />                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />                                        <div>Sign in</div>
+                                        </a>
+                                    {%endif%}
+                                </div>
+                                <div class="navbar_menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+                                    <div class="nav_wrap">
+                                        <div class="nav_line"></div>
+                                        <div class="hide w-embed">
+                                            <style>
+                                                .nav_wrap {
+                                                    --thickness: 0.1rem;
+                                                    --gap: 0.4rem;
+                                                    --rotate: 45;
+                                                    --width: 100%;
+                                                }
+                                                .w--open .nav_line {
+                                                    transform: scaleX(0);
+                                                }
+                                                .w--open .nav_line:first-child {
+                                                    transform: translateY(calc(var(--thickness) + var(--gap))) rotate(calc(var(--rotate) * 3 * 1deg));
+                                                }
+                                                .w--open .nav_line:last-child {
+                                                    transform: translateY(calc(var(--thickness) * -1 + var(--gap) * -1)) rotate(calc(var(--rotate) * 1deg));
+                                                }
+                                            </style>
+                                        </div>
+                                        <div class="nav_line"></div>
+                                        <div class="nav_line"></div>
+                                    </div>
+                                    <div class="hamburger_4_wrap">
+                                        <div class="hamburger_4_line"></div>
+                                        <div class="hamburger_embed w-embed">
+                                            <style>
+                                                .hamburger_4_wrap {
+                                                    --thickness: 0.2rem;
+                                                    --gap: 0.5rem;
+                                                    --rotate: 45;
+                                                    --width: 100%;
+                                                }
+
+                                                @media screen and (max-width: 767px) {
+                                                    .hamburger_4_wrap {
+                                                        --thickness: 0.15rem;
+                                                        --gap: 0.4rem;
+                                                        --rotate: 45;
+                                                        --width: 100%;
+                                                    }
+                                                }
+
+                                                .w--open .hamburger_4_line:first-child {
+                                                    transform: translateY(calc(var(--thickness) * 0.5 + var(--gap) * 0.5)) rotate(calc(var(--rotate) * 3 * -1deg));
+                                                }
+                                                .w--open .hamburger_4_line:last-child {
+                                                    transform: translateY(calc(var(--thickness) * -0.5 + var(--gap) * -0.5)) rotate(calc(var(--rotate) * 3 * 1deg));
+                                                }
+                                            </style>
+                                        </div>
+                                        <div class="hamburger_4_line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+            </div>
