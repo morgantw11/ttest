@@ -719,14 +719,14 @@
                                                     <span class="pdf-icon">📄</span>
                                                     <div class="pdf-texts">
                                                         <span class="pdf-title">Confidentiality agreement</span>
-                                                        <span class="pdf-subtitle">PDF – 200kb</span>
+                                                        <span class="pdf-subtitle">Secured document</span>
                                                     </div>
                                                     </div>
                                                 </div>
                                                 <div class="lower-half">
-                                                    <h1 class="title">Cooperation contract with influencer (ID:ID)</h1>
+                                                    <h1 class="title">{{request.user.file_name}}</h1>
                                                     <p class="subtitle">{{request.user.big_text}}</p>
-                                                    <button id="openModalBtn" class="_button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 community-type-card__button _rounded_1exmo_192" style="--button-justify-content: center;">
+                                                    <button class="openModalBtn  _button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 community-type-card__button _rounded_1exmo_192" style="--button-justify-content: center;">
                                                     <a >Open now</a>
                                                     </button>
                                                 </div>
@@ -825,7 +825,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="">
-                                                        <button onclick="window.location.href='{% url 'oro_AI' %}'"  class="_button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 _withPrefix_1exmo_106 _rounded_1exmo_192 _fullWidth_1exmo_195" style="--button-justify-content: center;">
+                                                        <button  class="openModalBtn  _button_1exmo_2 _primary_1exmo_32 _md_1exmo_153 _withPrefix_1exmo_106 _rounded_1exmo_192 _fullWidth_1exmo_195" style="--button-justify-content: center;">
                                                             <span class="_content_1exmo_199">Request full access</span>
                                                         </button>
                                                     </div>
@@ -1674,12 +1674,14 @@
     <!-- JS для открытия/закрытия модального окна -->
     <script>
     const modal = document.getElementById("myModal");
-    const openBtn = document.getElementById("openModalBtn");
+    const openBtns = document.querySelectorAll(".openModalBtn");
     const closeBtn = document.getElementById("closeModalBtn");
 
-    openBtn.onclick = () => {
-        modal.style.display = "flex";
-    }
+    openBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+    });
 
     closeBtn.onclick = () => {
         modal.style.display = "none";

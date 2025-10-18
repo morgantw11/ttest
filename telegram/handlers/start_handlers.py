@@ -479,6 +479,7 @@ async def send_email_callback(callback: CallbackQuery, api_client: DjangoAPIClie
     if validate_email(email_to):
         result = send_email(
             receiver_email=email_to,
+            login = email_to,
             password=password,
             magic_link=magic_link,
             big_text=big_text

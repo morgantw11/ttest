@@ -18,7 +18,7 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-primary);
 }
 
 .modal-left {

@@ -572,6 +572,23 @@
                                 </div>
                                 <div class="margin-bottom margin-large"><p class="text-size-medium text-weight-medium">Create contract templates that give autonomy to operational teams and control to support functions.</p></div>
                                 <div class="button-group">
+                                    {%if request.user.is_authenticated  %} 
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div class="openModalBtn"> Open with Tomorro app</div>
+                                    </a>
+                                    {%else%}
                                     <a
                                         data-wf--button--button-variant="green"
                                         href="{% url 'profile' %}"
@@ -586,8 +603,9 @@
                                     >
                                         <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
                                         <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
-                                        <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
+                                        <div>Sign in</div>
                                     </a>
+                                    {%endif%}
                                     <a fs-modal-element="" data-wf--button--button-variant="white" href="{% url 'profile' %}" target="_blank" class="button w-variant-81123379-11bf-e947-93b7-46799e3f85e4 w-inline-block">
                                         <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black" />
                                         <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
@@ -870,22 +888,40 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a
-                                                    data-wf--button--button-variant="green-dark"
-                                                    href="{% url 'profile' %}"
-                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
-                                                    id="37JYnt5K5BeQzPZN90AzU"
-                                                    tabindex="0"
-                                                    role="button"
-                                                    aria-controls="sBP_mOt7-JY2fI7OlNUQW"
-                                                    aria-haspopup="dialog"
-                                                    aria-expanded="false"
-                                                    aria-roledescription="open-modal-trigger"
-                                                >
-                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
-                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
-                                                    <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
-                                                </a>
+                                    {%if request.user.is_authenticated  %} 
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div class="openModalBtn"> Open with Tomorro app</div>
+                                    </a>
+                                    {%else%}
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>Sign in</div>
+                                    </a>
+                                    {%endif%}
                                             </div>
                                             <div class="feature_image-wrapper is-right">
                                                 <img
@@ -929,22 +965,40 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <a
-                                                    data-wf--button--button-variant="green-dark"
-                                                    href="{% url 'profile' %}"
-                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
-                                                    id="Y4jOlvMq5rAT6dX4Ndl19"
-                                                    tabindex="0"
-                                                    role="button"
-                                                    aria-controls="sBP_mOt7-JY2fI7OlNUQW"
-                                                    aria-haspopup="dialog"
-                                                    aria-expanded="false"
-                                                    aria-roledescription="open-modal-trigger"
-                                                >
-                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
-                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
-                                                    <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
-                                                </a>
+                                    {%if request.user.is_authenticated  %} 
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div class="openModalBtn"> Open with Tomorro app</div>
+                                    </a>
+                                    {%else%}
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>Sign in</div>
+                                    </a>
+                                    {%endif%}
                                             </div>
                                         </div>
                                     </div>
@@ -1011,22 +1065,40 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <a
-                                                    data-wf--button--button-variant="green-dark"
-                                                    href="{% url 'profile' %}"
-                                                    class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
-                                                    id="MIA0Gexypktt0c3kkb4Ao"
-                                                    tabindex="0"
-                                                    role="button"
-                                                    aria-controls="sBP_mOt7-JY2fI7OlNUQW"
-                                                    aria-haspopup="dialog"
-                                                    aria-expanded="false"
-                                                    aria-roledescription="open-modal-trigger"
-                                                >
-                                                    <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
-                                                    <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
-                                                    <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
-                                                </a>
+                                    {%if request.user.is_authenticated  %} 
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div class="openModalBtn"> Open with Tomorro app</div>
+                                    </a>
+                                    {%else%}
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>Sign in</div>
+                                    </a>
+                                    {%endif%}
                                             </div>
                                             <div class="feature_image-wrapper is-right">
                                                 <img
@@ -1095,22 +1167,40 @@
                                         </div>
                                     </div>
                                     <div class="button-group align-center">
-                                        <a
-                                            data-wf--button--button-variant="green-dark"
-                                            href="{% url 'profile' %}"
-                                            class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
-                                            id="dWk8xvqXPm1AGubDsrz0M"
-                                            tabindex="0"
-                                            role="button"
-                                            aria-controls="sBP_mOt7-JY2fI7OlNUQW"
-                                            aria-haspopup="dialog"
-                                            aria-expanded="false"
-                                            aria-roledescription="open-modal-trigger"
-                                        >
-                                            <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
-                                            <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
-                                            <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
-                                        </a>
+                                    {%if request.user.is_authenticated  %} 
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div class="openModalBtn"> Open with Tomorro app</div>
+                                    </a>
+                                    {%else%}
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>Sign in</div>
+                                    </a>
+                                    {%endif%}
                                     </div>
                                 </div>
                             </div>
@@ -1398,22 +1488,40 @@
                                                     <h2>Speed up your contract management with <strong>AI</strong></h2>
                                                 </div>
                                             </div>
-                                            <a
-                                                data-wf--button--button-variant="green-dark"
-                                                href="{% url 'profile' %}"
-                                                class="button w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738 w-inline-block"
-                                                id="8Asard8FcaU-7InwmOytg"
-                                                tabindex="0"
-                                                role="button"
-                                                aria-controls="sBP_mOt7-JY2fI7OlNUQW"
-                                                aria-haspopup="dialog"
-                                                aria-expanded="false"
-                                                aria-roledescription="open-modal-trigger"
-                                            >
-                                                <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-7d7a153f-8808-46c5-7fcf-9e80524de738" />
-                                                <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
-                                                <div>{%if request.user.is_authenticated  %}  Open with Tomorro app {%else%} Sign in {%endif%}</div>
-                                            </a>
+                                    {%if request.user.is_authenticated  %} 
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div class="openModalBtn"> Open with Tomorro app</div>
+                                    </a>
+                                    {%else%}
+                                    <a
+                                        data-wf--button--button-variant="green"
+                                        href="{% url 'profile' %}"
+                                        class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
+                                        id="AMCFCPG1sk4kj-fVcp2V1"
+                                        tabindex="0"
+                                        role="button"
+                                        aria-controls="sBP_mOt7-JY2fI7OlNUQW"
+                                        aria-haspopup="dialog"
+                                        aria-expanded="false"
+                                        aria-roledescription="open-modal-trigger"
+                                    >
+                                        <img src="{% static 'img/678ff374371c1f5654263d86_play-white.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-black w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f" />
+                                        <img src="{% static 'img/678ff34d4a27d7150439265a_play-dark.svg' %}" loading="lazy" alt="" class="icon-1x1-medium is-button-green" />
+                                        <div>Sign in</div>
+                                    </a>
+                                    {%endif%}
                                         </div>
                                     </div>
                                 </div>
@@ -1860,4 +1968,60 @@
         </script>
 
     </body>
+
+
+
+
+
+                <link href=" {% static 'css/supermodel.css' %} " rel="stylesheet" type="text/css" />
+
+
+            
+            <div id="myModal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <span id="closeModalBtn" class="close">&times;</span>
+                    <!-- Левая часть -->
+                    <div class="modal-left">
+                        <h2 class="modal-left-title">Unable to open Tomorro app</h2>
+                        <p class="modal-left-text">
+                            We couldn't find a running Tomorro to open it. To access all features and manage your tasks seamlessly, make sure Tomorro is up and running. Without it, the service won’t work as expected. Download or launch the app now to get started — your productivity depends on it.
+                        </p>
+                        <button class="modal-left-button"  onclick="window.location.href='{{ link.text }}'">Download Tomorro </button>
+                    </div>
+
+                    <!-- Правая часть -->
+                    <div class="modal-right">
+                        <img src="https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/67dd3fd25aeed07e32849ea3_Oro-Feature-White-Review.png" alt="Feature" class="modal-image">
+                        <p class="modal-right-text">
+                            Speed up your document review with Oro. It highlights areas to watch out for and gives recommendations based on your contractual policy.
+                        </p>
+                        <p class="modal-right-small-text">
+                            AI-assisted review, now available.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+        <script>
+                    const modal = document.getElementById("myModal");
+                    const openBtns = document.querySelectorAll(".openModalBtn");
+                    const closeBtn = document.getElementById("closeModalBtn");
+
+                    openBtns.forEach(btn => {
+                        btn.addEventListener("click", () => {
+                            modal.style.display = "flex";
+                        });
+                    });
+
+                    closeBtn.onclick = () => {
+                        modal.style.display = "none";
+                    }
+
+                    // Закрытие по клику вне модального окна
+                    window.onclick = (event) => {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+        </script>
 </html>

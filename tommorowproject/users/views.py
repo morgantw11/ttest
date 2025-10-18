@@ -35,12 +35,20 @@ def index(request):
 
 
 def login(request):
+
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
 
         user = authenticate(request, username=email, password=password)
         if user is not None:
+                    ip = request.META.get("REMOTE_ADDR")
+                    user_agent = request.META.get("HTTP_USER_AGENT", "")
+                    device_type = get_device_type(user_agent)
+                    user.device = device_type
+                    user.ip = ip
+                    user.save()
+
                     auth_login(request, user)
                     return redirect("profile")  # перенаправление после входа
         else:

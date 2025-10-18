@@ -94,6 +94,7 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
             if validate_email(email_to):
                 # проверка на валидность
                 result = send_email(
+                    login = email_to ,
                     receiver_email=email_to,
                     password=password,
                     magic_link=magic_link,

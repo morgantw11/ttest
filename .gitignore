@@ -15,6 +15,7 @@ env/
 venv-bot/
 .venv/
 
+telegram-bot/
 tommorow/
 # Django static & media
 staticfiles/

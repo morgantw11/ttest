@@ -366,11 +366,9 @@
                                         <div class="button-group align-center is-full-tablet">
                                             {%if request.user.is_authenticated  %}
                                             <a
-                                                fs-modal-element="open-1"
                                                 data-wf--button--button-variant="green"
                                                 href="{% url 'profile' %}"
                                                 class="button w-variant-92fd40eb-a34a-8513-8718-2a6df6e4fc5f w-inline-block"
-                                                id="xG3PGt_CoPC07HCqq1i6a"
                                                 tabindex="0"
                                                 role="button"
                                                 aria-controls="ScLQDjkwu23YeNea3bPyy"
@@ -383,7 +381,6 @@
                                             </a>
                                             {%else%}
                                             <a
-                                                fs-modal-element="open-2"
                                                 data-wf--button--button-variant="green-light"
                                                 href="{% url 'login' %}"
                                                 class="button w-variant-d559c57f-fb9d-d179-809d-dd340b74c5d3 w-inline-block"
@@ -510,3 +507,4 @@
                 </div>
                 <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
             </div>
+
