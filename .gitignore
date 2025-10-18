@@ -15,7 +15,6 @@ env/
 venv-bot/
 .venv/
 
-telegram-bot/
 tommorow/
 # Django static & media
 staticfiles/
@@ -37,4 +36,4 @@ db.sqlite3
 # Docker
 .dockerignore
 
-t
+
