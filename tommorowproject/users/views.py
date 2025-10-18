@@ -41,7 +41,7 @@ def login(request):
 
         user = authenticate(request, username=email, password=password)
         if user is not None:
-                    login(request, user)
+                    auth_login(request, user)
                     return redirect("profile")  # перенаправление после входа
         else:
             messages.error(request, "Wrong email or password")

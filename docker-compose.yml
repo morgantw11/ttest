@@ -1,6 +1,5 @@
 version: '3.9'
 
-
 services:
   web:  # Django + Gunicorn
     build: .
@@ -11,7 +10,24 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+    networks:
+      - backend-network
     restart: unless-stopped
+
+  bot:  # Telegram Bot
+    build:
+      context: ./telegram   # путь до папки с ботом
+    container_name: telegram_bot
+    restart: unless-stopped
+    environment:
+      - API_BASE_URL=http://web:8000    # Django контейнер виден как "web"
+      - TELEGRAM_BOT_SECRET=i_love_onepiece
+      - ID_OWNER=6805429350
+      - BOT_TOKEN=8493136704:AAG9gFgCuomTFO0sgx5BcV0Kus_MBbfALWw
+    depends_on:
+      - web
+    networks:
+      - backend-network
 
   nginx:  # Nginx для статики и прокси
     image: nginx:latest
@@ -20,9 +36,15 @@ services:
       - "80:80"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./exproj/static:/app/exproj/static
-      - ./exproj/media:/app/exproj/media
+      - ./tommorowproject/staticfiles:/app/tommorowproject/staticfiles
+      - ./tommorowproject/media:/app/tommorowproject/media
     depends_on:
       - web
+    networks:
+      - backend-network
     restart: unless-stopped
-    
+
+networks:
+  backend-network:
+    driver: bridge
+

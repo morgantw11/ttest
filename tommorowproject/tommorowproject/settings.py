@@ -4,11 +4,11 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DOMAIN = os.getenv("DOMAIN")
+API_BASE_URL = os.getenv("API_BASE_URL")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SECRET_KEY = 'django-insecure-t(yajdyw*pm#58mvak08364@6pajsq!*b(sxww)@!f0#4qkoy('
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -102,15 +102,18 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CSRF_TRUSTED_ORIGINS=[
-    DOMAIN,
+    'https://tomorro.biz',
+    'http://tomorro.biz',
     'http://127.0.0.1:8000',
     'http://localhost:8000',
 ]
 
-CSRF_COOKIE_SECURE = True
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
