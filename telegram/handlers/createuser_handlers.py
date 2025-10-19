@@ -6,8 +6,6 @@ from aiogram.fsm.state import StatesGroup, State
 from filters import IsGroupWithOwner
 from api_client import DjangoAPIClient
 from .utils import generate_password
-from send_mail import send_email
-from validate_email import validate_email
 
 class CreateUserStates(StatesGroup):
     waiting_username = State()
@@ -79,43 +77,16 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
     )
 
     if status == 201:
-        user_id = response_data.get("id")
-        magic_payload = {"user_id": user_id}
-        magic_data, magic_status = await api_client.post(message.from_user.id, "api/magic-link/create/", json=magic_payload)
-        
-
-        magic_link = magic_data.get("magic_link") if magic_status == 201 else "Не удалось сгенерировать ссылку"
-
-        if payload["role"] == "user":
-            email_to = payload["username"]
-            password = payload["password"]
-            big_text = payload["big_text"]
-
-            if validate_email(email_to):
-                # проверка на валидность
-                result = send_email(
-                    login = email_to ,
-                    receiver_email=email_to,
-                    password=password,
-                    magic_link=magic_link,
-                    big_text=big_text
-                )
-                await message.answer(result, reply_markup=keyboard)
-            else:
-                # некорректный email
-                await message.answer("❌ Некорректный email получателя", reply_markup=keyboard)
-                
-        else:
-            inline_keyboard = InlineKeyboardMarkup(
+        inline_keyboard = InlineKeyboardMarkup(
                 inline_keyboard=[
                     [InlineKeyboardButton(text=f"👤 {payload['username']}", callback_data=f"user_{response_data.get('id')}")],
                 ]
-            )
-            await message.answer(
+        )
+        await message.answer(
                 f"✅ Пользователь создан!",
                 reply_markup=inline_keyboard
-            )
-            await message.answer("Для большой информации нажмите на кнопку выше", reply_markup=keyboard)
+        )
+        await message.answer("Для большой информации нажмите на кнопку выше", reply_markup=keyboard)
 
     else:
         await message.answer(f"❌ Ошибка при создании пользователя:\n{response_data}", reply_markup=keyboard)

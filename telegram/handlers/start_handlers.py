@@ -414,7 +414,7 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
     if status == 200:
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
-                [InlineKeyboardButton(text="Отправить email", callback_data="send_emeil_{user_id}")],
+                [InlineKeyboardButton(text="Отправить email", callback_data=f"send_emeil_{user_id}")],
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}", callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
@@ -441,7 +441,7 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
 
 @start_router.callback_query(IsGroupWithOwner,F.data.startswith("send_emeil_"))
 async def send_email_callback(callback: CallbackQuery, api_client: DjangoAPIClient):
-    user_id = int(callback.data.split("_")[1])
+    user_id = int(callback.data.split("_")[2])
     data, status = await api_client.get(callback.from_user.id, f"api/users/{user_id}/")
 
     keyboard = ReplyKeyboardMarkup(

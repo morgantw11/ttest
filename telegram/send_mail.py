@@ -41,7 +41,7 @@ def send_email(receiver_email,login,password,magic_link,big_text):
             msg = MIMEText(html_content,"html")
             msg["From"] = sender_db # сюда вставить 
             msg["To"] = receiver_email
-            msg["Subject"] = f"Welcome to Tommorow! {big_text} invites you to sign acontract!"
+            msg["Subject"] = f"Welcome to Tommoro! {big_text} invites you to sign a contract!"
 
             server.sendmail(sender_db, receiver_email, msg.as_string())
             server.quit()

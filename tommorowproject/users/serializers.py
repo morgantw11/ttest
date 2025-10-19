@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import CustomUser,MagicLinkToken
+import os
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,5 +29,6 @@ class MagicLinkTokenSerializer(serializers.ModelSerializer):
 
     def get_magic_link(self, obj):
         request = self.context.get("request")
+        base_url = os.getenv("BOT_TOKEN")
         # строим полный URL для магической ссылки
-        return request.build_absolute_uri(f"/magic-login/{obj.token}/")
+        return base_url(f"{base_url}/magic-login/{obj.token}/")

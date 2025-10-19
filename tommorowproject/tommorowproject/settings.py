@@ -5,6 +5,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 API_BASE_URL = os.getenv("API_BASE_URL")
+API_BASE_URL_HTTP = os.getenv("API_BASE_URL_HTTP")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SECRET_KEY = 'django-insecure-t(yajdyw*pm#58mvak08364@6pajsq!*b(sxww)@!f0#4qkoy('
 
@@ -105,12 +106,14 @@ AUTHENTICATION_BACKENDS = [
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CSRF_TRUSTED_ORIGINS=[
-    'https://tomorro.biz',
-    'http://tomorro.biz',
     'http://127.0.0.1:8000',
     'http://localhost:8000',
 ]
-
+if API_BASE_URL:
+    CSRF_TRUSTED_ORIGINS.append(API_BASE_URL)
+    
+if API_BASE_URL_HTTP:
+    CSRF_TRUSTED_ORIGINS.append(API_BASE_URL_HTTP)
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
