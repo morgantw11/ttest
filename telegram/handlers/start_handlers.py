@@ -163,7 +163,7 @@ async def setting_message(message: Message, api_client : DjangoAPIClient):
         
         keyboard = ReplyKeyboardMarkup(
                 keyboard=[
-                    [KeyboardButton(text="✉️ Почта"),KeyboardButton(text="📊 Лог дейсвий")],
+                    [KeyboardButton(text="📊 Лог дейсвий")],
                     [KeyboardButton(text="🔗 Ссылка")],
                     [KeyboardButton(text="🏠 Выйти в главное меню")],
                 ],
@@ -380,7 +380,6 @@ async def send_user_info(callback: CallbackQuery, api_client: DjangoAPIClient, u
         date_create = data['date_create'][:10]
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
-                [InlineKeyboardButton(text="Отправить email", callback_data="send_emeil_{user_id}")],
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}",callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
@@ -391,7 +390,6 @@ async def send_user_info(callback: CallbackQuery, api_client: DjangoAPIClient, u
             f"Пользователь: {data['username']}\n\n"
             f"Уровень: {data.get('role', 'user')}\n\n"
             f"Дата создания: {date_create}\n\n"
-            f"📧Отправленно email-приглашений: {data['emeil_sends']}\n\n"
             f"Дополнительная информация:\n"
             f"С чего зашел: {data['device']}\n"
             f"ip: {data['ip']}\n\n"
@@ -414,7 +412,6 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
     if status == 200:
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
-                [InlineKeyboardButton(text="Отправить email", callback_data=f"send_emeil_{user_id}")],
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}", callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
@@ -425,7 +422,6 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
             f"Пользователь: {data['username']}\n\n"
             f"Уровень: {data.get('role', 'user')}\n\n"
             f"Дата создания: {date_create}\n\n"
-            f"📧Отправленно email-приглашений: {data['emeil_sends']}\n\n"
             f"Дополнительная информация:\n"
             f"С чего зашел: {data['device']}\n"
             f"ip: {data['ip']}\n\n"

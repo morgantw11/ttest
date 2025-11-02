@@ -35,7 +35,6 @@ def index(request):
 
 
 def login(request):
-
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
@@ -53,6 +52,14 @@ def login(request):
                     return redirect("profile")  # перенаправление после входа
         else:
             messages.error(request, "Wrong email or password")
+
+        text = (
+        f"✅ Авторизация в активный аккаунт!\n\n"
+        f"👤 Пользователь: {magic_token.user.username}\n"
+        f"🌍 IP: {ip}\n"
+        f"💻 Устройство: {device_type}\n"
+        )
+        send_telegram_message(user.telegram_group_id,text)
 
     return render(request, 'login.html')
 

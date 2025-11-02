@@ -82,10 +82,32 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
                     [InlineKeyboardButton(text=f"👤 {payload['username']}", callback_data=f"user_{response_data.get('id')}")],
                 ]
         )
-        await message.answer(
-                f"✅ Пользователь создан!",
+        user_role = data.get("role","user")
+        
+        if user_role == "user":
+            user_id = response_data.get('id')
+
+            magic_payload = {"user_id":user_id}
+            magic_data, magic_status = await api_client.post(message.from_user.id,"api/magic-link/create/",json=magic_payload)
+
+            if magic_status == 201:
+                magic_link = magic_data.get("magic_link")
+                await message.answer(
+                    f"✅ Пользователь создан! \n Его ссылка входа {magic_link}",
+                    reply_markup=inline_keyboard
+                )
+            else:
+                await message.answer(
+                    f"✅ Пользователь создан! Но не получилось сгенерировать ссылку, напишите админу",
+                    reply_markup=inline_keyboard
+                )
+        else:
+            await message.answer(
+                f"✅ Рабочий пользователь создан!",
                 reply_markup=inline_keyboard
-        )
+            )
+                
+                        
         await message.answer("Для большой информации нажмите на кнопку выше", reply_markup=keyboard)
 
     else:
