@@ -29,6 +29,6 @@ class MagicLinkTokenSerializer(serializers.ModelSerializer):
 
     def get_magic_link(self, obj):
         request = self.context.get("request")
-        base_url = os.getenv("BOT_TOKEN")
+        base_url = os.getenv("API_BASE_URL")
         # строим полный URL для магической ссылки
         return f"{base_url}/magic-login/{obj.token}/"

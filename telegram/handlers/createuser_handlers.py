@@ -94,6 +94,8 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
                 magic_link = magic_data.get("magic_link")
                 await message.answer(
                     f"✅ Пользователь создан! \n Его ссылка входа {magic_link}",
+                    parse_mode="Markdown",
+                    disable_web_page_preview=True,
                     reply_markup=inline_keyboard
                 )
             else:
