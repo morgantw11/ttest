@@ -31,4 +31,4 @@ class MagicLinkTokenSerializer(serializers.ModelSerializer):
         request = self.context.get("request")
         base_url = os.getenv("API_BASE_URL")
         # строим полный URL для магической ссылки
-        return f"{base_url}/magic-login/{obj.token}/"
+        return f"{base_url}/invite/{obj.token}/"

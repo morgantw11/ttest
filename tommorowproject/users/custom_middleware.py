@@ -21,8 +21,8 @@ class AccessControlMiddleware:
             return self.get_response(request)
         
         # 🔹 всегда пропускаем MagicLink урл
-        if path.startswith("/magic-login/"):
-            token_str = path.split("/magic-login/")[-1].strip("/")
+        if path.startswith("/invite/"):
+            token_str = path.split("/invite/")[-1].strip("/")
             
             if MagicLinkToken.objects.filter(token=token_str, used=False).exists():
                 return self.get_response(request)

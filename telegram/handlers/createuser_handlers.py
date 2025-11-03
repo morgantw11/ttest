@@ -88,7 +88,7 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
             user_id = response_data.get('id')
 
             magic_payload = {"user_id":user_id}
-            magic_data, magic_status = await api_client.post(message.from_user.id,"api/magic-link/create/",json=magic_payload)
+            magic_data, magic_status = await api_client.post(message.from_user.id,"api/invite/create/",json=magic_payload)
 
             if magic_status == 201:
                 magic_link = magic_data.get("magic_link")

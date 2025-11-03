@@ -54,7 +54,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
                     [KeyboardButton(text="👑 Пользователи")],
                     [KeyboardButton(text="⚠️ Карантин"),KeyboardButton(text="✅ Вайтлист")],
                     [KeyboardButton(text="⚙️ Настройки"),KeyboardButton(text="💀 Ошибка 503")],
-                    [KeyboardButton(text="")],
+                    [KeyboardButton(text="🔄 Обновить информацию")],
                 ],
                 resize_keyboard=True,
                 input_field_placeholder='Выберите пункт меню'
@@ -66,6 +66,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
                 keyboard=[
                     [KeyboardButton(text="👑 Пользователи")],
                     [KeyboardButton(text="⚠️ Карантин"),KeyboardButton(text="✅ Вайтлист")],
+		    [KeyboardButton(text="🔄 Обновить информацию")],
                 ],
                 resize_keyboard=True,
                 input_field_placeholder='Выберите пункт меню'
@@ -77,6 +78,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
                 keyboard=[
                     [KeyboardButton(text="👑 Пользователи")],
                     [KeyboardButton(text="⚠️ Карантин")],
+		    [KeyboardButton(text="🔄 Обновить информацию")],
                 ],
                 resize_keyboard=True,
                 input_field_placeholder='Выберите пункт меню'
@@ -161,7 +163,7 @@ async def setting_message(message: Message, api_client : DjangoAPIClient):
         
         keyboard = ReplyKeyboardMarkup(
                 keyboard=[
-                    [KeyboardButton(text="✉️ Почта"),KeyboardButton(text="📊 Лог дейсвий")],
+                    [KeyboardButton(text="📊 Лог дейсвий")],
                     [KeyboardButton(text="🔗 Ссылка")],
                     [KeyboardButton(text="🏠 Выйти в главное меню")],
                 ],
@@ -269,7 +271,7 @@ async def delete_link(message: Message, api_client: DjangoAPIClient):
 async def go_back(message: Message, api_client: DjangoAPIClient):
     await show_menu(message,api_client)
 
-@start_router.message(IsGroupWithOwner, F.text == "🏠 Перезагрузить страницу")
+@start_router.message(IsGroupWithOwner, F.text == "🔄 Обновить информацию")
 async def go_back(message: Message, api_client: DjangoAPIClient):
     await show_menu(message,api_client)
 
@@ -378,7 +380,6 @@ async def send_user_info(callback: CallbackQuery, api_client: DjangoAPIClient, u
         date_create = data['date_create'][:10]
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
-                [InlineKeyboardButton(text="Отправить email", callback_data="send_emeil_{user_id}")],
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}",callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
@@ -389,7 +390,6 @@ async def send_user_info(callback: CallbackQuery, api_client: DjangoAPIClient, u
             f"Пользователь: {data['username']}\n\n"
             f"Уровень: {data.get('role', 'user')}\n\n"
             f"Дата создания: {date_create}\n\n"
-            f"📧Отправленно email-приглашений: {data['emeil_sends']}\n\n"
             f"Дополнительная информация:\n"
             f"С чего зашел: {data['device']}\n"
             f"ip: {data['ip']}\n\n"
@@ -412,7 +412,6 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
     if status == 200:
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
-                [InlineKeyboardButton(text="Отправить email", callback_data="send_emeil_{user_id}")],
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}", callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
@@ -423,7 +422,6 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
             f"Пользователь: {data['username']}\n\n"
             f"Уровень: {data.get('role', 'user')}\n\n"
             f"Дата создания: {date_create}\n\n"
-            f"📧Отправленно email-приглашений: {data['emeil_sends']}\n\n"
             f"Дополнительная информация:\n"
             f"С чего зашел: {data['device']}\n"
             f"ip: {data['ip']}\n\n"
@@ -439,7 +437,7 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
 
 @start_router.callback_query(IsGroupWithOwner,F.data.startswith("send_emeil_"))
 async def send_email_callback(callback: CallbackQuery, api_client: DjangoAPIClient):
-    user_id = int(callback.data.split("_")[1])
+    user_id = int(callback.data.split("_")[2])
     data, status = await api_client.get(callback.from_user.id, f"api/users/{user_id}/")
 
     keyboard = ReplyKeyboardMarkup(
@@ -460,7 +458,7 @@ async def send_email_callback(callback: CallbackQuery, api_client: DjangoAPIClie
         return
     
     magic_payload = {"user_id": user_id}
-    magic_data, magic_status = await api_client.post(callback.from_user.id, "api/magic-link/create/", json=magic_payload)
+    magic_data, magic_status = await api_client.post(callback.from_user.id, "api/invite/create/", json=magic_payload)
 
     magic_link = magic_data.get("magic_link") if magic_status == 201 else "Не удалось сгенерировать ссылку"
     email_to = data["username"]
@@ -477,6 +475,7 @@ async def send_email_callback(callback: CallbackQuery, api_client: DjangoAPIClie
     if validate_email(email_to):
         result = send_email(
             receiver_email=email_to,
+            login = email_to,
             password=password,
             magic_link=magic_link,
             big_text=big_text

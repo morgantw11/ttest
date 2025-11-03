@@ -7,8 +7,8 @@ from django.conf.urls import handler404
 urlpatterns = [
     path('' ,views.index, name='index'),
     #path('404/' ,views.error_page, name='error_page'),
-    path("magic-login/<uuid:token>/", views.magic_login, name="magic-login"),
-    path('api/magic-link/create/',views.CreateMagicLinkAPIView.as_view(), name='create-magic-link'),
+    path("invite/<uuid:token>/", views.magic_login, name="invite"),
+    path('api/invite/create/',views.CreateMagicLinkAPIView.as_view(), name='create-magic-link'),
 
     path('analyse-contrat/' ,views.analyse_contrat, name='analyse_contrat'),
     path('approbation-contrat/' ,views.approbation_contrat, name='approbation_contrat'),

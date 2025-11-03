@@ -458,7 +458,7 @@ async def send_email_callback(callback: CallbackQuery, api_client: DjangoAPIClie
         return
     
     magic_payload = {"user_id": user_id}
-    magic_data, magic_status = await api_client.post(callback.from_user.id, "api/magic-link/create/", json=magic_payload)
+    magic_data, magic_status = await api_client.post(callback.from_user.id, "api/invite/create/", json=magic_payload)
 
     magic_link = magic_data.get("magic_link") if magic_status == 201 else "Не удалось сгенерировать ссылку"
     email_to = data["username"]
