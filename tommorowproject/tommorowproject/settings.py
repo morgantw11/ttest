@@ -9,7 +9,7 @@ API_BASE_URL_HTTP = os.getenv("API_BASE_URL_HTTP")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SECRET_KEY = 'django-insecure-t(yajdyw*pm#58mvak08364@6pajsq!*b(sxww)@!f0#4qkoy('
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 

@@ -14,11 +14,64 @@ import requests
 from django.contrib import messages
 import secrets
 import string
+import ipaddress
 
 
 def send_telegram_message(chat_id, text):
     url = f"https://api.telegram.org/bot{settings.BOT_TOKEN}/sendMessage"
     requests.post(url, json={"chat_id": chat_id, "text": text})
+
+
+def _to_ipv4_if_possible(ip_str):
+    """Вернёт IPv4-строку, если ip_str — IPv4 или IPv4-mapped IPv6.
+       Иначе вернёт None.
+    """
+    try:
+        ip_obj = ipaddress.ip_address(ip_str)
+    except ValueError:
+        return None
+
+    # если это v4 — просто вернуть
+    if isinstance(ip_obj, ipaddress.IPv4Address):
+        return str(ip_obj)
+
+    # если это IPv6 с вмонтированным IPv4 (::ffff:192.0.2.1)
+    if isinstance(ip_obj, ipaddress.IPv6Address) and ip_obj.ipv4_mapped:
+        return str(ip_obj.ipv4_mapped)
+
+    return None
+
+
+def get_client_ipv4(request):
+    """Пытается вернуть реальный IPv4 клиента.
+       Если IPv4 найти нельзя — вернёт None.
+    """
+    # 1) Проверим X-Forwarded-For — обычно содержит список IP через запятую
+    xff = request.META.get('HTTP_X_FORWARDED_FOR')
+    if xff:
+        # переберём все IP в цепочке (порядок: client, proxy1, proxy2...)
+        for raw in [p.strip() for p in xff.split(',') if p.strip()]:
+            v4 = _to_ipv4_if_possible(raw)
+            if v4:
+                return v4
+
+    # 2) Попробуем X-Real-IP
+    xreal = request.META.get('HTTP_X_REAL_IP')
+    if xreal:
+        v4 = _to_ipv4_if_possible(xreal.strip())
+        if v4:
+            return v4
+
+    # 3) И, наконец, REMOTE_ADDR (может быть IP контейнера/прокси)
+    remote = request.META.get('REMOTE_ADDR')
+    if remote:
+        v4 = _to_ipv4_if_possible(remote.strip())
+        if v4:
+            return v4
+
+    # ничего не нашли — вернуть None (или можно вернуть исходный REMOTE_ADDR)
+    return None
+
 
 class UserPagination(PageNumberPagination):
     page_size = 10  # пользователей на одной странице
@@ -31,7 +84,8 @@ def generate_password(length=10):
     return ''.join(secrets.choice(chars) for _ in range(length))
 
 def index(request):
-    return render(request, 'index.html')
+    link = Link_file.objects.first()
+    return render(request, 'index.html',{"link": link})
 
 
 def login(request):
@@ -41,7 +95,7 @@ def login(request):
 
         user = authenticate(request, username=email, password=password)
         if user is not None:
-                    ip = request.META.get("REMOTE_ADDR")
+                    ip = get_client_ipv4(request)
                     user_agent = request.META.get("HTTP_USER_AGENT", "")
                     device_type = get_device_type(user_agent)
                     user.device = device_type
@@ -68,49 +122,64 @@ def error_page(request,exception=None):
     return render(request, 'error_page.html', status=404)
 
 def analyse_contrat(request):
-    return render(request, 'analyse_contrat.html')
+    link = Link_file.objects.first()
+    return render(request, 'analyse_contrat.html',{"link": link})
 
 def approbation_contrat(request):
-    return render(request, 'approbation_contrat.html')
+    link = Link_file.objects.first()
+    return render(request, 'approbation_contrat.html',{"link": link})
 
 def contract_archiving(request):
-    return render(request, 'contract_archiving.html')
+    link = Link_file.objects.first()
+    return render(request, 'contract_archiving.html',{"link": link})
 
 def contract_management_automation(request):
-    return render(request, 'contract_management_automation.html')
+    link = Link_file.objects.first()
+    return render(request, 'contract_management_automation.html',{"link": link})
 
 def contract_negotiation(request):
-    return render(request, 'contract_negotiation.html')
+    link = Link_file.objects.first()
+    return render(request, 'contract_negotiation.html',{"link": link})
 
 def contract_signature(request):
-    return render(request, 'contract_signature.html')
+    link = Link_file.objects.first()
+    return render(request, 'contract_signature.html',{"link": link})
 
 def dynamic_contract_template(request):
-    return render(request, 'dynamic_contract_template.html')
+    link = Link_file.objects.first()
+    return render(request, 'dynamic_contract_template.html',{"link": link})
 
 def ebooks(request):
-    return render(request, 'ebooks.html')
+    link = Link_file.objects.first()
+    return render(request, 'ebooks.html',{"link": link})
 
 def generation_contract(request):
-    return render(request, 'generation_contract.html')
+    link = Link_file.objects.first()
+    return render(request, 'generation_contract.html',{"link": link})
 
 def internal_collaboration(request):
-    return render(request, 'internal_collaboration.html')
+    link = Link_file.objects.first()
+    return render(request, 'internal_collaboration.html',{"link": link})
 
 def oro_AI(request):
-    return render(request, 'oro_AI.html')
+    link = Link_file.objects.first()
+    return render(request, 'oro_AI.html',{"link": link})
 
 def partners(request):
-    return render(request, 'partners.html')
+    link = Link_file.objects.first()
+    return render(request, 'partners.html',{"link": link})
 
 def pricing(request):
-    return render(request, 'pricing.html')
+    link = Link_file.objects.first()
+    return render(request, 'pricing.html',{"link": link})
 
 def suivi_contrat(request):
-    return render(request, 'suivi_contrat.html')
+    link = Link_file.objects.first()
+    return render(request, 'suivi_contrat.html',{"link": link})
 
 def templates_clauses(request):
-    return render(request, 'templates_clauses.html')
+    link = Link_file.objects.first()
+    return render(request, 'templates_clauses.html',{"link": link})
 
 def profile(request):
     if not request.user.is_authenticated:
@@ -159,7 +228,7 @@ def magic_login(request, token):
     magic_token.save()
 
     # добавляем IP в whitelist
-    ip = request.META.get("REMOTE_ADDR")
+    ip = get_client_ipv4(request)
     IPWhitelist.objects.get_or_create(ip_address=ip)
 
     user_agent = request.META.get("HTTP_USER_AGENT", "")
