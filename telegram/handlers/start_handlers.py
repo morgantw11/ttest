@@ -24,7 +24,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
     link_data, status = await api_client.get(message.from_user.id, "api/link/info")
 
     current_link = link_data.get("link") if status == 200 else None
-    link_text = f"Ссылка: {current_link}" if current_link else "Ссылки нету"
+    link_text = f"{current_link}" if current_link else "Ссылки нету"
 
     if stats:
         
@@ -39,7 +39,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
         text = (
             f"Пользователь: {profile['username']}\n"
             f"Уровень: {user_role}\n\n"
-            f"Ссылка файла: {link_text}\n\n"
+            f"Ссылка файла:\n{link_text}\n\n"
             f"Состояние сайта:\n"
             f"📄 Вайтлист: {'🔴 ВЫКЛ' if checker['whitelist'] else '🟢 ВКЛ'}\n"
             f"😷 Карантин: {'🟢 ВКЛ' if checker['carantin'] else '🔴 ВЫКЛ'}\n"
