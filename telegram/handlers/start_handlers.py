@@ -21,6 +21,10 @@ class SetLinkState(StatesGroup):
 async def show_menu(message: Message, api_client : DjangoAPIClient):
     stats = await api_client.get_user_stats(message.from_user.id)
     checker = await api_client.get_system_states(message.from_user.id)
+    link_data, status = await api_client.get(message.from_user.id, "api/link/info")
+
+    current_link = link_data.get("link") if status == 200 else None
+    link_text = f"Ссылка: {current_link}" if current_link else "Ссылки нету"
 
     if stats:
         
@@ -31,13 +35,11 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
 
         user_role = profile['role']
 
-        formatted_date = profile.get("last_login", "")[:10]
 
         text = (
-            f"Главное меню\n"
             f"Пользователь: {profile['username']}\n"
             f"Уровень: {user_role}\n\n"
-            f"Дата авторизации: {formatted_date}\n\n"
+            f"Ссылка файла: {link_text}\n\n"
             f"Состояние сайта:\n"
             f"📄 Вайтлист: {'🔴 ВЫКЛ' if checker['whitelist'] else '🟢 ВКЛ'}\n"
             f"😷 Карантин: {'🟢 ВКЛ' if checker['carantin'] else '🔴 ВЫКЛ'}\n"

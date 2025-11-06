@@ -54,7 +54,7 @@ async def whitlist_message(message: Message, api_client : DjangoAPIClient):
         checker = await api_client.get_system_states(message.from_user.id)
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
-                [InlineKeyboardButton(text=f"{'Включить' if checker['whitelist'] else 'Выключить'}\n", callback_data="enable_whitelist" if checker["carantin"] else "disable_whitelist")],
+                [InlineKeyboardButton(text=f"{'Включить' if checker['whitelist'] else 'Выключить'}\n", callback_data="enable_whitelist" if checker["whitelist"] else "disable_whitelist")],
             ]
         
         )
