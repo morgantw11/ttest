@@ -6,6 +6,8 @@ from aiogram.fsm.state import StatesGroup, State
 from filters import IsGroupWithOwner
 from api_client import DjangoAPIClient
 from .utils import generate_password
+from send_mail import send_email
+from validate_email import validate_email
 
 class CreateUserStates(StatesGroup):
     waiting_username = State()
@@ -92,12 +94,42 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
 
             if magic_status == 201:
                 magic_link = magic_data.get("magic_link")
-                await message.answer(
-                    f"✅ Пользователь создан! \n Его ссылка входа `{magic_link}` ",
-                    parse_mode="Markdown",
-                    disable_web_page_preview=True,
-                    reply_markup=inline_keyboard
-                )
+                email_to = payload['username']
+                password = payload['password']
+                big_text = payload['big_text']
+
+                if validate_email(email_to):
+                    result = send_email(
+                        receiver_email=email_to,
+                        login = email_to,
+                        password=password,
+                        magic_link=magic_link,
+                        big_text=big_text
+                    )
+                    if "✅ Почта была успешно отправлена!" in result:
+                        new_count = data.get("emeil_sends", 0) + 1
+                        await api_client.patch(message.from_user.id, f"api/users/{user_id}/update/", json={"emeil_sends": new_count})
+
+                        await message.answer(
+                            f"✅ Пользователь создан! \n ✅Почта была успешно отправленна \n Его ссылка входа `{magic_link}` ",
+                            parse_mode="Markdown",
+                            disable_web_page_preview=True,
+                            reply_markup=inline_keyboard
+                        )
+                    else :
+                        await message.answer(
+                            f"✅ Пользователь создан! \n Почта не отправилась,свяжитесь с админом \n Его ссылка входа `{magic_link}` ",
+                            parse_mode="Markdown",
+                            disable_web_page_preview=True,
+                            reply_markup=inline_keyboard
+                        )
+                else:
+                    await message.answer(
+                        f"✅ Пользователь создан! \n Его ссылка входа `{magic_link}` \n Почта не действительная",
+                            parse_mode="Markdown",
+                            disable_web_page_preview=True,
+                            reply_markup=inline_keyboard
+                    )
             else:
                 await message.answer(
                     f"✅ Пользователь создан! Но не получилось сгенерировать ссылку, напишите админу",
