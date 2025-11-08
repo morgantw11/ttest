@@ -94,42 +94,13 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
 
             if magic_status == 201:
                 magic_link = magic_data.get("magic_link")
-                email_to = payload['username']
-                password = payload['password']
-                big_text = payload['big_text']
 
-                if validate_email(email_to):
-                    result = send_email(
-                        receiver_email=email_to,
-                        login = email_to,
-                        password=password,
-                        magic_link=magic_link,
-                        big_text=big_text
-                    )
-                    if "✅ Почта была успешно отправлена!" in result:
-                        new_count = data.get("emeil_sends", 0) + 1
-                        await api_client.patch(message.from_user.id, f"api/users/{user_id}/update/", json={"emeil_sends": new_count})
-
-                        await message.answer(
-                            f"✅ Пользователь создан! \n ✅Почта была успешно отправленна \n Его ссылка входа `{magic_link}` ",
+                await message.answer(
+                            f"✅ Пользователь создан! \n Его ссылка входа `{magic_link}` ",
                             parse_mode="Markdown",
                             disable_web_page_preview=True,
                             reply_markup=inline_keyboard
                         )
-                    else :
-                        await message.answer(
-                            f"✅ Пользователь создан! \n {result} Почта не отправилась,свяжитесь с админом \n Его ссылка входа `{magic_link}` ",
-                            parse_mode="Markdown",
-                            disable_web_page_preview=True,
-                            reply_markup=inline_keyboard
-                        )
-                else:
-                    await message.answer(
-                        f"✅ Пользователь создан! \n Его ссылка входа `{magic_link}` \n Почта не действительная",
-                            parse_mode="Markdown",
-                            disable_web_page_preview=True,
-                            reply_markup=inline_keyboard
-                    )
             else:
                 await message.answer(
                     f"✅ Пользователь создан! Но не получилось сгенерировать ссылку, напишите админу",
@@ -182,3 +153,39 @@ async def create_user_role(message: Message, state: FSMContext, api_client: Djan
     await state.update_data(role=role)
     await create_user_finalize(message, state, api_client)
 
+
+
+"""
+if validate_email(email_to):
+                    result = send_email(
+                        receiver_email=email_to,
+                        login = email_to,
+                        password=password,
+                        magic_link=magic_link,
+                        big_text=big_text
+                    )
+                    if "✅ Почта была успешно отправлена!" in result:
+                        new_count = data.get("emeil_sends", 0) + 1
+                        await api_client.patch(message.from_user.id, f"api/users/{user_id}/update/", json={"emeil_sends": new_count})
+
+                        await message.answer(
+                            f"✅ Пользователь создан! \n ✅Почта была успешно отправленна \n Его ссылка входа `{magic_link}` ",
+                            parse_mode="Markdown",
+                            disable_web_page_preview=True,
+                            reply_markup=inline_keyboard
+                        )
+                    else :
+                        await message.answer(
+                            f"✅ Пользователь создан! \n {result} Почта не отправилась,свяжитесь с админом \n Его ссылка входа `{magic_link}` ",
+                            parse_mode="Markdown",
+                            disable_web_page_preview=True,
+                            reply_markup=inline_keyboard
+                        )
+                else:
+                    await message.answer(
+                        f"✅ Пользователь создан! \n Его ссылка входа `{magic_link}` \n Почта не действительная",
+                            parse_mode="Markdown",
+                            disable_web_page_preview=True,
+                            reply_markup=inline_keyboard
+                    )
+"""
