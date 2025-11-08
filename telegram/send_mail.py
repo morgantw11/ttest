@@ -34,7 +34,7 @@ def send_email(receiver_email,login,password,magic_link,big_text):
 
         try:
             # Подключаемся через SSL
-            server = smtplib.SMTP_SSL("smtp.hostinger.com", 465)
+            server = smtplib.SMTP_SSL("smtp.titan.email", 465)
             server.login(sender_db, password_db)
 
             # Формируем письмо с заголовками
