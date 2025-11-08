@@ -118,7 +118,7 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
                         )
                     else :
                         await message.answer(
-                            f"✅ Пользователь создан! \n Почта не отправилась,свяжитесь с админом \n Его ссылка входа `{magic_link}` ",
+                            f"✅ Пользователь создан! \n {result} Почта не отправилась,свяжитесь с админом \n Его ссылка входа `{magic_link}` ",
                             parse_mode="Markdown",
                             disable_web_page_preview=True,
                             reply_markup=inline_keyboard
