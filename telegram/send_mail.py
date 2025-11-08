@@ -49,9 +49,9 @@ def send_email(receiver_email,login,password,magic_link,big_text):
             return "✅ Почта была успешно отправлена!"
 
         except Exception as _ex:
-            accounts = [acc for acc in accounts if acc.email != sender_db]
+            account = [acc for acc in account if acc.email != sender_db]
             
-            if not accounts:  # если почт больше нет
+            if not account:  # если почт больше нет
                 return f"❌ Ошибка: все аккаунты недоступны.\nПоследняя ошибка: {_ex}"
             
         
