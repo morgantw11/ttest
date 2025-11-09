@@ -4,21 +4,61 @@ import string
 from models import EmailAccount, SessionLocal
 
 def make_user_buttons(users_page):
-    buttons = [
-        [InlineKeyboardButton(text=f"{u['username']} {'✅' if u['last_login'] else ''}", callback_data=f"user_{u['id']}")]
-        for u in users_page["results"]
-    ]
+    try:
+        buttons = [
+            [InlineKeyboardButton(
+                text=f"{u['username']} {'✅' if u['last_login'] else ''}", 
+                callback_data=f"user_{u['id']}"
+            )]
+            for u in users_page["results"]
+        ]
 
-    # Навигация
-    nav_buttons = []
-    if users_page["previous"]:
-        nav_buttons.append(InlineKeyboardButton("⬅️ Назад", callback_data=f"users_page_{users_page['previous'].split('=')[-1]}"))
-    if users_page["next"]:
-        nav_buttons.append(InlineKeyboardButton("➡️ Вперед", callback_data=f"users_page_{users_page['next'].split('=')[-1]}"))
-    if nav_buttons:
-        buttons.append(nav_buttons)
+        # Навигация - правильный разбор номеров страниц
+        nav_buttons = []
+        
+        if users_page.get("previous"):
+            # Безопасное извлечение номера страницы
+            prev_page = extract_page_number(users_page["previous"])
+            if prev_page:
+                nav_buttons.append(InlineKeyboardButton(
+                    text="⬅️ Назад", 
+                    callback_data=f"users_page_{prev_page}"  # <-- исправлено
+                ))
+        
+        if users_page.get("next"):
+            # Безопасное извлечение номера страницы
+            next_page = extract_page_number(users_page["next"])
+            if next_page:
+                nav_buttons.append(InlineKeyboardButton(
+                    text="➡️ Вперед", 
+                    callback_data=f"users_page_{next_page}"  # <-- исправлено
+                ))
+        
+        if nav_buttons:
+            buttons.append(nav_buttons)
 
-    return InlineKeyboardMarkup(inline_keyboard=buttons)
+        return InlineKeyboardMarkup(inline_keyboard=buttons)
+    
+    except Exception as e:
+        print(f"Error in make_user_buttons: {e}")
+        # Возвращаем простую клавиатуру с ошибкой
+        return InlineKeyboardMarkup(
+            inline_keyboard=[[InlineKeyboardButton(text="Ошибка отображения", callback_data="error")]]
+        )
+
+def extract_page_number(url):
+    """Безопасно извлекает номер страницы из URL"""
+    if not url:
+        return None
+    
+    try:
+        from urllib.parse import urlparse, parse_qs
+        parsed_url = urlparse(url)
+        query_params = parse_qs(parsed_url.query)
+        page = query_params.get('page', [None])[0]
+        return page
+    except:
+        return None
 
 
 def generate_password(length=10):
