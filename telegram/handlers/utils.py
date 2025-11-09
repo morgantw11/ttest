@@ -24,9 +24,6 @@ def make_user_buttons(users_page):
                     text="➡️ Вперед", 
                     callback_data=f"users_page_{next_page}"
                 ))
-        else:
-            nav_buttons.append(InlineKeyboardButton(text="❌ No Previous", callback_data="test"))
-
 
         # ВСЕГДА показываем "Назад" если есть предыдущая страница
         if users_page.get("previous"):
@@ -36,8 +33,7 @@ def make_user_buttons(users_page):
                     text="⬅️ Назад", 
                     callback_data=f"users_page_{prev_page}"
                 ))
-        else:
-            nav_buttons.append(InlineKeyboardButton(text="❌ No Next", callback_data="test"))
+
         
         
         # Добавляем навигационные кнопки только если они есть
@@ -62,6 +58,11 @@ def extract_page_number(url):
         parsed_url = urlparse(url)
         query_params = parse_qs(parsed_url.query)
         page = query_params.get('page', [None])[0]
+        
+        # Если page не найден в query параметрах, проверяем является ли URL главной страницей
+        if page is None and parsed_url.path.endswith('/api/users/'):
+            return "1"  # Главная страница = страница 1
+            
         return page
     except:
         return None
