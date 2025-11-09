@@ -5,8 +5,6 @@ from models import EmailAccount, SessionLocal
 
 def make_user_buttons(users_page):
     try:
-        print("🔍 DEBUG: make_user_buttons started")
-        
         buttons = [
             [InlineKeyboardButton(
                 text=f"{u['username']} {'✅' if u['last_login'] else ''}", 
@@ -14,49 +12,42 @@ def make_user_buttons(users_page):
             )]
             for u in users_page["results"]
         ]
-        print("🔍 DEBUG: User buttons created")
 
         # Навигация - правильный разбор номеров страниц
         nav_buttons = []
         
-        # ВСЕГДА показываем "Назад" если есть предыдущая страница
-        if users_page.get("previous"):
-            print(f"🔍 DEBUG: previous exists: {users_page['previous']}")
-            prev_page = extract_page_number(users_page["previous"])
-            print(f"🔍 DEBUG: prev_page extracted: {prev_page}")
-            if prev_page:
-                print("🔍 DEBUG: Creating 'Back' button")
-                nav_buttons.append(InlineKeyboardButton(
-                    text="⬅️ Назад", 
-                    callback_data=f"users_page_{prev_page}"
-                ))
-                print("🔍 DEBUG: 'Back' button added")
-        
         # ВСЕГДА показываем "Вперед" если есть следующая страница
         if users_page.get("next"):
-            print(f"🔍 DEBUG: next exists: {users_page['next']}")
             next_page = extract_page_number(users_page["next"])
-            print(f"🔍 DEBUG: next_page extracted: {next_page}")
             if next_page:
-                print("🔍 DEBUG: Creating 'Forward' button")
                 nav_buttons.append(InlineKeyboardButton(
                     text="➡️ Вперед", 
                     callback_data=f"users_page_{next_page}"
                 ))
-                print("🔍 DEBUG: 'Forward' button added")
+        else:
+            nav_buttons.append(InlineKeyboardButton(text="❌ No Previous"))
+
+
+        # ВСЕГДА показываем "Назад" если есть предыдущая страница
+        if users_page.get("previous"):
+            prev_page = extract_page_number(users_page["previous"])
+            if prev_page:
+                nav_buttons.append(InlineKeyboardButton(
+                    text="⬅️ Назад", 
+                    callback_data=f"users_page_{prev_page}"
+                ))
+        else:
+            nav_buttons.append(InlineKeyboardButton(text="❌ No Next"))
         
-        print(f"🔍 DEBUG: nav_buttons count: {len(nav_buttons)}")
         
+        # Добавляем навигационные кнопки только если они есть
         if nav_buttons:
             buttons.append(nav_buttons)
 
-        print("🔍 DEBUG: Returning keyboard")
         return InlineKeyboardMarkup(inline_keyboard=buttons)
     
     except Exception as e:
-        print(f"❌ Error in make_user_buttons: {e}")
-        import traceback
-        print(f"❌ Traceback: {traceback.format_exc()}")
+        print(f"Error in make_user_buttons: {e}")
         return InlineKeyboardMarkup(
             inline_keyboard=[[InlineKeyboardButton(text="Ошибка отображения", callback_data="error")]]
         )
