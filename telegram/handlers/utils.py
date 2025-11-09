@@ -16,24 +16,25 @@ def make_user_buttons(users_page):
         # Навигация - правильный разбор номеров страниц
         nav_buttons = []
         
+        # ВСЕГДА показываем "Назад" если есть предыдущая страница
         if users_page.get("previous"):
-            # Безопасное извлечение номера страницы
             prev_page = extract_page_number(users_page["previous"])
             if prev_page:
                 nav_buttons.append(InlineKeyboardButton(
                     text="⬅️ Назад", 
-                    callback_data=f"users_page_{prev_page}"  # <-- исправлено
+                    callback_data=f"users_page_{prev_page}"
                 ))
         
+        # ВСЕГДА показываем "Вперед" если есть следующая страница
         if users_page.get("next"):
-            # Безопасное извлечение номера страницы
             next_page = extract_page_number(users_page["next"])
             if next_page:
                 nav_buttons.append(InlineKeyboardButton(
                     text="➡️ Вперед", 
-                    callback_data=f"users_page_{next_page}"  # <-- исправлено
+                    callback_data=f"users_page_{next_page}"
                 ))
         
+        # Добавляем навигационные кнопки только если они есть
         if nav_buttons:
             buttons.append(nav_buttons)
 
@@ -41,7 +42,6 @@ def make_user_buttons(users_page):
     
     except Exception as e:
         print(f"Error in make_user_buttons: {e}")
-        # Возвращаем простую клавиатуру с ошибкой
         return InlineKeyboardMarkup(
             inline_keyboard=[[InlineKeyboardButton(text="Ошибка отображения", callback_data="error")]]
         )
