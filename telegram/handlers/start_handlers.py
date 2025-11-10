@@ -395,6 +395,7 @@ async def send_user_info(callback: CallbackQuery, api_client: DjangoAPIClient, u
             f"Уровень: {data.get('role', 'user')}\n\n"
             f"Дата создания: {date_create}\n\n"
             f"Дополнительная информация:\n"
+            f"Почт отправленно: {data['emeil_sends']}\n"
             f"С чего зашел: {data['device']}\n"
             f"ip: {data['ip']}\n\n"
             f"Доступа к сайту {'закрыт 🔴' if data['is_block'] else 'открыт 🟢'} \n",
@@ -417,6 +418,7 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}", callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
+                [InlineKeyboardButton(text="Отправить email", callback_data=f"send_emeil_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
         )
@@ -427,6 +429,7 @@ async def user_selected_callback(callback: CallbackQuery, api_client: DjangoAPIC
             f"Уровень: {data.get('role', 'user')}\n\n"
             f"Дата создания: {date_create}\n\n"
             f"Дополнительная информация:\n"
+            f"Почт отправленно: {data['emeil_sends']}\n"
             f"С чего зашел: {data['device']}\n"
             f"ip: {data['ip']}\n\n"
             f"Доступа к сайту {'закрыт 🔴' if data['is_block'] else 'открыт 🟢'} \n",
