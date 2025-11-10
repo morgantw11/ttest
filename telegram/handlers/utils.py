@@ -15,17 +15,7 @@ def make_user_buttons(users_page):
 
         # Навигация - правильный разбор номеров страниц
         nav_buttons = []
-        
-        # ВСЕГДА показываем "Вперед" если есть следующая страница
-        if users_page.get("next"):
-            next_page = extract_page_number(users_page["next"])
-            if next_page:
-                nav_buttons.append(InlineKeyboardButton(
-                    text="➡️ Вперед", 
-                    callback_data=f"users_page_{next_page}"
-                ))
-
-        # ВСЕГДА показываем "Назад" если есть предыдущая страница
+                # ВСЕГДА показываем "Назад" если есть предыдущая страница
         if users_page.get("previous"):
             prev_page = extract_page_number(users_page["previous"])
             if prev_page:
@@ -34,7 +24,15 @@ def make_user_buttons(users_page):
                     callback_data=f"users_page_{prev_page}"
                 ))
 
-        
+                
+        # ВСЕГДА показываем "Вперед" если есть следующая страница
+        if users_page.get("next"):
+            next_page = extract_page_number(users_page["next"])
+            if next_page:
+                nav_buttons.append(InlineKeyboardButton(
+                    text="➡️ Вперед", 
+                    callback_data=f"users_page_{next_page}"
+                ))
         
         # Добавляем навигационные кнопки только если они есть
         if nav_buttons:
@@ -49,7 +47,7 @@ def make_user_buttons(users_page):
         )
 
 def extract_page_number(url):
-    """Безопасно извлекает номер страницы из URL"""
+    """Безопасно извлекает номер страницы из URL для любого endpoint"""
     if not url:
         return None
     
@@ -59,14 +57,27 @@ def extract_page_number(url):
         query_params = parse_qs(parsed_url.query)
         page = query_params.get('page', [None])[0]
         
-        # Если page не найден в query параметрах, проверяем является ли URL главной страницей
-        if page is None and parsed_url.path.endswith('/api/users/'):
-            return "1"  # Главная страница = страница 1
+        if page:
+            return page
+        
+        # Список всех endpoints которые поддерживают пагинацию
+        paginated_endpoints = [
+            '/api/users',
+            '/api/users/',
+            '/api/users/created-by-me',
+            '/api/users/created-by-me/',
+            '/api/workers', 
+            '/api/workers/',
+            # добавьте другие endpoints по мере необходимости
+        ]
+        
+        clean_path = parsed_url.path.rstrip('/')
+        if clean_path in [ep.rstrip('/') for ep in paginated_endpoints]:
+            return "1"
             
-        return page
+        return None
     except:
         return None
-
 
 def generate_password(length=10):
     alphabet = string.ascii_letters + string.digits + "!@#$%^&*()"

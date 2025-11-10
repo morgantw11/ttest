@@ -73,7 +73,8 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
     response_data, status = await api_client.post(message.from_user.id, "api/users/create/", json=payload)
     
     keyboard = ReplyKeyboardMarkup(
-        keyboard=[[KeyboardButton(text="🏠 Выйти в главное меню")]],
+        keyboard=[[KeyboardButton(text="🙋‍♂️ Добавить пользователя")],
+                  [KeyboardButton(text="🏠 Выйти в главное меню")],],
         resize_keyboard=True,
         input_field_placeholder='Выберите пункт меню'
     )
@@ -82,6 +83,7 @@ async def create_user_finalize(message: Message, state: FSMContext, api_client: 
         inline_keyboard = InlineKeyboardMarkup(
                 inline_keyboard=[
                     [InlineKeyboardButton(text=f"👤 {payload['username']}", callback_data=f"user_{response_data.get('id')}")],
+                    [InlineKeyboardButton(text=f"❌ Удалить {payload['username']}", callback_data=f"delete_{response_data.get('id')}")],
                 ]
         )
         user_role = data.get("role","user")

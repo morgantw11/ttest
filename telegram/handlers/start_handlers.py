@@ -167,6 +167,7 @@ async def setting_message(message: Message, api_client : DjangoAPIClient):
                 keyboard=[
                     [KeyboardButton(text="📊 Лог дейсвий")],
                     [KeyboardButton(text="🔗 Ссылка")],
+                    [KeyboardButton(text="✉️ Почта")],
                     [KeyboardButton(text="🏠 Выйти в главное меню")],
                 ],
                 resize_keyboard=True,
@@ -383,6 +384,7 @@ async def send_user_info(callback: CallbackQuery, api_client: DjangoAPIClient, u
         keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
                 [InlineKeyboardButton(text=f"{'Разблокировать' if data['is_block'] else 'Заблокировать'}",callback_data=f"{'unblock' if data['is_block'] else 'block'}_{user_id}")],
+                [InlineKeyboardButton(text="Отправить email", callback_data=f"send_emeil_{user_id}")],
                 [InlineKeyboardButton(text="Удалить", callback_data=f"delete_{user_id}")],
             ]
         )
