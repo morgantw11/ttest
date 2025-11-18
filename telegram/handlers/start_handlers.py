@@ -248,11 +248,6 @@ async def shablon_name(message: Message, api_client : DjangoAPIClient):
             "Нажмите на шаблон чтобы удалить",
             reply_markup=keyboard_info
         )
-        
-
-    await message.answer(
-            "📋 Не удалось получить шаблоны, напишите админу",
-    )
 
 #Воторой шаблон
 @start_router.message(IsGroupWithOwner, F.text == "🖼️ Название файла")
@@ -299,11 +294,6 @@ async def shablon_file(message: Message, api_client : DjangoAPIClient):
             "Нажмите на шаблон чтобы удалить",
             reply_markup=keyboard_info
         )
-        
-
-    await message.answer(
-            "📋 Не удалось получить шаблоны, напишите админу",
-    )
 
 
 
