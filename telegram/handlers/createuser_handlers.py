@@ -22,19 +22,60 @@ async def create_user_start(message: Message, state: FSMContext, api_client: Dja
     await message.answer("Введите EMAIL нового пользователя:", reply_markup=ReplyKeyboardRemove())
     await state.set_state(CreateUserStates.waiting_username)
     
+
 @start_router.message(IsGroupWithOwner, CreateUserStates.waiting_username)
-async def create_user_username(message: Message, state: FSMContext):
+async def create_user_username(message: Message, state: FSMContext , api_client: DjangoAPIClient):
     await state.update_data(new_username=message.text)
-    await message.answer("Введите имя создателя файла:")
+    data, status = await api_client.get(message.from_user.id, "api/users/shablon/first/")
+
+    if status == 200 and data:
+        keyboard_buttons =[]
+        for shablon in data:
+            content = shablon.get('shablon', '')
+            if content:  # добавляем только непустые шаблоны
+                keyboard_buttons.append([KeyboardButton(text=f"{content}")])
+
+        keyboard = ReplyKeyboardMarkup(
+            keyboard=keyboard_buttons,
+            resize_keyboard=True,
+            input_field_placeholder='Выберите шаблон или введите вручную'
+        )
+        await message.answer("Выберите шаблон создателя файла или введите вручную:", reply_markup=keyboard)
+    else:
+        await message.answer("Введите имя создателя файла:")
+
     await state.set_state(CreateUserStates.waiting_big_text)
 
 
 
 @start_router.message(IsGroupWithOwner, CreateUserStates.waiting_big_text)
-async def create_user_big_text(message: Message, state: FSMContext):
+async def create_user_big_text(message: Message, state: FSMContext, api_client: DjangoAPIClient):
     await state.update_data(big_text=message.text or "")
-    await message.answer("Введите название файла для скачивания:")
+
+    data, status = await api_client.get(message.from_user.id, "api/users/shablon/second/")
+
+    if status == 200 and data:
+            keyboard_buttons =[]
+            for shablon in data:
+                content = shablon.get('shablon', '')
+                if content:  # добавляем только непустые шаблоны
+                    keyboard_buttons.append([KeyboardButton(text=f"{content}")])
+
+            keyboard = ReplyKeyboardMarkup(
+                keyboard=keyboard_buttons,
+                resize_keyboard=True,
+                input_field_placeholder='Выберите шаблон или введите вручную'
+            )
+            await message.answer("Выберите названия файла или введите вручную:", reply_markup=keyboard)
+    else:
+        await message.answer("Введите названия файла:")
+
     await state.set_state(CreateUserStates.waiting_file_name)
+
+
+
+
+
 
 @start_router.message(IsGroupWithOwner, CreateUserStates.waiting_file_name)
 async def create_user_file_name(message: Message, state: FSMContext):

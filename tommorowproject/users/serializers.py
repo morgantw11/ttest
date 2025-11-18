@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CustomUser,MagicLinkToken
+from .models import CustomUser,MagicLinkToken,ShablonFirst,ShablonSecond
 import os
 
 
@@ -9,15 +9,29 @@ class UserSerializer(serializers.ModelSerializer):
         fields = [
             "id", "username", "email", "role", "big_text",
             "norm_text", "date_create", "ip", "device",
-            "file_name", "is_block", "emeil_sends", "created_by","password","telegram_group_id","last_login"
+            "file_name", "is_block", "emeil_sends", "created_by","password","telegram_group_id","last_login",
+            "first_shablon","second_shablon"
+
         ]
         read_only_fields = ["id", "date_create","created_by"] 
+
+
+
 
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
 
+class ShablonFirstSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ShablonFirst
+        fields = ['id','shablon']
+
+class ShablonSecondSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ShablonSecond
+        fields = ['id','shablon']
 
 
 class MagicLinkTokenSerializer(serializers.ModelSerializer):

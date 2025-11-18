@@ -17,6 +17,9 @@ PAGE_SIZE = 15
 class SetLinkState(StatesGroup):
     waiting_for_link = State()
 
+class ShablonStates(StatesGroup):
+    waiting_first_shablon = State()
+    waiting_second_shablon = State()
 
 async def show_menu(message: Message, api_client : DjangoAPIClient):
     stats = await api_client.get_user_stats(message.from_user.id)
@@ -68,6 +71,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
                 keyboard=[
                     [KeyboardButton(text="👑 Пользователи")],
                     [KeyboardButton(text="⚠️ Карантин"),KeyboardButton(text="✅ Вайтлист")],
+                    [KeyboardButton(text="📋 Шаблон")],
 		    [KeyboardButton(text="🔄 Обновить информацию")],
                 ],
                 resize_keyboard=True,
@@ -79,7 +83,7 @@ async def show_menu(message: Message, api_client : DjangoAPIClient):
             keyboard = ReplyKeyboardMarkup(
                 keyboard=[
                     [KeyboardButton(text="👑 Пользователи")],
-                    [KeyboardButton(text="⚠️ Карантин")],
+                    [KeyboardButton(text="⚠️ Карантин"),KeyboardButton(text="📋 Шаблон")],
 		    [KeyboardButton(text="🔄 Обновить информацию")],
                 ],
                 resize_keyboard=True,
@@ -166,9 +170,10 @@ async def setting_message(message: Message, api_client : DjangoAPIClient):
         keyboard = ReplyKeyboardMarkup(
                 keyboard=[
                     [KeyboardButton(text="📊 Лог дейсвий")],
-                    [KeyboardButton(text="🔗 Ссылка")],
+                    [KeyboardButton(text="🔗 Ссылка"),KeyboardButton(text="📋 Шаблон")],
                     [KeyboardButton(text="✉️ Почта")],
                     [KeyboardButton(text="🏠 Выйти в главное меню")],
+
                 ],
                 resize_keyboard=True,
                 input_field_placeholder='Выберите пункт меню'
@@ -179,6 +184,222 @@ async def setting_message(message: Message, api_client : DjangoAPIClient):
             "🛠️ Настройки",
             reply_markup=keyboard
         )
+
+
+@start_router.message(IsGroupWithOwner, F.text == "📋 Шаблон")
+async def shablon(message: Message, api_client : DjangoAPIClient):
+        keyboard = ReplyKeyboardMarkup(
+                keyboard=[
+                    [KeyboardButton(text="📝 Создатель файла")],
+                    [KeyboardButton(text="🖼️ Название файла")],
+                    [KeyboardButton(text="🏠 Выйти в главное меню")],
+                ],
+                resize_keyboard=True,
+                input_field_placeholder='Выберите пункт меню'
+            )
+
+
+        await message.answer(
+            "📋 Шаблоны",
+            reply_markup=keyboard
+        )
+
+@start_router.message(IsGroupWithOwner, F.text == "📝 Создатель файла")
+async def shablon_name(message: Message, api_client : DjangoAPIClient):
+    user_id = message.from_user.id
+
+    data,status = await api_client.get(user_id,"api/users/shablon/first/")
+
+    if status == 200:
+
+        keyboard_info = ReplyKeyboardMarkup(
+                keyboard=[
+                    [KeyboardButton(text="➕ Создать шаблон создателя файла")],
+                    [KeyboardButton(text="🏠 Выйти в главное меню"),KeyboardButton(text="📋 Шаблон")],
+                ],
+                resize_keyboard=True,
+                input_field_placeholder='Выберите пункт меню'
+            )
+        
+        
+        shablons = data
+        if not shablons:
+            await message.answer("📋 У вас пока нет шаблонов",reply_markup=keyboard_info)
+            return
+        
+        keyboard_buttons = []
+        for shablon in shablons:
+            shablon_id = shablon.get('id')
+            content = shablon.get('shablon', 'Пустой шаблон')
+            keyboard_buttons.append([
+                InlineKeyboardButton(
+                    text=f"{content}", 
+                    callback_data=f"deleteshablonfirst_{shablon_id}"
+                )
+            ])
+        keyboard = InlineKeyboardMarkup(inline_keyboard=keyboard_buttons)
+
+        await message.answer(
+            "📋 Все шаблоны создателя файла:",
+            reply_markup=keyboard
+        )
+
+        await message.answer(
+            "Нажмите на шаблон чтобы удалить",
+            reply_markup=keyboard_info
+        )
+        
+
+    await message.answer(
+            "📋 Не удалось получить шаблоны, напишите админу",
+    )
+
+#Воторой шаблон
+@start_router.message(IsGroupWithOwner, F.text == "🖼️ Название файла")
+async def shablon_file(message: Message, api_client : DjangoAPIClient):
+    user_id = message.from_user.id
+
+    data,status = await api_client.get(user_id,"api/users/shablon/second/")
+
+    if status == 200:
+
+        keyboard_info = ReplyKeyboardMarkup(
+                keyboard=[
+                    [KeyboardButton(text="➕ Создать шаблон название файла")],
+                    [KeyboardButton(text="🏠 Выйти в главное меню"),KeyboardButton(text="📋 Шаблон")],
+                ],
+                resize_keyboard=True,
+                input_field_placeholder='Выберите пункт меню'
+            )
+        
+        
+        shablons = data
+        if not shablons:
+            await message.answer("📋 У вас пока нет шаблонов",reply_markup=keyboard_info)
+            return
+        
+        keyboard_buttons = []
+        for shablon in shablons:
+            shablon_id = shablon.get('id')
+            content = shablon.get('shablon', 'Пустой шаблон')
+            keyboard_buttons.append([
+                InlineKeyboardButton(
+                    text=f"{content}", 
+                    callback_data=f"deleteshablonsecond_{shablon_id}"
+                )
+            ])
+        keyboard = InlineKeyboardMarkup(inline_keyboard=keyboard_buttons)
+
+        await message.answer(
+            "📋 Все шаблоны название файла:",
+            reply_markup=keyboard
+        )
+
+        await message.answer(
+            "Нажмите на шаблон чтобы удалить",
+            reply_markup=keyboard_info
+        )
+        
+
+    await message.answer(
+            "📋 Не удалось получить шаблоны, напишите админу",
+    )
+
+
+
+
+
+@start_router.callback_query(IsGroupWithOwner,F.data.startswith("deleteshablonfirst_"))
+async def user_shablon_delete_first_callback(callback: CallbackQuery, api_client: DjangoAPIClient):
+    shablon_id = int(callback.data.split("_")[1])
+    user_id = callback.from_user.id
+
+    data, status = await api_client.delete(user_id ,f"api/users/shablon/first/{shablon_id}/")
+    
+    if status == 200:
+        await callback.message.edit_text("✅ Шаблон создателя файла удален")
+    else:
+        await callback.message.answer("❌ Ошибка при удалении шаблона")
+        
+        await callback.answer()
+
+
+@start_router.callback_query(IsGroupWithOwner,F.data.startswith("deleteshablonsecond_"))
+async def user_shablon_delete_second_callback(callback: CallbackQuery, api_client: DjangoAPIClient):
+    shablon_id = int(callback.data.split("_")[1])
+    user_id = callback.from_user.id
+
+    data, status = await api_client.delete(user_id ,f"api/users/shablon/second/{shablon_id}/")
+
+    if status == 200:
+        await callback.message.edit_text("✅ Шаблон создателя файла удален")
+    else:
+        await callback.message.answer("❌ Ошибка при удалении шаблона")
+        
+        await callback.answer()
+
+
+
+@start_router.message(IsGroupWithOwner, F.text == "➕ Создать шаблон создателя файла")
+async def create_first_shablon(message: Message, state: FSMContext):
+    await message.answer("📝 Введите текст для шаблона создателя файла:")
+    await state.set_state(ShablonStates.waiting_first_shablon)
+
+
+@start_router.message(ShablonStates.waiting_first_shablon)
+async def process_first_shablon(message: Message, state: FSMContext, api_client: DjangoAPIClient):
+    user_id = message.from_user.id
+    content = message.text
+    
+    data, status = await api_client.post(user_id, "api/users/shablon/first/", json={"shablon": content})
+    keyboard_info = ReplyKeyboardMarkup(
+                keyboard=[
+                    [KeyboardButton(text="➕ Создать шаблон название файла")],
+                    [KeyboardButton(text="🏠 Выйти в главное меню"),KeyboardButton(text="📋 Шаблон")],
+                ],
+                resize_keyboard=True,
+                input_field_placeholder='Выберите пункт меню'
+            )    
+    
+    if status == 201 or status == 200:
+        await message.answer("✅ Шаблон создателя файла сохранен!",reply_markup=keyboard_info)
+    else:
+        await message.answer("❌ Ошибка при сохранении шаблона")
+    
+    await state.clear()
+
+
+@start_router.message(IsGroupWithOwner, F.text == "➕ Создать шаблон название файла")
+async def create_second_shablon(message: Message, state: FSMContext):
+    await message.answer("📝 Введите текст для шаблона названия файла:")
+    await state.set_state(ShablonStates.waiting_second_shablon)
+
+@start_router.message(ShablonStates.waiting_second_shablon)
+async def process_second_shablon(message: Message, state: FSMContext, api_client: DjangoAPIClient):
+    user_id = message.from_user.id
+    content = message.text
+    
+    data, status = await api_client.post(user_id, "api/users/shablon/second/", json={"shablon": content})
+
+    keyboard_info = ReplyKeyboardMarkup(
+                keyboard=[
+                    [KeyboardButton(text="➕ Создать шаблон название файла")],
+                    [KeyboardButton(text="🏠 Выйти в главное меню"),KeyboardButton(text="📋 Шаблон")],
+                ],
+                resize_keyboard=True,
+                input_field_placeholder='Выберите пункт меню'
+            )
+    
+    if status == 201 or status == 200:
+        await message.answer("✅ Шаблон названия файла сохранен!",reply_markup=keyboard_info)
+    else:
+        await message.answer("❌ Ошибка при сохранении шаблона")
+    
+    await state.clear()
+
+
+
+# выводить во время создания юзера 
 
 
 @start_router.message(IsGroupWithOwner, F.text == "🔗 Ссылка")

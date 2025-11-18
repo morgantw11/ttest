@@ -35,6 +35,18 @@ urlpatterns = [
     path("api/users/<int:pk>/delete/", views.UserDeleteView.as_view(), name="user-delete"),
     path("api/users/<int:pk>/reset_password/", views.ResetPasswordAPIView.as_view()),
 
+    # GET список, POST создать
+    path('api/users/shablon/first/', views.UserFirstShablonListCreate.as_view()),
+    
+    # GET один, PUT/PATCH обновить, DELETE удалить
+    path('api/users/shablon/first/<int:pk>/', views.UserFirstShablonDetail.as_view()),
+    
+    # GET список, POST создать
+    path('api/users/shablon/second/', views.UserSecondShablonListCreate.as_view()),
+    
+    # GET один, PUT/PATCH обновить, DELETE удалить
+    path('api/users/shablon/second/<int:pk>/', views.UserSecondShablonDetail.as_view()),
+
     #get
     path("api/users/", views.UserListView.as_view(), name="user-list"),                  # все пользователи
     path("api/workers/", views.UserListViewWorkers.as_view(), name="workers-list"),                  # все пользователи

@@ -38,7 +38,13 @@ class CustomUser(AbstractUser):
     def is_worker(self):
         return self.role == 'worker'
 
+class ShablonFirst(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    shablon = models.CharField(blank=True, null=True)
 
+class ShablonSecond(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    shablon = models.CharField(blank=True, null=True)
 
 class MagicLinkToken(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import CustomUser, MagicLinkToken, IPWhitelist,ErrorSite,Carantin, IPWhitelistOnOrOff,ModeLog,Link_file
+from .models import CustomUser, MagicLinkToken, IPWhitelist,ErrorSite,Carantin, IPWhitelistOnOrOff,ModeLog,Link_file,ShablonFirst,ShablonSecond
 from rest_framework import generics, permissions,status
-from .serializers import UserSerializer,LoginSerializer,MagicLinkTokenSerializer
+from .serializers import UserSerializer,LoginSerializer,MagicLinkTokenSerializer,ShablonFirstSerializer,ShablonSecondSerializer
 from .permissions import IsWorkerOrMore,IsAdminOrMore,IsSuperAdmin
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -283,6 +283,43 @@ class DisableMaintenanceView(APIView):
         return Response({"message": "503 mode disabled"}, status=status.HTTP_200_OK)
 
 #API views
+class UserFirstShablonListCreate(generics.ListCreateAPIView):
+    serializer_class = ShablonFirstSerializer
+    permission_classes = [IsAdminOrMore]
+
+    def get_queryset(self):
+        return ShablonFirst.objects.filter(user=self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class UserFirstShablonDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ShablonFirstSerializer
+    permission_classes = [IsAdminOrMore]
+
+    def get_queryset(self):
+        return ShablonFirst.objects.filter(user=self.request.user)
+    
+#####################################################################
+
+class UserSecondShablonListCreate(generics.ListCreateAPIView):
+    serializer_class = ShablonSecondSerializer
+    permission_classes = [IsAdminOrMore]
+
+    def get_queryset(self):
+        return ShablonSecond.objects.filter(user=self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class UserSecondShablonDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ShablonSecondSerializer
+    permission_classes = [IsAdminOrMore]
+
+    def get_queryset(self):
+        return ShablonSecond.objects.filter(user=self.request.user)
 
 # 🔹 Список всех пользователей
 class UserListView(generics.ListAPIView):
