@@ -59,8 +59,8 @@ class MaintenanceModeMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
         self.allowed_urls = [
-            "/api/mode/503/create/",
-            "/api/mode/503/delete/",
+            "/api/mode/503/create",
+            "/api/mode/503/delete",
         ]
 
 
